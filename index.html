@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#1C120B">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Block &amp; Bean — Specialty Coffee &amp; Community Wall</title>
-<meta name="description" content="Block & Bean is a community-powered coffee shop on Birch Street — order ahead, book a table, browse the menu, and get featured on our Local Legends wall.">
+<title>Block & Bean — Specialty Coffee & Community Wall</title>
+<meta name="description" content="Block & Bean is a community-powered coffee shop on Birch Street.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%95%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,10 +18,10 @@
   tailwind.config={theme:{extend:{colors:{espresso:'#1C120B',espresso2:'#2A1B12',cream:'#F6EFE0',cork:'#C49A6C',corkdark:'#A8794A',stamp:'#BD4332',stampdark:'#98301F',sage:'#6B7755',gold:'#D9A441'},fontFamily:{display:['Fraunces','serif'],sans:['DM Sans','sans-serif'],mono:['Space Mono','monospace'],hand:['Caveat','cursive']}}}}
 </script>
 <style>
-:root{--espresso:#1C120B;--espresso2:#2A1B12;--cream:#F6EFE0;--cork:#C49A6C;--corkdark:#A8794A;--stamp:#BD4332;--stampdark:#98301F;--sage:#6B7755;--gold:#D9A441;--gold-text:#8A5A16}
+:root{--espresso:#1C120B;--espresso2:#2A1B12;--cream:#F6EFE0;--cork:#C49A6C;--corkdark:#A8794A;--stamp:#BD4332;--stampdark:#98301F;--sage:#6B7755;--gold:#D9A441}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-tap-highlight-color:transparent}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--espresso);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--espresso);-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:80px}
 button{font-family:inherit;cursor:pointer;background:0 0;border:none}
 input,select,textarea{font-family:inherit}
 img{max-width:100%}
@@ -30,31 +30,12 @@ img{max-width:100%}
 .font-hand{font-family:'Caveat',cursive}
 .font-mono{font-family:'Space Mono',monospace}
 
-/* Reveal Animations */
+/* Animations */
 [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
 [data-reveal].is-visible{opacity:1;transform:translateY(0)}
 @media (prefers-reduced-motion:reduce){[data-reveal]{transition:none!important;transform:none!important;opacity:1!important}}
 
-/* Grain Overlay */
 .grain{pointer-events:none;opacity:.06;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
-
-/* Header & Nav */
-.site-header{position:fixed;top:0;left:0;right:0;z-index:40;padding-top:env(safe-area-inset-top);transition:background .3s,box-shadow .3s}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.2rem}
-.header-logo{opacity:0;color:var(--cream);font-size:1.15rem;transition:opacity .3s;letter-spacing:.02em}
-.site-header.scrolled{background:rgba(28,18,11,.82);backdrop-filter:blur(10px);box-shadow:0 4px 18px rgba(0,0,0,.15)}
-.site-header.scrolled .header-logo{opacity:1}
-.nav-toggle{width:42px;height:42px;border-radius:50%;background:rgba(246,239,224,.14);border:1.5px solid rgba(246,239,224,.25);color:var(--cream);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);flex-shrink:0}
-.nav-toggle:active{transform:scale(.92)}
-.nav-overlay{position:fixed;inset:0;background:var(--espresso);z-index:70;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.4rem}
-.nav-overlay.active{opacity:1;pointer-events:auto}
-.nav-close{position:absolute;top:calc(1.1rem + env(safe-area-inset-top));right:1.1rem;width:42px;height:42px;border-radius:50%;background:rgba(246,239,224,.1);border:1.5px solid rgba(246,239,224,.2);color:var(--cream);display:flex;align-items:center;justify-content:center}
-.nav-close:active{transform:scale(.92)}
-.nav-links{display:flex;flex-direction:column;align-items:center;gap:1.5rem;list-style:none;padding:0;margin:0}
-.nav-links button{font-family:'Fraunces',serif;font-weight:600;font-size:2rem;color:var(--cream)}
-.nav-links button:active{color:var(--gold)}
-.nav-footer{text-align:center;color:rgba(246,239,224,.55)}
-.nav-footer a{color:rgba(246,239,224,.8)}
 
 /* Hero */
 .hero{position:relative;height:100dvh;min-height:600px;width:100%;overflow:hidden;display:flex;flex-direction:column}
@@ -62,8 +43,7 @@ img{max-width:100%}
 .hero-bg img{width:100%;height:100%;object-fit:cover}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,18,11,.6) 0,rgba(28,18,11,.42) 32%,rgba(28,18,11,.78) 75%,rgba(28,18,11,.97) 100%)}
 .steam{position:absolute;width:14px;height:60px;border-radius:50%;background:rgba(246,239,224,.16);filter:blur(7px);bottom:50%;animation:steamRise 7s ease-in-out infinite;z-index:3}
-.steam-1{left:41%;animation-delay:0s}
-.steam-2{left:57%;width:10px;animation-delay:2.6s}
+.steam-1{left:41%;animation-delay:0s}.steam-2{left:57%;width:10px;animation-delay:2.6s}
 @keyframes steamRise{0%{transform:translateY(0) scaleX(1);opacity:0}15%{opacity:.45}55%{transform:translateY(-90px) scaleX(1.5);opacity:.2}100%{transform:translateY(-160px) scaleX(1.9);opacity:0}}
 .hero-badge{background:rgba(246,239,224,.1);border:1px solid rgba(246,239,224,.22);padding:.4rem .9rem;border-radius:999px;backdrop-filter:blur(6px)}
 .live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--sage);box-shadow:0 0 0 0 rgba(107,119,85,.6);animation:pulseDot 2s infinite}
@@ -71,107 +51,146 @@ img{max-width:100%}
 .hero-wordmark{font-size:clamp(3rem,15vw,5.5rem);letter-spacing:-.02em}
 .scroll-cue{animation:bounceCue 2s infinite}
 @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
-@media (prefers-reduced-motion:reduce){.live-dot,.scroll-cue,.steam{animation:none}}
 
-/* Ticket Bar */
-.ticket-bar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;align-items:stretch;background:var(--cream);border-top:2px dashed rgba(28,18,11,.25);box-shadow:0 -6px 24px rgba(28,18,11,.18);padding-bottom:env(safe-area-inset-bottom)}
-.ticket-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:.55rem;padding:.95rem 0;font-weight:600;font-size:.85rem;color:var(--espresso);position:relative;transition:transform .15s,background .15s}
-.ticket-btn:active{transform:scale(.96);background:rgba(28,18,11,.05)}
-.ticket-btn i{color:var(--stamp);font-size:1.05rem}
-.ticket-divider{width:0;border-left:2px dashed rgba(28,18,11,.2);margin:10px 0}
-.cart-badge{position:absolute;top:6px;right:20%;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:var(--stamp);color:var(--cream);font-family:'Space Mono',monospace;font-size:10px;display:flex;align-items:center;justify-content:center;transform:scale(0);transition:transform .25s}
-.cart-badge.show{transform:scale(1)}
-
-/* Typography & Utilities */
-.eyebrow{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-text);margin-bottom:.5rem;display:inline-block}
-.eyebrow.on-dark{color:var(--gold)}
-.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,5vw,2.75rem);color:var(--espresso);line-height:1.05}
-.section-title.on-dark{color:var(--cream)}
-.section-sub{margin-top:.6rem;color:rgba(28,18,11,.65);font-size:.95rem;max-width:32rem;margin-inline:auto}
-.section-sub.on-dark{color:rgba(246,239,224,.7)}
-.btn-stamp{display:inline-flex;align-items:center;gap:.6rem;background:var(--stamp);color:var(--cream);font-weight:700;font-size:.95rem;padding:.9rem 1.6rem;border-radius:999px;box-shadow:0 8px 20px rgba(189,67,50,.35);transition:transform .15s,box-shadow .15s,opacity .15s}
-.btn-stamp:active{transform:scale(.97)}
-.btn-stamp:disabled{opacity:.4;box-shadow:none}
-.btn-outline{display:inline-flex;align-items:center;gap:.6rem;background:0 0;color:var(--cream);font-weight:700;font-size:.95rem;padding:.85rem 1.6rem;border-radius:999px;border:1.5px solid rgba(246,239,224,.35);transition:transform .15s,background .15s}
-.btn-outline:active{transform:scale(.97);background:rgba(246,239,224,.08)}
-.link-btn{color:var(--stamp);font-weight:600;text-decoration:underline;font-size:.85rem}
-
-/* EXPANDABLE TABS (Mobile First Navigation) */
-.expandable-tabs-container {
+/* Fluid Menu (Floating Navigation) */
+.fluid-menu-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
   display: flex;
-  justify-content: center;
-  margin-bottom: 2.5rem;
-  padding: 0 1rem;
-}
-.expandable-tabs {
-  display: flex;
+  flex-direction: column-reverse;
   align-items: center;
-  gap: 0.5rem;
-  background: #fff;
-  padding: 0.5rem;
-  border-radius: 1.25rem;
-  box-shadow: 0 4px 14px rgba(28,18,11,0.08);
-  border: 1px solid rgba(28,18,11,0.06);
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  gap: 12px;
 }
-.expandable-tabs::-webkit-scrollbar { display: none; }
-.tab-item {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.6rem;
-  border-radius: 0.875rem;
-  color: rgba(28,18,11,0.55);
-  font-weight: 600;
-  font-size: 0.9rem;
-  white-space: nowrap;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  background: transparent;
-  cursor: pointer;
-  overflow: hidden;
-  min-width: 42px;
-}
-.tab-item i {
-  font-size: 1.1rem;
-  min-width: 20px;
-  text-align: center;
-  z-index: 2;
-}
-.tab-item span {
-  opacity: 0;
-  width: 0;
-  margin-left: 0;
-  transform: translateX(-10px);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  white-space: nowrap;
-  z-index: 2;
-}
-.tab-item.active {
+.fluid-trigger {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
   background: var(--espresso);
   color: var(--cream);
-  padding-left: 1rem;
-  padding-right: 1rem;
-  gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 8px 24px rgba(28,18,11,0.3);
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+  position: relative;
+  z-index: 102;
 }
-.tab-item.active span {
+.fluid-trigger:active { transform: scale(0.95); }
+.fluid-trigger i { transition: transform 0.3s, opacity 0.3s; position: absolute; }
+.fluid-trigger i.fa-bars { opacity: 1; transform: rotate(0); }
+.fluid-trigger i.fa-xmark { opacity: 0; transform: rotate(-90deg); }
+.fluid-menu-container.active .fluid-trigger i.fa-bars { opacity: 0; transform: rotate(90deg); }
+.fluid-menu-container.active .fluid-trigger i.fa-xmark { opacity: 1; transform: rotate(0); }
+
+.fluid-item {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: white;
+  color: var(--espresso);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  z-index: 101;
+  text-decoration: none;
+}
+.fluid-item:hover { background: var(--gold); color: var(--espresso); }
+.fluid-menu-container.active .fluid-item {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+/* Staggered delays handled in JS or specific classes if needed, but CSS transition handles the bulk */
+.fluid-menu-container.active .fluid-item:nth-child(2) { transition-delay: 0.05s; }
+.fluid-menu-container.active .fluid-item:nth-child(3) { transition-delay: 0.1s; }
+.fluid-menu-container.active .fluid-item:nth-child(4) { transition-delay: 0.15s; }
+.fluid-menu-container.active .fluid-item:nth-child(5) { transition-delay: 0.2s; }
+
+.fluid-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(28,18,11,0.4);
+  backdrop-filter: blur(4px);
+  z-index: 99;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.fluid-backdrop.active { opacity: 1; pointer-events: auto; }
+
+/* Expandable Tabs (Menu Filter) */
+.expandable-tabs-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.expandable-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(28,18,11,0.05);
+  padding: 0.35rem;
+  border-radius: 999px;
+  position: relative;
+}
+.tab-btn {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: rgba(28,18,11,0.5);
+  background: transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.tab-btn i {
+  font-size: 1.1rem;
+  min-width: 20px;
+  margin-right: 0;
+  transition: margin 0.3s;
+}
+.tab-btn span {
+  opacity: 0;
+  width: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.tab-btn.active {
+  background: var(--espresso);
+  color: var(--cream);
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.tab-btn.active i { margin-right: 0.5rem; }
+.tab-btn.active span {
   opacity: 1;
   width: auto;
-  margin-left: 0.25rem;
   transform: translateX(0);
-}
-.tab-item:not(.active):hover {
-  background: rgba(28,18,11,0.05);
-  color: var(--espresso);
 }
 .tab-separator {
   width: 1px;
   height: 24px;
   background: rgba(28,18,11,0.15);
   margin: 0 0.25rem;
-  flex-shrink: 0;
 }
 
 /* Menu Grid */
@@ -183,15 +202,13 @@ img{max-width:100%}
 .menu-card-name{font-family:'Fraunces',serif;font-weight:600;font-size:1rem;color:var(--espresso);line-height:1.2}
 .menu-card-desc{font-size:.78rem;color:rgba(28,18,11,.55);line-height:1.35;flex:1}
 .menu-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:.5rem}
-.price-tag{font-family:'Space Mono',monospace;font-size:.85rem;color:var(--gold-text)}
+.price-tag{font-family:'Space Mono',monospace;font-size:.85rem;color:#8A5A16}
 .add-circle{width:30px;height:30px;border-radius:50%;background:var(--stamp);color:var(--cream);display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0}
 #menu-grid.fading .menu-card{opacity:0;transform:translateY(8px)}
 
 /* Community Wall */
 .cork-bg{position:relative;background-color:var(--cork);background-image:radial-gradient(circle at 12% 18%,rgba(70,42,16,.2) 0 3px,transparent 4px),radial-gradient(circle at 32% 64%,rgba(70,42,16,.16) 0 2px,transparent 3px),radial-gradient(circle at 58% 22%,rgba(70,42,16,.18) 0 3px,transparent 4px),radial-gradient(circle at 78% 70%,rgba(70,42,16,.15) 0 2px,transparent 3px),radial-gradient(circle at 88% 30%,rgba(70,42,16,.19) 0 3px,transparent 4px),radial-gradient(circle at 22% 85%,rgba(70,42,16,.16) 0 2px,transparent 3px),radial-gradient(circle at 45% 40%,rgba(70,42,16,.14) 0 2px,transparent 3px),radial-gradient(circle at 68% 92%,rgba(70,42,16,.17) 0 3px,transparent 4px),radial-gradient(circle at 5% 50%,rgba(70,42,16,.15) 0 2px,transparent 3px),radial-gradient(circle at 95% 8%,rgba(70,42,16,.15) 0 2px,transparent 3px),linear-gradient(180deg,rgba(0,0,0,.1),transparent 16%,transparent 84%,rgba(0,0,0,.14));background-size:180px 180px,220px 220px,160px 160px,200px 200px,190px 190px,210px 210px,170px 170px,230px 230px,150px 150px,240px 240px,100% 100%}
-.masonry{column-count:2;column-gap:1.1rem}
-@media (min-width:640px){.masonry{column-count:3}}
-@media (min-width:1024px){.masonry{column-count:4}}
+.masonry{column-count:2;column-gap:1.1rem}@media (min-width:640px){.masonry{column-count:3}}@media (min-width:1024px){.masonry{column-count:4}}
 .polaroid{margin-bottom:1.1rem;break-inside:avoid;display:inline-block;width:100%;transform:rotate(var(--rot,0deg));transition:transform .25s}
 .polaroid:active,.polaroid:hover{transform:rotate(0) scale(1.02)}
 .polaroid-inner{position:relative;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.4,.2,.2,1);cursor:pointer}
@@ -211,7 +228,7 @@ img{max-width:100%}
 .tape-stamp{background:repeating-linear-gradient(135deg,rgba(189,67,50,.9) 0 6px,rgba(189,67,50,.65) 6px 12px)}
 .pin{position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:13px;height:13px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#e8866f,var(--stamp) 70%);box-shadow:0 2px 4px rgba(0,0,0,.35);z-index:3}
 
-/* Forms & Inputs */
+/* Forms & UI */
 .field{margin-bottom:1rem;display:flex;flex-direction:column;gap:.4rem}
 .field label{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:rgba(28,18,11,.55)}
 .field input,.field select,.field textarea{padding:.75rem .9rem;border-radius:12px;border:1.5px solid rgba(28,18,11,.15);background:#fff;color:var(--espresso);font-size:.95rem;width:100%}
@@ -219,41 +236,19 @@ img{max-width:100%}
 .field-row .field{flex:1}
 .envelope-card,.reserve-card{background:rgba(246,239,224,.05);border:1px solid rgba(246,239,224,.14);border-radius:20px;padding:1.6rem}
 .envelope-card label,.reserve-card label{color:rgba(246,239,224,.6)!important}
-.stepper{display:inline-flex;align-items:center;gap:1rem;background:#fff;border:1.5px solid rgba(28,18,11,.12);border-radius:999px;padding:.4rem .6rem}
-.stepper-btn{width:30px;height:30px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;color:var(--espresso);font-size:.78rem;flex-shrink:0}
-.stepper-btn:active{transform:scale(.9)}
-.qty-count,#guest-count{font-family:'Space Mono',monospace;min-width:1.4rem;text-align:center;display:inline-block}
-.option-block{margin-top:1.1rem}
-.option-label{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:rgba(28,18,11,.5);margin-bottom:.5rem}
-.pill-row{display:flex;gap:.5rem;flex-wrap:wrap}
-.pill{font-size:.82rem;padding:.45rem 1rem;border-radius:999px;border:1.5px solid rgba(28,18,11,.15);background:#fff;color:var(--espresso);transition:all .15s}
-.pill.active{background:var(--espresso);color:var(--cream);border-color:var(--espresso)}
-.range-input{width:100%;accent-color:var(--stamp)}
+.btn-stamp{display:inline-flex;align-items:center;gap:.6rem;background:var(--stamp);color:var(--cream);font-weight:700;font-size:.95rem;padding:.9rem 1.6rem;border-radius:999px;box-shadow:0 8px 20px rgba(189,67,50,.35);transition:transform .15s,box-shadow .15s,opacity .15s}
+.btn-stamp:active{transform:scale(.97)}
+.btn-stamp:disabled{opacity:.4;box-shadow:none}
+.btn-outline{display:inline-flex;align-items:center;gap:.6rem;background:0 0;color:var(--cream);font-weight:700;font-size:.95rem;padding:.85rem 1.6rem;border-radius:999px;border:1.5px solid rgba(246,239,224,.35);transition:transform .15s,background .15s}
+.btn-outline:active{transform:scale(.97);background:rgba(246,239,224,.08)}
+.eyebrow{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:#8A5A16;margin-bottom:.5rem;display:inline-block}
+.eyebrow.on-dark{color:var(--gold)}
+.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,5vw,2.75rem);color:var(--espresso);line-height:1.05}
+.section-title.on-dark{color:var(--cream)}
+.section-sub{margin-top:.6rem;color:rgba(28,18,11,.65);font-size:.95rem;max-width:32rem;margin-inline:auto}
+.section-sub.on-dark{color:rgba(246,239,224,.7)}
 
-/* Testimonials */
-.testimonial-track{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.5rem;scrollbar-width:none}
-.testimonial-track::-webkit-scrollbar{display:none}
-.testimonial-card{scroll-snap-align:start;flex:0 0 85%;background:rgba(246,239,224,.06);border:1px solid rgba(246,239,224,.14);border-radius:18px;padding:1.4rem}
-@media (min-width:640px){.testimonial-card{flex:0 0 60%}}
-@media (min-width:1024px){.testimonial-card{flex:0 0 44%}}
-.testimonial-card .stars{color:var(--gold);margin-bottom:.6rem;font-size:.85rem}
-.testimonial-card p.quote{font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;color:var(--cream);line-height:1.4}
-.testimonial-card p.author{margin-top:.9rem;font-family:'Space Mono',monospace;font-size:.72rem;color:rgba(246,239,224,.5)}
-.dots{display:flex;justify-content:center;gap:.5rem;margin-top:1.2rem}
-.dot{width:8px;height:8px;border-radius:50%;background:rgba(246,239,224,.25);transition:all .25s}
-.dot.active{background:var(--gold);width:22px;border-radius:4px}
-
-/* About & Footer */
-.about-frame{position:relative;background:#FFFDF7;padding:10px 10px 30px;border-radius:3px;box-shadow:0 16px 36px rgba(28,18,11,.25);transform:rotate(-2deg);max-width:340px}
-.about-frame img{width:100%;border-radius:1px;display:block}
-.newsletter-row{display:flex;border:1.5px solid rgba(246,239,224,.25);border-radius:999px;overflow:hidden}
-.newsletter-row input{flex:1;background:0 0;border:none;padding:.7rem 1rem;color:var(--cream);font-size:.85rem;min-width:0}
-.newsletter-row input::placeholder{color:rgba(246,239,224,.4)}
-.newsletter-row button{background:var(--gold);color:var(--espresso);width:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.footer-social a{color:rgba(246,239,224,.7);transition:color .15s}
-.footer-social a:hover{color:var(--gold)}
-
-/* Sheets & Modals */
+/* Modal / Sheet */
 .sheet-backdrop{position:fixed;inset:0;background:rgba(28,18,11,.55);opacity:0;pointer-events:none;transition:opacity .3s;z-index:60}
 .sheet-backdrop.active{opacity:1;pointer-events:auto}
 .sheet{position:fixed;left:0;right:0;bottom:0;max-height:88vh;background:var(--cream);border-radius:22px 22px 0 0;transform:translateY(100%);transition:transform .35s cubic-bezier(.32,.72,0,1);z-index:65;display:flex;flex-direction:column;box-shadow:0 -10px 40px rgba(28,18,11,.3)}
@@ -262,55 +257,53 @@ img{max-width:100%}
 .sheet-close{position:absolute;top:.85rem;right:1rem;width:32px;height:32px;border-radius:50%;background:rgba(28,18,11,.06);color:var(--espresso);display:flex;align-items:center;justify-content:center}
 .sheet-content{padding:.4rem 1.4rem 1.4rem;overflow-y:auto;flex:1}
 .sheet-footer{padding:1rem 1.4rem calc(1rem + env(safe-area-inset-bottom));border-top:1px solid rgba(28,18,11,.08);flex-shrink:0}
-.sheet-item-row{display:flex;gap:1rem;align-items:center;margin-bottom:.3rem}
-.sheet-item-img{width:64px;height:64px;border-radius:14px;object-fit:cover;flex-shrink:0}
-.total-price{margin-left:auto;font-size:.95rem}
-.add-to-order{width:100%;justify-content:space-between}
 .dropzone{position:relative;border:2px dashed rgba(28,18,11,.22);border-radius:18px;min-height:160px;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;overflow:hidden;background:rgba(28,18,11,.02);transition:border-color .2s,background .2s}
 .dropzone.dragover{border-color:var(--stamp);background:rgba(189,67,50,.07)}
 .dropzone-preview{display:none;width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
 .dropzone.has-file .dropzone-preview{display:block}
 .dropzone.has-file .dropzone-placeholder{display:none}
 .dropzone-placeholder{color:rgba(28,18,11,.55);padding:1rem}
-.ig-input-wrap{display:flex;align-items:center;border:1.5px solid rgba(28,18,11,.15);border-radius:12px;background:#fff;overflow:hidden}
-.ig-input-wrap span{padding-left:.9rem;color:rgba(28,18,11,.4)}
-.ig-input-wrap input{border:none!important;flex:1}
 .consent-row{display:flex;gap:.6rem;align-items:flex-start;font-size:.82rem;color:rgba(28,18,11,.7);margin:1.1rem 0;cursor:pointer}
 .consent-row input{margin-top:.2rem;accent-color:var(--stamp);width:16px;height:16px;flex-shrink:0}
 .toast{position:fixed;bottom:96px;left:50%;transform:translate(-50%,12px);background:var(--espresso);color:var(--cream);padding:.7rem 1.3rem;border-radius:999px;font-size:.85rem;opacity:0;pointer-events:none;transition:all .3s;z-index:80;box-shadow:0 10px 28px rgba(0,0,0,.3);max-width:88vw;text-align:center}
 .toast.show{opacity:1;transform:translate(-50%,0)}
-.no-scrollbar::-webkit-scrollbar{display:none}
-.img-fallback{background:var(--espresso2)}
+
+/* Testimonials */
+.testimonial-track{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.5rem;scrollbar-width:none}
+.testimonial-track::-webkit-scrollbar{display:none}
+.testimonial-card{scroll-snap-align:start;flex:0 0 85%;background:rgba(246,239,224,.06);border:1px solid rgba(246,239,224,.14);border-radius:18px;padding:1.4rem}@media (min-width:640px){.testimonial-card{flex:0 0 60%}}@media (min-width:1024px){.testimonial-card{flex:0 0 44%}}
+.testimonial-card .stars{color:var(--gold);margin-bottom:.6rem;font-size:.85rem}
+.testimonial-card p.quote{font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;color:var(--cream);line-height:1.4}
+.testimonial-card p.author{margin-top:.9rem;font-family:'Space Mono',monospace;font-size:.72rem;color:rgba(246,239,224,.5)}
+
+/* About */
+.about-frame{position:relative;background:#FFFDF7;padding:10px 10px 30px;border-radius:3px;box-shadow:0 16px 36px rgba(28,18,11,.25);transform:rotate(-2deg);max-width:340px;margin:0 auto}
+.about-frame img{width:100%;border-radius:1px;display:block}
 </style>
 </head>
 <body>
-<header class="site-header" id="site-header">
-  <div class="header-inner">
-    <button class="header-logo font-display font-bold" data-scroll-to="#hero" aria-label="Scroll to top">B<span class="text-stamp">&amp;</span>B</button>
-    <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+
+<!-- Fluid Backdrop -->
+<div class="fluid-backdrop" id="fluid-backdrop"></div>
+
+<!-- Fluid Menu Navigation -->
+<div class="fluid-menu-container" id="fluid-menu">
+  <a href="#about" class="fluid-item"><i class="fa-solid fa-store"></i></a>
+  <a href="#reserve" class="fluid-item"><i class="fa-regular fa-calendar-check"></i></a>
+  <a href="#wall" class="fluid-item"><i class="fa-solid fa-camera-retro"></i></a>
+  <a href="#menu" class="fluid-item"><i class="fa-solid fa-mug-hot"></i></a>
+  
+  <div class="fluid-trigger" id="fluid-trigger">
+    <i class="fa-solid fa-bars"></i>
+    <i class="fa-solid fa-xmark"></i>
   </div>
-</header>
-<nav id="nav-overlay" class="nav-overlay" aria-hidden="true">
-  <button id="nav-close" class="nav-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
-  <ul class="nav-links">
-    <li><button data-scroll-to="#menu">Menu</button></li>
-    <li><button data-scroll-to="#wall">The Wall</button></li>
-    <li><button data-scroll-to="#reserve">Reserve</button></li>
-    <li><button data-scroll-to="#about">Our Roots</button></li>
-  </ul>
-  <div class="nav-footer">
-    <div class="flex gap-5 justify-center text-xl mb-3">
-      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-    </div>
-    <p class="font-mono text-xs">214 Birch Street</p>
-  </div>
-</nav>
+</div>
+
 <main>
+  <!-- Hero Section -->
   <section id="hero" class="hero">
     <div class="hero-bg">
-      <img src="https://images.unsplash.com/photo-1751956066306-c5684cbcf385?auto=format&amp;fit=crop&amp;q=80&amp;w=1600&amp;h=2000" alt="Warm interior" loading="eager" fetchpriority="high" decoding="async" data-fallback>
+      <img src="https://images.unsplash.com/photo-1751956066306-c5684cbcf385?auto=format&fit=crop&q=80&w=1600&h=2000" alt="Warm interior" loading="eager" fetchpriority="high" decoding="async" data-fallback>
       <div class="hero-overlay"></div>
       <div class="grain"></div>
     </div>
@@ -322,7 +315,7 @@ img{max-width:100%}
         <span class="font-mono text-xs tracking-wide text-cream/90"><span id="live-count">24</span> neighbors here</span>
       </div>
       <div class="flex-1 flex flex-col items-center justify-center text-center gap-4 -mt-6">
-        <p class="font-mono text-xs uppercase tracking-[0.3em] text-gold" data-reveal>Est. 2014 · Birch &amp; 9th</p>
+        <p class="font-mono text-xs uppercase tracking-[0.3em] text-gold" data-reveal>Est. 2014 · Birch & 9th</p>
         <h1 class="hero-wordmark font-display font-black text-cream leading-[0.92]" data-reveal>BLOCK<br><span class="text-stamp">&amp;</span> BEAN</h1>
         <p class="font-display italic text-xl sm:text-2xl text-cream/90" data-reveal>Part café. Part block party.</p>
         <p class="max-w-xs text-sm text-cream/70" data-reveal>Specialty coffee, baked-daily pastries, and a wall full of regulars.</p>
@@ -333,6 +326,8 @@ img{max-width:100%}
       </div>
     </div>
   </section>
+
+  <!-- Menu Section with Expandable Tabs -->
   <section id="menu" class="relative bg-cream px-5 sm:px-8 py-20 sm:py-28">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-10" data-reveal>
@@ -341,20 +336,20 @@ img{max-width:100%}
         <p class="section-sub">Everything's made to order — tap anything to make it yours.</p>
       </div>
       
-      <!-- NEW EXPANDABLE TABS NAVIGATION -->
-      <div class="expandable-tabs-container" data-reveal>
+      <!-- Expandable Tabs Component -->
+      <div class="expandable-tabs-wrapper" data-reveal>
         <div class="expandable-tabs">
-          <button class="tab-item active" data-category="espresso">
+          <button class="tab-btn active" data-category="espresso">
             <i class="fa-solid fa-mug-hot"></i>
             <span>Espresso Bar</span>
           </button>
           <div class="tab-separator"></div>
-          <button class="tab-item" data-category="non-coffee">
+          <button class="tab-btn" data-category="non-coffee">
             <i class="fa-solid fa-leaf"></i>
             <span>Non-Coffee</span>
           </button>
           <div class="tab-separator"></div>
-          <button class="tab-item" data-category="pastries">
+          <button class="tab-btn" data-category="pastries">
             <i class="fa-solid fa-bread-slice"></i>
             <span>Pastries</span>
           </button>
@@ -364,6 +359,8 @@ img{max-width:100%}
       <div id="menu-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"></div>
     </div>
   </section>
+
+  <!-- Community Wall -->
   <section id="wall" class="relative cork-bg px-5 sm:px-8 py-20 sm:py-28 overflow-hidden">
     <div class="grain absolute inset-0"></div>
     <div class="max-w-5xl mx-auto relative z-10">
@@ -373,11 +370,12 @@ img{max-width:100%}
         <p class="section-sub" style="color:rgba(28,18,11,.7);">Pin your cup, your corner, your crew — upload your vibe and you might just end up on this wall.</p>
       </div>
       <div class="masonry" data-reveal id="polaroid-grid">
+        <!-- Polaroid 1 -->
         <div class="polaroid" style="--rot:-3deg">
           <div class="polaroid-inner" style="aspect-ratio:500/640">
             <div class="polaroid-front">
               <span class="pin"></span>
-              <div class="polaroid-photo"><img src=" https://images.unsplash.com/photo-1474293507615-951863a0f942?auto=format&amp;fit=crop&amp;q=80&amp;w=500&amp;h=600" alt="Customer" loading="lazy" decoding="async" data-fallback></div>
+              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1474293507615-951863a0f942?auto=format&fit=crop&q=80&w=500&h=600" alt="Customer" loading="lazy" decoding="async" data-fallback></div>
               <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
             </div>
             <div class="polaroid-back">
@@ -387,25 +385,27 @@ img{max-width:100%}
             </div>
           </div>
         </div>
+        <!-- Polaroid 2 -->
         <div class="polaroid" style="--rot:2deg">
           <div class="polaroid-inner" style="aspect-ratio:500/400">
             <div class="polaroid-front">
               <span class="tape tape-sage"></span>
-              <div class="polaroid-photo"><img src=" https://images.unsplash.com/photo-1758525225816-8dd1901ef6ec?auto=format&amp;fit=crop&amp;q=80&amp;w=500&amp;h=400" alt="Friends laughing" loading="lazy" decoding="async" data-fallback></div>
+              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1758525225816-8dd1901ef6ec?auto=format&fit=crop&q=80&w=500&h=400" alt="Friends laughing" loading="lazy" decoding="async" data-fallback></div>
               <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
             </div>
             <div class="polaroid-back">
               <p class="hand-handle">@two.sugars.please</p>
-              <p class="hand-drink">Matcha Cloud &times; 2<br>Tuesday tradition</p>
+              <p class="hand-drink">Matcha Cloud × 2<br>Tuesday tradition</p>
               <i class="fa-solid fa-heart back-heart" aria-hidden="true"></i>
             </div>
           </div>
         </div>
+        <!-- Polaroid 3 -->
         <div class="polaroid" style="--rot:-2deg">
           <div class="polaroid-inner" style="aspect-ratio:500/620">
             <div class="polaroid-front">
               <span class="tape tape-gold"></span>
-              <div class="polaroid-photo"><img src=" https://images.unsplash.com/photo-1646772281149-91ae4a9478d3?auto=format&amp;fit=crop&amp;q=80&amp;w=500&amp;h=620" alt="Smiling customer" loading="lazy" decoding="async" data-fallback></div>
+              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1646772281149-91ae4a9478d3?auto=format&fit=crop&q=80&w=500&h=620" alt="Smiling customer" loading="lazy" decoding="async" data-fallback></div>
               <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
             </div>
             <div class="polaroid-back">
@@ -415,44 +415,17 @@ img{max-width:100%}
             </div>
           </div>
         </div>
+        <!-- Polaroid 4 -->
         <div class="polaroid" style="--rot:3deg">
           <div class="polaroid-inner" style="aspect-ratio:500/500">
             <div class="polaroid-front">
               <span class="pin"></span>
-              <div class="polaroid-photo"><img src=" https://images.unsplash.com/photo-1683329570019-8307d6d42ad9?auto=format&amp;fit=crop&amp;q=80&amp;w=500&amp;h=500" alt="Coffee on table" loading="lazy" decoding="async" data-fallback></div>
+              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1683329570019-8307d6d42ad9?auto=format&fit=crop&q=80&w=500&h=500" alt="Coffee on table" loading="lazy" decoding="async" data-fallback></div>
               <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
             </div>
             <div class="polaroid-back">
               <p class="hand-handle">@junebug.writes</p>
               <p class="hand-drink">Cardamom Morning Bun<br>+ chapter 12</p>
-              <i class="fa-solid fa-heart back-heart" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-        <div class="polaroid" style="--rot:-1deg">
-          <div class="polaroid-inner" style="aspect-ratio:500/600">
-            <div class="polaroid-front">
-              <span class="tape tape-stamp"></span>
-              <div class="polaroid-photo"><img src=" https://images.unsplash.com/photo-1659882617003-4a0c077e2768?auto=format&amp;fit=crop&amp;q=80&amp;w=500&amp;h=600&amp;flip=h" alt="Latte art" loading="lazy" decoding="async" data-fallback></div>
-              <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
-            </div>
-            <div class="polaroid-back">
-              <p class="hand-handle">@latte.lyfe</p>
-              <p class="hand-drink">Maple Block Latte<br>made my Monday</p>
-              <i class="fa-solid fa-heart back-heart" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-        <div class="polaroid" style="--rot:2deg">
-          <div class="polaroid-inner" style="aspect-ratio:500/420">
-            <div class="polaroid-front">
-              <span class="tape tape-gold"></span>
-              <div class="polaroid-photo"><img src=" https://images.unsplash.com/photo-1679449223735-444c4f71f0dd?auto=format&amp;fit=crop&amp;q=80&amp;w=500&amp;h=420&amp;flip=h" alt="Croissant" loading="lazy" decoding="async" data-fallback></div>
-              <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
-            </div>
-            <div class="polaroid-back">
-              <p class="hand-handle">@croissant.szn</p>
-              <p class="hand-drink">Brown Butter Croissant<br>no notes</p>
               <i class="fa-solid fa-heart back-heart" aria-hidden="true"></i>
             </div>
           </div>
@@ -463,6 +436,8 @@ img{max-width:100%}
       </div>
     </div>
   </section>
+
+  <!-- Reservations -->
   <section id="reserve" class="relative bg-espresso px-5 sm:px-8 py-20 sm:py-28">
     <div class="grain absolute inset-0"></div>
     <div class="max-w-3xl mx-auto relative z-10">
@@ -488,301 +463,168 @@ img{max-width:100%}
         </div>
         <button type="submit" class="btn-stamp mt-4 w-full justify-center">Reserve Table</button>
       </form>
-    </div>
-  </section>
-  
-  <section id="feedback" class="relative bg-espresso2 px-5 sm:px-8 py-20 sm:py-28">
-    <div class="grain absolute inset-0"></div>
-    <div class="max-w-4xl mx-auto relative z-10">
-      <div class="text-center mb-10" data-reveal>
-        <span class="eyebrow on-dark">Spill the Beans</span>
-        <h2 class="section-title on-dark">Feedback Hub</h2>
-        <p class="section-sub on-dark">Love us? Tell the world. Hate something? Tell the manager directly.</p>
-      </div>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div data-reveal>
-          <h3 class="font-display text-xl text-cream mb-4">Kind Words</h3>
-          <div class="testimonial-track" id="testimonial-track">
-            <div class="testimonial-card">
-              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-              <p class="quote">"The vibe here is unmatched. It feels like my living room, but with better coffee."</p>
-              <p class="author">— Sarah J.</p>
-            </div>
-            <div class="testimonial-card">
-              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-              <p class="quote">"Finally, a place that understands what a proper flat white should taste like."</p>
-              <p class="author">— Mike T.</p>
-            </div>
-            <div class="testimonial-card">
-              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
-              <p class="quote">"My new remote office. The wifi is fast and the pastries are dangerous."</p>
-              <p class="author">— Elena R.</p>
-            </div>
+      
+      <!-- Testimonials -->
+      <div class="mt-16" data-reveal>
+        <h3 class="text-center font-display text-cream text-xl mb-6">Spill the Beans</h3>
+        <div class="testimonial-track">
+          <div class="testimonial-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="quote">"The vibe here is unmatched. It feels like my second living room."</p>
+            <p class="author">— Sarah J.</p>
           </div>
-          <div class="dots" id="testimonial-dots"></div>
-        </div>
-        <div data-reveal>
-          <h3 class="font-display text-xl text-cream mb-4">Private Feedback</h3>
-          <form id="feedback-form" class="envelope-card">
-            <div class="field">
-              <label for="f-name">Name</label>
-              <input id="f-name" name="name" required placeholder="Your name">
-            </div>
-            <div class="field">
-              <label for="f-email">Email</label>
-              <input id="f-email" name="email" type="email" required placeholder="you@example.com">
-            </div>
-            <div class="field">
-              <label for="f-message">Message</label>
-              <textarea id="f-message" name="message" rows="3" required placeholder="How did we do?"></textarea>
-            </div>
-            <button type="submit" class="btn-outline w-full justify-center mt-2">Send privately</button>
-          </form>
+          <div class="testimonial-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="quote">"Best flat white in the city, hands down. The staff knows my order."</p>
+            <p class="author">— Mike T.</p>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+            <p class="quote">"Love the community wall idea. Got my photo featured last week!"</p>
+            <p class="author">— Elena R.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="about" class="relative bg-cream px-5 sm:px-8 py-20 sm:py-28">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="order-2 md:order-1" data-reveal>
-          <div class="about-frame">
-            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&amp;fit=crop&amp;q=80&amp;w=800&amp;h=1000" alt="Cafe founders" loading="lazy" decoding="async" data-fallback>
-          </div>
+  <!-- About Us -->
+  <section id="about" class="bg-cream px-5 sm:px-8 py-20 sm:py-28">
+    <div class="max-w-4xl mx-auto text-center" data-reveal>
+      <span class="eyebrow">Our Roots</span>
+      <h2 class="section-title mb-6">Born on Birch Street</h2>
+      <div class="about-frame mb-8">
+        <img src="https://images.unsplash.com/photo-1554118598-7b827e7c4d72?auto=format&fit=crop&q=80&w=600&h=400" alt="Cafe founders" loading="lazy">
+      </div>
+      <p class="text-lg text-espresso/80 leading-relaxed mb-8">
+        We started Block & Bean in 2014 with a simple mission: create a space where coffee is serious, but people are welcome just as they are. No pretension, just great beans and good vibes. We source directly from sustainable farms and bake our pastries fresh every morning at 4 AM.
+      </p>
+      <div class="grid grid-cols-3 gap-4 max-w-md mx-auto font-mono text-xs uppercase tracking-wider text-espresso/60">
+        <div>
+          <span class="block text-2xl font-bold text-espresso">10k+</span>
+          Cups/Mo
         </div>
-        <div class="order-1 md:order-2" data-reveal>
-          <span class="eyebrow">Our Roots</span>
-          <h2 class="section-title mb-6">More Than Just Caffeine</h2>
-          <p class="text-lg leading-relaxed mb-6 text-espresso/80">Block &amp; Bean started in 2014 with a simple mission: to build a gathering spot that feels like an extension of your own home. We source beans directly from sustainable farms and roast them locally to bring out the unique character of every origin.</p>
-          <p class="text-lg leading-relaxed mb-8 text-espresso/80">Whether you're here for a quick espresso at the bar or a long afternoon working on your novel, you're part of the block now.</p>
-          <div class="grid grid-cols-3 gap-4 text-center">
-            <div>
-              <p class="font-display text-3xl font-bold text-stamp">10k+</p>
-              <p class="font-mono text-xs uppercase tracking-wider mt-1">Cups Served</p>
-            </div>
-            <div>
-              <p class="font-display text-3xl font-bold text-stamp">12</p>
-              <p class="font-mono text-xs uppercase tracking-wider mt-1">Local Partners</p>
-            </div>
-            <div>
-              <p class="font-display text-3xl font-bold text-stamp">100%</p>
-              <p class="font-mono text-xs uppercase tracking-wider mt-1">Community Owned</p>
-            </div>
-          </div>
+        <div>
+          <span class="block text-2xl font-bold text-espresso">12</span>
+          Local Artists
+        </div>
+        <div>
+          <span class="block text-2xl font-bold text-espresso">100%</span>
+          Organic
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="bg-espresso text-cream pt-20 pb-32">
-  <div class="max-w-5xl mx-auto px-5 sm:px-8">
-    <div class="grid md:grid-cols-4 gap-12 mb-16">
-      <div class="md:col-span-2">
-        <h3 class="font-display text-2xl font-bold mb-4">Block &amp; Bean</h3>
-        <p class="text-cream/60 mb-6 max-w-sm">Specialty coffee and community spirit on Birch Street. Come for the pour-over, stay for the connections.</p>
-        <div class="footer-social flex gap-4 text-xl">
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-        </div>
-      </div>
-      <div>
-        <h4 class="font-mono text-xs uppercase tracking-widest mb-4 text-gold">Hours</h4>
-        <ul class="space-y-2 text-cream/70 text-sm">
-          <li class="flex justify-between"><span>Mon-Fri</span><span>7am - 7pm</span></li>
-          <li class="flex justify-between"><span>Saturday</span><span>8am - 8pm</span></li>
-          <li class="flex justify-between"><span>Sunday</span><span>8am - 6pm</span></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-mono text-xs uppercase tracking-widest mb-4 text-gold">Contact</h4>
-        <ul class="space-y-2 text-cream/70 text-sm">
-          <li>214 Birch Street</li>
-          <li>Seattle, WA 98102</li>
-          <li><a href="tel:+12065550199" class="hover:text-gold transition-colors">(206) 555-0199</a></li>
-          <li><a href="mailto:hello@blockandbean.com" class="hover:text-gold transition-colors">hello@blockandbean.com</a></li>
-        </ul>
-      </div>
+<footer class="bg-espresso text-cream/60 py-12 px-6 text-center text-sm">
+  <div class="max-w-md mx-auto space-y-4">
+    <h3 class="font-display text-2xl text-cream">Block & Bean</h3>
+    <p>214 Birch Street, Open Daily 7am - 7pm</p>
+    <div class="flex justify-center gap-6 text-xl">
+      <a href="#" class="hover:text-gold transition-colors"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="hover:text-gold transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" class="hover:text-gold transition-colors"><i class="fa-brands fa-tiktok"></i></a>
     </div>
-    <div class="border-t border-cream/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-cream/40 text-xs">&copy; 2024 Block &amp; Bean. All rights reserved.</p>
-      <form class="w-full md:w-auto">
-        <p class="font-mono text-xs uppercase tracking-widest mb-2 text-gold">Join the inner circle</p>
-        <div class="newsletter-row">
-          <input type="email" placeholder="Email address" aria-label="Email address">
-          <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
-        </div>
-      </form>
-    </div>
+    <p class="text-xs pt-4">&copy; 2024 Block & Bean Coffee Co.</p>
   </div>
 </footer>
 
-<!-- Sticky Bottom Bar -->
-<div class="ticket-bar">
-  <button class="ticket-btn" data-open-sheet="cart-sheet">
-    <i class="fa-solid fa-bag-shopping"></i>
-    <span>Order Now</span>
-    <span class="cart-badge" id="cart-badge">0</span>
-  </button>
-  <div class="ticket-divider"></div>
-  <button class="ticket-btn" data-scroll-to="#reserve">
-    <i class="fa-regular fa-calendar-check"></i>
-    <span>Book a Table</span>
-  </button>
-</div>
-
-<!-- Cart/Customization Sheet -->
-<div class="sheet-backdrop" id="cart-backdrop"></div>
-<div class="sheet" id="cart-sheet" role="dialog" aria-modal="true" aria-labelledby="cart-title">
-  <div class="sheet-handle"></div>
-  <button class="sheet-close" aria-label="Close cart"><i class="fa-solid fa-xmark"></i></button>
-  <div class="sheet-content">
-    <div class="flex items-center gap-4 mb-6">
-      <img id="sheet-img" src="" alt="" class="sheet-item-img">
-      <div>
-        <h3 id="sheet-title" class="font-display font-bold text-xl text-espresso"></h3>
-        <p id="sheet-price" class="font-mono text-stamp font-bold"></p>
-      </div>
-    </div>
-    <div class="option-block">
-      <p class="option-label">Size</p>
-      <div class="pill-row" id="size-options">
-        <button class="pill" data-size="S">Small</button>
-        <button class="pill active" data-size="M">Medium</button>
-        <button class="pill" data-size="L">Large</button>
-      </div>
-    </div>
-    <div class="option-block">
-      <p class="option-label">Milk Preference</p>
-      <div class="pill-row" id="milk-options">
-        <button class="pill active" data-milk="whole">Whole</button>
-        <button class="pill" data-milk="oat">Oat (+$0.80)</button>
-        <button class="pill" data-milk="almond">Almond (+$0.80)</button>
-        <button class="pill" data-milk="skim">Skim</button>
-      </div>
-    </div>
-    <div class="option-block">
-      <p class="option-label">Extras</p>
-      <div class="pill-row" id="extra-options">
-        <button class="pill" data-extra="vanilla">Vanilla Syrup (+$0.60)</button>
-        <button class="pill" data-extra="caramel">Caramel (+$0.60)</button>
-        <button class="pill" data-extra="espresso">Extra Shot (+$1.50)</button>
-      </div>
-    </div>
-  </div>
-  <div class="sheet-footer">
-    <button class="btn-stamp add-to-order">
-      <span>Add to Order</span>
-      <span class="total-price" id="sheet-total">$5.50</span>
-    </button>
-  </div>
-</div>
-
-<!-- Upload Modal Sheet -->
+<!-- Upload Modal -->
 <div class="sheet-backdrop" id="upload-backdrop"></div>
-<div class="sheet" id="upload-sheet" role="dialog" aria-modal="true" aria-labelledby="upload-title">
+<div class="sheet" id="upload-sheet">
   <div class="sheet-handle"></div>
-  <button class="sheet-close" aria-label="Close upload"><i class="fa-solid fa-xmark"></i></button>
+  <button class="sheet-close" id="close-upload"><i class="fa-solid fa-xmark"></i></button>
   <div class="sheet-content">
-    <h3 id="upload-title" class="font-display font-bold text-2xl text-espresso mb-1">Upload Your Vibe</h3>
+    <h3 class="font-display text-2xl mb-1">Upload Your Vibe</h3>
     <p class="text-sm text-espresso/60 mb-6">Get featured on the Local Legends wall.</p>
     
     <form id="upload-form">
-      <div class="field">
-        <label>Photo</label>
-        <div class="dropzone" id="dropzone">
-          <img class="dropzone-preview" id="dropzone-preview" alt="Preview">
-          <div class="dropzone-placeholder">
-            <i class="fa-solid fa-cloud-arrow-up text-2xl mb-2 text-stamp"></i>
-            <p class="font-bold">Tap to upload or drag photo here</p>
-            <p class="text-xs mt-1">JPG or PNG (Max 5MB)</p>
-          </div>
-          <input type="file" id="file-input" accept="image/*" hidden>
+      <div class="dropzone" id="dropzone">
+        <img class="dropzone-preview" id="preview-img" alt="Preview">
+        <div class="dropzone-placeholder">
+          <i class="fa-solid fa-cloud-arrow-up text-3xl mb-2 text-stamp"></i>
+          <p class="font-medium">Tap to upload photo</p>
+          <p class="text-xs mt-1">or drag and drop here</p>
+        </div>
+        <input type="file" id="file-input" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer">
+      </div>
+
+      <div class="field mt-6">
+        <label>IG Handle (Optional)</label>
+        <div class="ig-input-wrap" style="display:flex;align-items:center;border:1.5px solid rgba(28,18,11,.15);border-radius:12px;background:#fff;overflow:hidden">
+          <span class="text-espresso/40 px-3">@</span>
+          <input type="text" placeholder="username" style="border:none!important;flex:1;padding:.75rem 0">
         </div>
       </div>
 
       <div class="field">
-        <label for="ig-handle">IG Handle (Optional)</label>
-        <div class="ig-input-wrap">
-          <span class="text-espresso/40">@</span>
-          <input type="text" id="ig-handle" placeholder="username">
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="drink-choice">Your Drink</label>
-        <input type="text" id="drink-choice" placeholder="e.g. Iced Oat Latte" required>
+        <label>Your Drink</label>
+        <input type="text" placeholder="e.g. Oat Latte" required>
       </div>
 
       <label class="consent-row">
-        <input type="checkbox" required id="media-consent">
-        <span>I grant Block &amp; Bean permission to feature this photo on the community wall and social media.</span>
+        <input type="checkbox" required>
+        <span>I agree to let Block & Bean feature this photo on our digital wall.</span>
       </label>
 
-      <button type="submit" class="btn-stamp w-full justify-center" id="upload-submit">
-        <span>Send to Barista!</span>
-        <i class="fa-solid fa-paper-plane"></i>
+      <button type="submit" class="btn-stamp w-full justify-center mt-2" id="submit-upload">
+        Send to Barista!
       </button>
     </form>
   </div>
 </div>
 
-<div class="toast" id="toast">Message</div>
+<!-- Toast Notification -->
+<div class="toast" id="toast">You're on the waitlist for the wall! 🎉</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  // --- State ---
+  // --- Fluid Menu Logic ---
+  const fluidTrigger = document.getElementById('fluid-trigger');
+  const fluidMenu = document.getElementById('fluid-menu');
+  const fluidBackdrop = document.getElementById('fluid-backdrop');
+  const fluidItems = document.querySelectorAll('.fluid-item');
+
+  function toggleMenu() {
+    const isActive = fluidMenu.classList.toggle('active');
+    fluidBackdrop.classList.toggle('active', isActive);
+    document.body.style.overflow = isActive ? 'hidden' : '';
+  }
+
+  fluidTrigger.addEventListener('click', toggleMenu);
+  fluidBackdrop.addEventListener('click', toggleMenu);
+  
+  // Close menu when clicking a link
+  fluidItems.forEach(item => {
+    item.addEventListener('click', () => {
+      if(fluidMenu.classList.contains('active')) toggleMenu();
+    });
+  });
+
+  // --- Expandable Tabs Logic ---
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const menuGrid = document.getElementById('menu-grid');
+  
+  // Mock Menu Data
   const menuItems = {
     espresso: [
-      { id: 1, name: "House Espresso", desc: "Rich, chocolatey notes", price: 3.50, img: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&q=80&w=400&h=400" },
-      { id: 2, name: "Cappuccino", desc: "Equal parts espresso, milk, foam", price: 4.75, img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=80&w=400&h=400" },
-      { id: 3, name: "Flat White", desc: "Silky microfoam over double shot", price: 5.00, img: "https://images.unsplash.com/photo-1570968992193-96ab71b54791?auto=format&fit=crop&q=80&w=400&h=400" },
-      { id: 4, name: "Cortado", desc: "Espresso cut with warm milk", price: 4.25, img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=400&h=400" }
+      { name: "House Espresso", price: "$3.50", desc: "Rich, nutty, chocolate notes", img: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&q=80&w=400" },
+      { name: "Cortado", price: "$4.25", desc: "Equal parts espresso & steamed milk", img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=400" },
+      { name: "Flat White", price: "$4.75", desc: "Double shot, microfoam texture", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=80&w=400" },
+      { name: "Cold Brew", price: "$5.00", desc: "Steeped 18hrs, smooth finish", img: "https://images.unsplash.com/photo-1517701604599-bb29b5c7355c?auto=format&fit=crop&q=80&w=400" }
     ],
     "non-coffee": [
-      { id: 5, name: "Matcha Latte", desc: "Ceremonial grade from Kyoto", price: 5.50, img: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&q=80&w=400&h=400" },
-      { id: 6, name: "Chai Tea Latte", desc: "House-spiced black tea", price: 4.75, img: "https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?auto=format&fit=crop&q=80&w=400&h=400" },
-      { id: 7, name: "Hot Chocolate", desc: "70% dark chocolate, whipped cream", price: 4.50, img: "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&q=80&w=400&h=400" },
-      { id: 8, name: "Steamer", desc: "Steamed milk with vanilla", price: 3.75, img: "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?auto=format&fit=crop&q=80&w=400&h=400" }
+      { name: "Matcha Latte", price: "$5.50", desc: "Ceremonial grade, oat milk", img: "https://images.unsplash.com/photo-1515825838458-f2a94b20105a?auto=format&fit=crop&q=80&w=400" },
+      { name: "Chai Tea", price: "$4.75", desc: "Spiced black tea, steamed milk", img: "https://images.unsplash.com/photo-1576092768241-dec231847233?auto=format&fit=crop&q=80&w=400" },
+      { name: "Hot Chocolate", price: "$4.50", desc: "70% dark chocolate, whipped cream", img: "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&q=80&w=400" }
     ],
     pastries: [
-      { id: 9, name: "Butter Croissant", desc: "Flaky, buttery, baked daily", price: 3.75, img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=400&h=400" },
-      { id: 10, name: "Morning Bun", desc: "Cinnamon sugar, orange zest", price: 4.25, img: "https://images.unsplash.com/photo-1623334044303-241021148842?auto=format&fit=crop&q=80&w=400&h=400" },
-      { id: 11, name: "Blueberry Muffin", desc: "Bursting with local berries", price: 3.95, img: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&q=80&w=400&h=400" },
-      { id: 12, name: "Avocado Toast", desc: "Sourdough, chili flake, lemon", price: 6.50, img: "https://images.unsplash.com/photo-1588137372308-15f75323ca8d?auto=format&fit=crop&q=80&w=400&h=400" }
+      { name: "Croissant", price: "$3.75", desc: "Buttery, flaky, baked daily", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=400" },
+      { name: "Morning Bun", price: "$4.25", desc: "Cinnamon sugar, orange zest", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=400" },
+      { name: "Blueberry Muffin", price: "$3.50", desc: "Bursting with berries", img: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&q=80&w=400" }
     ]
   };
-
-  let cartCount = 0;
-  let currentItem = null;
-
-  // --- Elements ---
-  const menuGrid = document.getElementById('menu-grid');
-  const tabButtons = document.querySelectorAll('.tab-item');
-  const cartBadge = document.getElementById('cart-badge');
-  const sheetBackdrop = document.getElementById('cart-backdrop');
-  const cartSheet = document.getElementById('cart-sheet');
-  const closeSheetBtn = document.querySelector('#cart-sheet .sheet-close');
-  const sizeOptions = document.getElementById('size-options').querySelectorAll('.pill');
-  const milkOptions = document.getElementById('milk-options').querySelectorAll('.pill');
-  const extraOptions = document.getElementById('extra-options').querySelectorAll('.pill');
-  const sheetTotal = document.getElementById('sheet-total');
-  
-  // Upload Elements
-  const uploadBtn = document.getElementById('open-upload');
-  const uploadBackdrop = document.getElementById('upload-backdrop');
-  const uploadSheet = document.getElementById('upload-sheet');
-  const closeUploadBtn = document.querySelector('#upload-sheet .sheet-close');
-  const dropzone = document.getElementById('dropzone');
-  const fileInput = document.getElementById('file-input');
-  const dropzonePreview = document.getElementById('dropzone-preview');
-  const uploadForm = document.getElementById('upload-form');
-  const uploadSubmit = document.getElementById('upload-submit');
-
-  // --- Functions ---
 
   function renderMenu(category) {
     menuGrid.classList.add('fading');
@@ -792,285 +634,118 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = document.createElement('div');
         card.className = 'menu-card';
         card.innerHTML = `
-          <div class="menu-card-img-wrap">
-            <img src="${item.img}" alt="${item.name}" loading="lazy" decoding="async">
-          </div>
+          <div class="menu-card-img-wrap"><img src="${item.img}" alt="${item.name}" loading="lazy"></div>
           <div class="menu-card-body">
             <h3 class="menu-card-name">${item.name}</h3>
             <p class="menu-card-desc">${item.desc}</p>
             <div class="menu-card-footer">
-              <span class="price-tag">$${item.price.toFixed(2)}</span>
-              <button class="add-circle" aria-label="Add ${item.name} to cart">
-                <i class="fa-solid fa-plus"></i>
-              </button>
+              <span class="price-tag">${item.price}</span>
+              <button class="add-circle"><i class="fa-solid fa-plus"></i></button>
             </div>
           </div>
         `;
-        card.querySelector('.add-circle').addEventListener('click', (e) => {
-          e.stopPropagation();
-          openCart(item);
-        });
-        card.addEventListener('click', () => openCart(item));
         menuGrid.appendChild(card);
       });
       menuGrid.classList.remove('fading');
     }, 200);
   }
 
-  function openCart(item) {
-    currentItem = item;
-    document.getElementById('sheet-title').textContent = item.name;
-    document.getElementById('sheet-price').textContent = `$${item.price.toFixed(2)}`;
-    document.getElementById('sheet-img').src = item.img;
-    updateTotal();
-    cartSheet.classList.add('active');
-    sheetBackdrop.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeCart() {
-    cartSheet.classList.remove('active');
-    sheetBackdrop.classList.remove('active');
-    document.body.style.overflow = '';
-    currentItem = null;
-  }
-
-  function updateTotal() {
-    if (!currentItem) return;
-    let total = currentItem.price;
-    const selectedMilk = document.querySelector('#milk-options .pill.active');
-    const selectedExtra = document.querySelector('#extra-options .pill.active');
-    
-    if (selectedMilk && selectedMilk.dataset.milk !== 'whole') total += 0.80;
-    if (selectedExtra) {
-      if (selectedExtra.dataset.extra === 'espresso') total += 1.50;
-      else total += 0.60;
-    }
-    sheetTotal.textContent = `$${total.toFixed(2)}`;
-  }
-
-  function addToCart() {
-    cartCount++;
-    cartBadge.textContent = cartCount;
-    cartBadge.classList.add('show');
-    closeCart();
-    showToast("Added to order!");
-    
-    // Animate badge
-    setTimeout(() => {
-      cartBadge.style.transform = 'scale(1.2)';
-      setTimeout(() => cartBadge.style.transform = 'scale(1)', 200);
-    }, 100);
-  }
-
-  function showToast(msg) {
-    const toast = document.getElementById('toast');
-    toast.textContent = msg;
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 3000);
-  }
-
-  function openUpload() {
-    uploadSheet.classList.add('active');
-    uploadBackdrop.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeUpload() {
-    uploadSheet.classList.remove('active');
-    uploadBackdrop.classList.remove('active');
-    document.body.style.overflow = '';
-    uploadForm.reset();
-    dropzone.classList.remove('has-file');
-    dropzonePreview.src = '';
-  }
-
-  // --- Event Listeners ---
-
-  // Tabs
-  tabButtons.forEach(btn => {
+  tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      tabButtons.forEach(b => b.classList.remove('active'));
+      // Remove active class from all
+      tabBtns.forEach(b => b.classList.remove('active'));
+      // Add active to clicked
       btn.classList.add('active');
+      // Render content
       renderMenu(btn.dataset.category);
     });
   });
 
-  // Cart Logic
-  document.querySelectorAll('[data-open-sheet="cart-sheet"]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      if(currentItem) openCart(currentItem);
-      else showToast("Select an item from the menu first!");
+  // Initial Render
+  renderMenu('espresso');
+
+  // --- Scroll Reveal Animation ---
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
     });
-  });
-  closeSheetBtn.addEventListener('click', closeCart);
-  sheetBackdrop.addEventListener('click', closeCart);
-  
-  // Pill Selection Logic
-  [sizeOptions, milkOptions, extraOptions].forEach(group => {
-    group.forEach(pill => {
-      pill.addEventListener('click', () => {
-        group.forEach(p => p.classList.remove('active'));
-        pill.classList.add('active');
-        updateTotal();
-      });
-    });
-  });
+  }, { threshold: 0.1 });
 
-  document.querySelector('.add-to-order').addEventListener('click', addToCart);
+  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
 
-  // Upload Logic
-  uploadBtn.addEventListener('click', openUpload);
-  closeUploadBtn.addEventListener('click', closeUpload);
-  uploadBackdrop.addEventListener('click', closeUpload);
+  // --- Upload Modal Logic ---
+  const openUploadBtn = document.getElementById('open-upload');
+  const closeUploadBtn = document.getElementById('close-upload');
+  const uploadSheet = document.getElementById('upload-sheet');
+  const uploadBackdrop = document.getElementById('upload-backdrop');
+  const dropzone = document.getElementById('dropzone');
+  const fileInput = document.getElementById('file-input');
+  const previewImg = document.getElementById('preview-img');
+  const uploadForm = document.getElementById('upload-form');
+  const toast = document.getElementById('toast');
 
-  dropzone.addEventListener('click', () => fileInput.click());
+  function toggleSheet(show) {
+    if(show) {
+      uploadSheet.classList.add('active');
+      uploadBackdrop.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    } else {
+      uploadSheet.classList.remove('active');
+      uploadBackdrop.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  openUploadBtn.addEventListener('click', () => toggleSheet(true));
+  closeUploadBtn.addEventListener('click', () => toggleSheet(false));
+  uploadBackdrop.addEventListener('click', () => toggleSheet(false));
+
+  // File Preview
   fileInput.addEventListener('change', (e) => {
-    if (e.target.files && e.target.files[0]) {
+    const file = e.target.files[0];
+    if(file) {
       const reader = new FileReader();
       reader.onload = (evt) => {
-        dropzonePreview.src = evt.target.result;
+        previewImg.src = evt.target.result;
         dropzone.classList.add('has-file');
       };
-      reader.readAsDataURL(e.target.files[0]);
+      reader.readAsDataURL(file);
     }
   });
 
-  // Drag and Drop
-  ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-    dropzone.addEventListener(eventName, preventDefaults, false);
-  });
-  function preventDefaults(e) { e.preventDefault(); e.stopPropagation(); }
-  dropzone.addEventListener('dragover', () => dropzone.classList.add('dragover'));
-  dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
-  dropzone.addEventListener('drop', (e) => {
-    dropzone.classList.remove('dragover');
-    const dt = e.dataTransfer;
-    const files = dt.files;
-    if (files && files[0]) {
-      fileInput.files = files;
-      const reader = new FileReader();
-      reader.onload = (evt) => {
-        dropzonePreview.src = evt.target.result;
-        dropzone.classList.add('has-file');
-      };
-      reader.readAsDataURL(files[0]);
-    }
-  });
-
+  // Form Submit
   uploadForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const btn = uploadSubmit;
-    const originalText = btn.innerHTML;
+    const btn = document.getElementById('submit-upload');
+    const originalText = btn.innerText;
+    
     btn.disabled = true;
-    btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Sending...';
+    btn.innerText = "Sending...";
     
     setTimeout(() => {
       btn.disabled = false;
-      btn.innerHTML = originalText;
-      closeUpload();
-      showToast("You're on the waitlist for the wall!");
+      btn.innerText = originalText;
+      toggleSheet(false);
+      
+      // Show Toast
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+      
+      // Reset form
+      uploadForm.reset();
+      dropzone.classList.remove('has-file');
+      previewImg.src = '';
     }, 1500);
   });
 
-  // Scroll Effects
-  const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
-  });
-
-  // Reveal Animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('is-visible');
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
-
-  // Polaroid Flip
-  document.querySelectorAll('.polaroid-inner').forEach(card => {
-    card.addEventListener('click', () => {
-      card.parentElement.classList.toggle('is-flipped');
-    });
-  });
-
-  // Navigation
-  const navToggle = document.getElementById('nav-toggle');
-  const navOverlay = document.getElementById('nav-overlay');
-  const navClose = document.getElementById('nav-close');
-  
-  navToggle.addEventListener('click', () => {
-    navOverlay.classList.add('active');
-    navToggle.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  });
-  navClose.addEventListener('click', () => {
-    navOverlay.classList.remove('active');
-    navToggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  });
-
-  document.querySelectorAll('[data-scroll-to]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const target = document.querySelector(btn.dataset.scrollTo);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-        navOverlay.classList.remove('active');
-        navToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      }
-    });
-  });
-
-  // Testimonial Carousel (Auto Scroll)
-  const track = document.getElementById('testimonial-track');
-  const dotsContainer = document.getElementById('testimonial-dots');
-  const cards = document.querySelectorAll('.testimonial-card');
-  let currentSlide = 0;
-
-  cards.forEach((_, i) => {
-    const dot = document.createElement('div');
-    dot.className = i === 0 ? 'dot active' : 'dot';
-    dotsContainer.appendChild(dot);
-  });
-  const dots = document.querySelectorAll('.dot');
-
-  function updateDots() {
-    dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
-  }
-
-  setInterval(() => {
-    currentSlide = (currentSlide + 1) % cards.length;
-    const cardWidth = cards[0].offsetWidth + 16; // width + gap
-    track.scrollTo({ left: cardWidth * currentSlide, behavior: 'smooth' });
-    updateDots();
-  }, 4000);
-
-  // Forms Mock Submission
+  // --- Reservation Form Mock ---
   document.getElementById('reserve-form').addEventListener('submit', (e) => {
     e.preventDefault();
-    showToast("Table reserved! See you soon.");
+    alert("Table reserved! See you soon.");
     e.target.reset();
   });
-
-  document.getElementById('feedback-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    showToast("Feedback sent privately. Thanks!");
-    e.target.reset();
-  });
-
-  // Live Count Simulation
-  const liveCount = document.getElementById('live-count');
-  setInterval(() => {
-    const current = parseInt(liveCount.textContent);
-    const change = Math.floor(Math.random() * 3) - 1;
-    const next = Math.max(10, Math.min(50, current + change));
-    if (next !== current) liveCount.textContent = next;
-  }, 5000);
-
-  // Initial Render
-  renderMenu('espresso');
 });
 </script>
 </body>
