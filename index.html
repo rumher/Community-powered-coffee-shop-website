@@ -21,20 +21,13 @@
 <meta property="og:description" content="Experience authentic Filipino hospitality. Sips, Smiles & Solidarity in every single cup of Barako and premium local teas.">
 <meta property="og:image" content="https://images.unsplash.com/photo-1596707328770-7a208b9d0679?auto=format&fit=crop&q=80&w=1200&h=630">
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://bobakatea.com/">
-<meta property="twitter:title" content="Boba Ka Tea? — Filipino Artisan Coffee, Ube Tea & Community Hub">
-<meta property="twitter:description" content="Experience authentic Filipino hospitality. Sips, Smiles & Solidarity in every single cup of Barako and premium local teas.">
-<meta property="twitter:image" content="https://images.unsplash.com/photo-1596707328770-7a208b9d0679?auto=format&fit=crop&q=80&w=1200&h=630">
-
 <!-- JSON-LD Local Business Structured Data for Google SEO -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CafeOrCoffeeShop",
   "name": "Boba Ka Tea?",
-  "image": "https://images.unsplash.com/photo-1596707328770-7a208b9d0679?auto=format&fit=crop&q=80&w=600",
+  "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=600",
   "@id": "https://bobakatea.com/#about",
   "url": "https://bobakatea.com/",
   "telephone": "+63281234567",
@@ -107,8 +100,8 @@ img{max-width:100%;display:block}
 /* Hero Header and Steam Elements */
 .hero{position:relative;height:100dvh;min-height:650px;width:100%;overflow:hidden;display:flex;flex-direction:column}
 .hero-bg{position:absolute;inset:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,92,75,.7) 0,rgba(0,92,75,.4) 40%,rgba(0,92,75,.85) 100%)}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(0.85) contrast(1.05)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,92,75,.8) 0,rgba(0,92,75,.4) 40%,rgba(62,39,37,.95) 100%)}
 .steam{position:absolute;width:14px;height:60px;border-radius:50%;background:rgba(255,255,255,.2);filter:blur(8px);bottom:50%;animation:steamRise 7s ease-in-out infinite;z-index:3}
 .steam-1{left:41%;animation-delay:0s}.steam-2{left:57%;width:10px;animation-delay:2.6s}
 @keyframes steamRise{0%{transform:translateY(0) scaleX(1);opacity:0}15%{opacity:.5}55%{transform:translateY(-90px) scaleX(1.5);opacity:.2}100%{transform:translateY(-160px) scaleX(1.9);opacity:0}}
@@ -307,16 +300,31 @@ img{max-width:100%;display:block}
 /* Cork Board Community Wall Styles */
 .cork-bg{position:relative;background-color:var(--bamboo);background-image:radial-gradient(circle at 12% 18%,rgba(62,39,35,.1) 0 2px,transparent 3px),radial-gradient(circle at 58% 22%,rgba(62,39,35,.08) 0 2px,transparent 3px),linear-gradient(180deg,rgba(0,0,0,.05),transparent 10%,transparent 90%,rgba(0,0,0,.05));background-size:100px 100px,150px 150px,100% 100%}
 .masonry{
-  column-count:2;
-  column-gap:1.5rem;
-  max-width: 1100px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
-@media (min-width:640px){.masonry{column-count:3}}
-@media (min-width:1024px){.masonry{column-count:4}}
 
-.polaroid{margin-bottom:1.5rem;break-inside:avoid;display:inline-block;width:100%;transform:rotate(var(--rot,0deg));transition:transform .25s;perspective:1000px}
+.polaroid{
+  flex: 0 0 calc(100% - 1rem);
+  max-width: 320px;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  transform: rotate(var(--rot,0deg));
+  transition: transform .25s;
+  perspective: 1000px;
+}
+@media (min-width:640px){
+  .polaroid{ flex: 0 0 calc(50% - 1.5rem); }
+}
+@media (min-width:1024px){
+  .polaroid{ flex: 0 0 calc(25% - 1.5rem); }
+}
+
 .polaroid:active,.polaroid:hover{transform:rotate(0deg) scale(1.04);z-index:15}
 .polaroid-inner{position:relative;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.4,.2,.2,1);cursor:pointer}
 .polaroid.is-flipped .polaroid-inner{transform:rotateY(180deg)}
@@ -334,6 +342,18 @@ img{max-width:100%;display:block}
 .tape-teal{background:repeating-linear-gradient(135deg,var(--teal) 0 6px,var(--tealDark) 6px 12px)}
 .tape-pink{background:repeating-linear-gradient(135deg,var(--guava) 0 6px,#F06292 6px 12px)}
 .pin{position:absolute;top:-8px;left:50%;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ffccbc,var(--barako) 70%);box-shadow:0 2px 4px rgba(0,0,0,0.3);z-index:3}
+
+/* Empty Placeholder slots styling */
+.polaroid.empty-slot .polaroid-inner {
+  cursor: pointer;
+}
+.polaroid.empty-slot .polaroid-front {
+  background: rgba(255, 255, 255, 0.85);
+  border: 3px dashed rgba(0, 92, 75, 0.25);
+  min-height: 290px;
+  justify-content: center;
+  align-items: center;
+}
 
 /* Digital Loyalty Stamps Section */
 .stamp-grid {
@@ -484,7 +504,8 @@ img{max-width:100%;display:block}
   <!-- Hero Section -->
   <section id="hero" class="hero">
     <div class="hero-bg">
-      <img src="https://images.unsplash.com/photo-1596707328770-7a208b9d0679?auto=format&fit=crop&q=80&w=1600&h=2000" alt="Boba Ka Tea tropical cozy Pinoy style cafe interior" loading="eager" fetchpriority="high">
+      <!-- High-quality warm cozy cafe background image -->
+      <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=1600" alt="Boba Ka Tea tropical cozy Pinoy style cafe interior" loading="eager" fetchpriority="high">
       <div class="hero-overlay"></div>
     </div>
     <div class="steam steam-1"></div>
@@ -627,10 +648,10 @@ img{max-width:100%;display:block}
         <p class="section-sub">Freshly brewed Batangas coffee, heritage milk teas, and baked-with-love snacks.</p>
       </div>
 
-      <!-- Quick Search Bar to increase SEO user engagement and retention -->
+      <!-- Quick Search Bar -->
       <div class="max-w-md mx-auto mb-8" data-reveal>
         <div class="relative">
-          <input type="text" id="menu-search" placeholder="Search for Ube, Pandesal, Barako..." class="w-full px-5 py-3 pl-12 rounded-full border-2 border-teal/10 focus:border-teal focus:outline-none shadow-sm text-sm" oninput="filterMenuBySearch()">
+          <input type="text" id="menu-search" placeholder="Search for Ube, Pandesal, Barako, Turon..." class="w-full px-5 py-3 pl-12 rounded-full border-2 border-teal/10 focus:border-teal focus:outline-none shadow-sm text-sm" oninput="filterMenuBySearch()">
           <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
         </div>
       </div>
@@ -666,53 +687,83 @@ img{max-width:100%;display:block}
     <div class="max-w-6xl mx-auto relative z-10 w-full">
       <div class="text-center mb-12" data-reveal>
         <span class="eyebrow">Pinoy Community Canvas</span>
-        <h2 class="section-title">Local Legends Wall</h2>
-        <p class="section-sub">Capture the cozy neighborhood vibe! Upload your photo below and watch it append live to our cork board.</p>
+        <h2 class="section-title text-3xl">Local Legends Wall</h2>
+        <p class="section-sub">Capture the cozy neighborhood vibe! Upload your photo below or fill one of the waiting empty polaroids instantly.</p>
       </div>
       
       <!-- Polaroid Grid (Dynamic generation & User uploads rendered here) -->
       <div class="masonry" data-reveal id="polaroid-grid">
-        <!-- Initial Static Polaroid 1 -->
+        <!-- Polaroid 1 - Solo remote worker/student enjoying drink -->
         <div class="polaroid" style="--rot:-2deg">
           <div class="polaroid-inner" style="aspect-ratio:500/640">
             <div class="polaroid-front">
               <span class="pin"></span>
-              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1541167863299-9b595f08c007?auto=format&fit=crop&q=80&w=500&h=640" alt="Customer sipping Barako coffee at cafe" loading="lazy"></div>
+              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=500&h=640" alt="Student reading beside a custom coffee cup" loading="lazy"></div>
               <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
             </div>
             <div class="polaroid-back">
-              <p class="hand-handle">@manila_morning</p>
-              <p class="hand-drink">Barako Black<br>Kickstart ko 'to!</p>
+              <p class="hand-handle">@pat_codes</p>
+              <p class="hand-drink">Pandan Matcha tea<br>Perfect study buddy!</p>
               <i class="fa-solid fa-heart back-heart" aria-hidden="true"></i>
             </div>
           </div>
         </div>
-        <!-- Initial Static Polaroid 2 -->
+
+        <!-- Polaroid 2 - Empty Slot (Awaiting Upload) -->
+        <div class="polaroid empty-slot" id="empty-polaroid-1" style="--rot:1.5deg">
+          <div class="polaroid-inner">
+            <div class="polaroid-front border-2 border-dashed border-teal/30 bg-coconut/60 flex flex-col items-center justify-center min-h-[290px]">
+              <span class="pin"></span>
+              <div class="text-center p-4">
+                <i class="fa-solid fa-camera text-3xl text-teal/40 animate-bounce mb-3"></i>
+                <p class="font-hand text-2xl text-teal font-bold">Reserved For You!</p>
+                <p class="text-[10px] uppercase font-mono tracking-wider text-barako/60 mt-1">Tap to pin your vibe</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Polaroid 3 - Happy friends group laughing over tea/coffee -->
         <div class="polaroid" style="--rot:3deg">
           <div class="polaroid-inner" style="aspect-ratio:500/400">
             <div class="polaroid-front">
               <span class="tape tape-teal"></span>
-              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&q=80&w=500&h=400" alt="Barkada group enjoying drinks in Philippines cafe" loading="lazy"></div>
+              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=500&h=400" alt="Barkada group enjoying drinks in Philippines cafe" loading="lazy"></div>
               <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
             </div>
             <div class="polaroid-back">
-              <p class="hand-handle">@barkada_goals</p>
-              <p class="hand-drink">Ube Latte x3<br>Tuesday tsismis sessions</p>
+              <p class="hand-handle">@barkada_times</p>
+              <p class="hand-drink">Signature Ube Latte x3<br>Sundays are for tsismis!</p>
               <i class="fa-solid fa-heart back-heart" aria-hidden="true"></i>
             </div>
           </div>
         </div>
-        <!-- Initial Static Polaroid 3 -->
+
+        <!-- Polaroid 4 - Empty Slot (Awaiting Upload) -->
+        <div class="polaroid empty-slot" id="empty-polaroid-2" style="--rot:-2.5deg">
+          <div class="polaroid-inner">
+            <div class="polaroid-front border-2 border-dashed border-teal/30 bg-coconut/60 flex flex-col items-center justify-center min-h-[290px]">
+              <span class="pin"></span>
+              <div class="text-center p-4">
+                <i class="fa-solid fa-mug-hot text-3xl text-teal/40 animate-pulse mb-3"></i>
+                <p class="font-hand text-2xl text-teal font-bold">Waiting For Sips...</p>
+                <p class="text-[10px] uppercase font-mono tracking-wider text-barako/60 mt-1">Post your drink here</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Polaroid 5 - Professional working with latte art -->
         <div class="polaroid" style="--rot:-1.5deg">
           <div class="polaroid-inner" style="aspect-ratio:500/620">
             <div class="polaroid-front">
               <span class="tape tape-gold"></span>
-              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1517938532-a98cb36c8307?auto=format&fit=crop&q=80&w=500&h=620" alt="Smiling customer holding a matcha tea" loading="lazy"></div>
+              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=500&h=620" alt="Barista smiling with custom coffee latte art" loading="lazy"></div>
               <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
             </div>
             <div class="polaroid-back">
-              <p class="hand-handle">@study_with_me</p>
-              <p class="hand-drink">Cold Brew<br>Midterm Thesis Mode: Active</p>
+              <p class="hand-handle">@barista_renz</p>
+              <p class="hand-drink">Flat White Latte Art<br>Brewed with pure pride!</p>
               <i class="fa-solid fa-heart back-heart" aria-hidden="true"></i>
             </div>
           </div>
@@ -1015,7 +1066,9 @@ const menuItems = {
   pastries: [
     { id: 'p1', name: "Pandesal Basket", price: 45, desc: "Three fresh baked soft bread rolls served warm with Batangas salted butter.", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=400" },
     { id: 'p2', name: "Artisan Ube Hopia", price: 65, desc: "Indulgently flaky sweet pocket pastries packed with premium ube halaya.", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=400", badge: "Highly Fresh" },
-    { id: 'p3', name: "Sweet Banana Cue Skewers", price: 80, desc: "Two skewers of deep-fried saba bananas heavily glazed in brown sugar caramel.", img: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&q=80&w=400" }
+    { id: 'p3', name: "Sweet Banana Cue Skewers", price: 80, desc: "Two skewers of deep-fried saba bananas heavily glazed in brown sugar caramel.", img: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&q=80&w=400" },
+    // UPGRADED PASTRIES: Adding one more item in Merienda Bites as requested!
+    { id: 'p4', name: "Crispy Jackfruit Turon", price: 75, desc: "Golden caramelized spring rolls with ripe banana saba and sweet langka.", img: "https://images.unsplash.com/photo-1543807535-eceef0bc6599?auto=format&fit=crop&q=80&w=400", badge: "Crispy Gold" }
   ]
 };
 
@@ -1085,6 +1138,7 @@ function closeSidebarCart() {
   document.body.style.overflow = '';
 }
 
+// --- STREAMING_CHUNK: Binding dynamic search queries with interactive filters... ---
 // --- Dynamic Interactive Menu Logic ---
 function initMenuFilters() {
   const btns = document.querySelectorAll('.tab-btn');
@@ -1255,6 +1309,7 @@ function claimStamp(slotIndex) {
   }
 }
 
+// --- STREAMING_CHUNK: Managing calculations for custom crafted drinks... ---
 // --- Timplahan Custom Drink Builder Logic ---
 function updateCustomDrink() {
   const baseSelect = document.getElementById('build-base');
@@ -1306,11 +1361,20 @@ function addCustomDrinkToCart() {
   openSidebarCart();
 }
 
+// --- STREAMING_CHUNK: Wiring interactive polaroid empty slot replacements... ---
 // --- Polaroid Wall & Real-Time Upload Simulation ---
 function initPolaroidClickHandlers() {
   // delegation to dynamically added polaroids
   const container = document.getElementById('polaroid-grid');
   container.addEventListener('click', (e) => {
+    const emptySlot = e.target.closest('.polaroid.empty-slot');
+    if (emptySlot) {
+      // Direct click on empty slots triggers the upload modal
+      document.getElementById('upload-sheet').classList.add('active');
+      document.getElementById('sheet-backdrop').classList.add('active');
+      return;
+    }
+
     const inner = e.target.closest('.polaroid-inner');
     if (inner) {
       inner.parentElement.classList.toggle('is-flipped');
@@ -1378,31 +1442,51 @@ function initImageUploadLogic() {
     const drinkInput = document.getElementById('u-drink').value.trim() || 'Cozy sips';
     const finalImageSrc = previewImg.src || 'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&q=80&w=400';
 
-    // Build Polaroid Element dynamically
     const randomRot = (Math.random() * 8 - 4).toFixed(1); // random angle between -4deg and 4deg
     const randomTape = ['tape-teal', 'tape-gold', 'tape-pink'][Math.floor(Math.random() * 3)];
 
-    const polaroid = document.createElement('div');
-    polaroid.className = 'polaroid animate-fadeIn';
-    polaroid.style.setProperty('--rot', `${randomRot}deg`);
-    polaroid.innerHTML = `
-      <div class="polaroid-inner" style="aspect-ratio:500/550">
-        <div class="polaroid-front">
-          <span class="tape ${randomTape}"></span>
-          <div class="polaroid-photo"><img src="${finalImageSrc}" alt="User pinned memory on local legends wall"></div>
-          <i class="fa-solid fa-rotate flip-hint"></i>
+    // Target empty slots first to fulfill user requested visual flow
+    const emptySlots = document.querySelectorAll('.polaroid.empty-slot');
+    if (emptySlots.length > 0) {
+      const targetSlot = emptySlots[0];
+      targetSlot.classList.remove('empty-slot');
+      targetSlot.setAttribute('style', `--rot: ${randomRot}deg`);
+      targetSlot.innerHTML = `
+        <div class="polaroid-inner" style="aspect-ratio:500/550">
+          <div class="polaroid-front">
+            <span class="tape ${randomTape}"></span>
+            <div class="polaroid-photo"><img src="${finalImageSrc}" alt="User pinned memory on local legends wall"></div>
+            <i class="fa-solid fa-rotate flip-hint"></i>
+          </div>
+          <div class="polaroid-back">
+            <p class="hand-handle">@${handleInput}</p>
+            <p class="hand-drink">${drinkInput}</p>
+            <i class="fa-solid fa-heart back-heart"></i>
+          </div>
         </div>
-        <div class="polaroid-back">
-          <p class="hand-handle">@${handleInput}</p>
-          <p class="hand-drink">${drinkInput}</p>
-          <i class="fa-solid fa-heart back-heart"></i>
+      `;
+    } else {
+      // Fallback fallback: Append as a fresh card if all empty slots are occupied
+      const polaroid = document.createElement('div');
+      polaroid.className = 'polaroid animate-fadeIn';
+      polaroid.style.setProperty('--rot', `${randomRot}deg`);
+      polaroid.innerHTML = `
+        <div class="polaroid-inner" style="aspect-ratio:500/550">
+          <div class="polaroid-front">
+            <span class="tape ${randomTape}"></span>
+            <div class="polaroid-photo"><img src="${finalImageSrc}" alt="User pinned memory on local legends wall"></div>
+            <i class="fa-solid fa-rotate flip-hint"></i>
+          </div>
+          <div class="polaroid-back">
+            <p class="hand-handle">@${handleInput}</p>
+            <p class="hand-drink">${drinkInput}</p>
+            <i class="fa-solid fa-heart back-heart"></i>
+          </div>
         </div>
-      </div>
-    `;
-
-    // Append to top of cork board masonry
-    const grid = document.getElementById('polaroid-grid');
-    grid.insertBefore(polaroid, grid.firstChild);
+      `;
+      const grid = document.getElementById('polaroid-grid');
+      grid.insertBefore(polaroid, grid.firstChild);
+    }
 
     // Reset Form & Close sheet
     uploadForm.reset();
@@ -1425,11 +1509,9 @@ function applyPreset(url) {
 
 // --- Cozy Seating Reservation Logic & Passport Ticket ---
 function selectZone(element, name, description) {
-  // Update state
   chosenZoneName = name;
   document.getElementById('zone-description').innerText = description;
 
-  // Toggle CSS Selected state
   const btns = document.querySelectorAll('.zone-btn');
   btns.forEach(btn => btn.classList.remove('selected'));
   element.classList.add('selected');
@@ -1448,17 +1530,14 @@ function initReservationSystem() {
     const partySize = document.getElementById('r-guests').value;
     const arrivalTime = document.getElementById('r-time').value;
 
-    // Render retro receipt passport data
     document.getElementById('ticket-guest-name').innerText = guestName;
     document.getElementById('ticket-party-size').innerText = `${partySize} Pax`;
     document.getElementById('ticket-arrival-time').innerText = arrivalTime;
     document.getElementById('ticket-zone').innerText = chosenZoneName;
 
-    // Open ticket sheet modal instead of native alert
     document.getElementById('ticket-sheet').classList.add('active');
     document.getElementById('sheet-backdrop').classList.add('active');
 
-    // Reset Form
     form.reset();
   });
 }
@@ -1470,7 +1549,6 @@ function closeReservationTicket() {
 
 // --- About Interaction & Live Counters ---
 function initAboutInteraction() {
-  // Set up live interval simulating people entering/leaving
   setInterval(() => {
     const counter = document.getElementById('live-count');
     if (counter) {
@@ -1481,7 +1559,6 @@ function initAboutInteraction() {
     }
   }, 12000);
 
-  // Scroll reveal setup
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1493,7 +1570,6 @@ function initAboutInteraction() {
   document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
 }
 
-// --- Global Toast utility ---
 function showToast(message) {
   const toast = document.getElementById('toast');
   toast.innerText = message;
