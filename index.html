@@ -1031,28 +1031,45 @@ img{max-width:100%;display:block}
     <h3 class="font-display text-2xl text-teal" id="cms-title">BKT Admin CMS Hub 🛠️</h3>
     <p class="text-xs text-barako/60 mb-4">Direct cloud persistence control over community media & cafe menu.</p>
 
-    <!-- CMS Sub Tabs -->
-    <div class="flex border-b border-gray-200 mb-4">
-      <button class="flex-1 pb-2 text-sm font-bold text-teal border-b-2 border-teal" id="tab-cms-photos" onclick="switchCMSTab('photos')">
-        📸 Photos
-      </button>
-      <button class="flex-1 pb-2 text-sm font-bold text-gray-400 border-b-2 border-transparent" id="tab-cms-menu" onclick="switchCMSTab('menu')">
-        ☕ Menu Products
+    <!-- Embedded Authentication Overlay Screen (Adhering to No Alerts/Prompts rule) -->
+    <div id="cms-lock-screen" class="space-y-4 py-6 text-center">
+      <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-100 text-amber-700 text-xl mb-1">
+        <i class="fa-solid fa-lock"></i>
+      </div>
+      <p class="text-sm font-semibold">Security Access Key Required</p>
+      <div class="max-w-xs mx-auto field">
+        <input type="password" id="cms-passcode-input" placeholder="Enter 'barako' to unlock..." class="text-center tracking-wider">
+      </div>
+      <button onclick="verifyCMSAccess()" class="bg-teal text-white text-xs font-bold px-6 py-2.5 rounded-lg hover:bg-tealDark transition-all">
+        Unlock CMS Hub
       </button>
     </div>
 
-    <!-- CMS Container 1: Community Photos List -->
-    <div id="cms-photos-container" class="space-y-3">
-      <!-- JS dynamically generates photo lineitems with Download & Delete actions -->
-    </div>
+    <!-- Authenticated CMS Layout Container -->
+    <div id="cms-main-panel" class="hidden space-y-4">
+      <!-- CMS Sub Tabs -->
+      <div class="flex border-b border-gray-200 mb-4">
+        <button class="flex-1 pb-2 text-sm font-bold text-teal border-b-2 border-teal" id="tab-cms-photos" onclick="switchCMSTab('photos')">
+          📸 Photos
+        </button>
+        <button class="flex-1 pb-2 text-sm font-bold text-gray-400 border-b-2 border-transparent" id="tab-cms-menu" onclick="switchCMSTab('menu')">
+          ☕ Menu Products
+        </button>
+      </div>
 
-    <!-- CMS Container 2: Products Manager -->
-    <div id="cms-menu-container" class="space-y-4 hidden">
-      <button class="w-full bg-teal text-white py-2.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 mb-3" onclick="openProductForm()">
-        <i class="fa-solid fa-circle-plus"></i> Add New Product Catalog
-      </button>
-      <div id="cms-product-list" class="space-y-3">
-        <!-- JS dynamically renders active products catalog edit actions -->
+      <!-- CMS Container 1: Community Photos List -->
+      <div id="cms-photos-container" class="space-y-3 max-h-[50vh] overflow-y-auto">
+        <!-- JS dynamically generates photo lineitems with Download & Delete actions -->
+      </div>
+
+      <!-- CMS Container 2: Products Manager -->
+      <div id="cms-menu-container" class="space-y-4 hidden">
+        <button class="w-full bg-teal text-white py-2.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 mb-3" onclick="openProductForm()">
+          <i class="fa-solid fa-circle-plus"></i> Add New Product Catalog
+        </button>
+        <div id="cms-product-list" class="space-y-3 max-h-[40vh] overflow-y-auto">
+          <!-- JS dynamically renders active products catalog edit actions -->
+        </div>
       </div>
     </div>
   </div>
@@ -1301,7 +1318,7 @@ function renderPublicWall() {
   }
 }
 
-// Render dynamic public catalog filtered in-memory matching search query & tab selection
+// Render public catalog filtered in-memory matching search query & tab selection
 window.renderPublicMenu = function() {
   const grid = document.getElementById('menu-grid');
   grid.classList.add('fading');
@@ -1395,7 +1412,6 @@ function renderCMSPhotos() {
   });
 }
 
-// Render CMS product catalog with full administrative controls
 function renderCMSMenu() {
   const container = document.getElementById('cms-product-list');
   container.innerHTML = '';
@@ -1433,7 +1449,6 @@ function renderCMSMenu() {
   });
 }
 
-// --- Dynamic Mutation handlers directly mapping to Firestore ---
 window.deleteCMSPhoto = async function(id) {
   try {
     await deleteDoc(doc(db, 'artifacts', appId, 'public', 'data', 'photos', id));
@@ -1630,17 +1645,9 @@ function initNavigation() {
     });
   }
 
-  // CMS Dashboard Controller with PIN protection
+  // CMS Dashboard Controller
   const adminBtn = document.getElementById('admin-cms-btn');
-  adminBtn.addEventListener('click', () => {
-    const pin = prompt("Enter Admin Secure Passcode:");
-    if (pin === 'barako' || pin === 'admin') {
-      openCMSPanel();
-    } else {
-      showToast("Access Denied: Invalid secure PIN! 🔐");
-    }
-  });
-
+  adminBtn.addEventListener('click', openCMSPanel);
   document.getElementById('close-cms').addEventListener('click', closeCMSPanel);
 
   sheetBackdrop.addEventListener('click', () => {
@@ -1685,7 +1692,23 @@ function closeCMSPanel() {
   document.getElementById('admin-cms-sheet').classList.remove('active');
   document.getElementById('sheet-backdrop').classList.remove('active');
   document.body.style.overflow = '';
+  // Reset lock screen on panel dismiss
+  document.getElementById('cms-lock-screen').classList.remove('hidden');
+  document.getElementById('cms-main-panel').classList.add('hidden');
+  document.getElementById('cms-passcode-input').value = '';
 }
+
+// Security validation for CMS dashboard
+window.verifyCMSAccess = function() {
+  const input = document.getElementById('cms-passcode-input').value.trim().toLowerCase();
+  if (input === 'barako') {
+    document.getElementById('cms-lock-screen').classList.add('hidden');
+    document.getElementById('cms-main-panel').classList.remove('hidden');
+    showToast("Access Unlocked! Welcome Back Admin 🛠️");
+  } else {
+    showToast("Incorrect Passcode! Try 'barako' 🔐");
+  }
+};
 
 // --- Dynamic Interactive Menu Logic ---
 function initMenuFilters() {
