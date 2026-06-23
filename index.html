@@ -358,7 +358,7 @@ img{max-width:100%;display:block}
 .polaroid.empty-slot .polaroid-front {
   background: rgba(255, 255, 255, 0.85);
   border: 3px dashed rgba(0, 92, 75, 0.25);
-  aspect-ratio: 500/640;
+  aspect-ratio: 500/550;
   justify-content: center;
   align-items: center;
 }
@@ -540,6 +540,7 @@ img{max-width:100%;display:block}
   <a href="#reserve" class="fluid-item" aria-label="Reserve a spot"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i></a>
   <a href="#about" class="fluid-item" aria-label="About Us"><i class="fa-solid fa-store" aria-hidden="true"></i></a>
   <button class="fluid-item text-teal" id="desktop-cart-btn" aria-label="View Shopping Cart"><i class="fa-solid fa-basket-shopping" aria-hidden="true"></i></button>
+  <button class="fluid-item text-mango" id="admin-cms-btn" aria-label="Open CMS Panel"><i class="fa-solid fa-user-gear" aria-hidden="true"></i></button>
 </nav>
 
 <!-- Persistent Mobile Conversion Bar (Sticky Footer Strategy) -->
@@ -739,93 +740,19 @@ img{max-width:100%;display:block}
     </div>
   </section>
 
-  <!-- Community Wall (Fully dynamic digital polaroid board) -->
+  <!-- Community Wall (Fully dynamic digital polaroid board with 7-Day Live Filter) -->
   <section id="wall" class="relative cork-bg px-5 sm:px-8 py-20 sm:py-28 overflow-hidden border-b border-gray-200">
     <div class="grain absolute inset-0"></div>
     <div class="max-w-6xl mx-auto relative z-10 w-full">
-      <div class="text-center mb-12" data-reveal>
+      <div class="text-center mb-6" data-reveal>
         <span class="eyebrow">Pinoy Community Canvas</span>
         <h2 class="section-title text-3xl">Local Legends Wall</h2>
-        <p class="section-sub">Capture the cozy neighborhood vibe! Upload your photo below or fill one of the waiting empty polaroids instantly.</p>
+        <p class="section-sub">Capture the cozy neighborhood vibe! Photos are featured here live for exactly <strong>7 Days</strong> before archiving!</p>
       </div>
       
-      <!-- Polaroid Grid (Dynamic generation & User uploads rendered here) -->
+      <!-- Polaroid Grid (Cloud synchronized & User uploads rendered here) -->
       <div class="masonry" data-reveal id="polaroid-grid">
-        <!-- Polaroid 1 -->
-        <div class="polaroid" style="--rot:-2deg">
-          <div class="polaroid-inner" style="aspect-ratio:500/640">
-            <div class="polaroid-front">
-              <span class="pin"></span>
-              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=500&h=640" alt="Student reading beside a custom coffee cup" loading="lazy"></div>
-              <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
-            </div>
-            <div class="polaroid-back">
-              <p class="hand-handle">@pat_codes</p>
-              <p class="hand-drink">Pandan Matcha tea<br>Perfect study buddy!</p>
-              <i class="fa-solid fa-heart back-heart" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- Polaroid 2 - Empty Slot (Awaiting Upload) -->
-        <div class="polaroid empty-slot" id="empty-polaroid-1" style="--rot:1.5deg">
-          <div class="polaroid-inner">
-            <div class="polaroid-front bg-coconut/60 flex flex-col items-center justify-center">
-              <span class="pin"></span>
-              <div class="text-center p-2">
-                <i class="fa-solid fa-camera text-2xl text-teal/40 animate-bounce mb-2"></i>
-                <p class="font-hand text-xl text-teal font-bold leading-none">Your Spot!</p>
-                <p class="text-[8px] uppercase font-mono tracking-wider text-barako/60 mt-1">Tap to pin</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Polaroid 3 -->
-        <div class="polaroid" style="--rot:3deg">
-          <div class="polaroid-inner" style="aspect-ratio:500/400">
-            <div class="polaroid-front">
-              <span class="tape tape-teal"></span>
-              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=500&h=400" alt="Barkada group enjoying drinks in Philippines cafe" loading="lazy"></div>
-              <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
-            </div>
-            <div class="polaroid-back">
-              <p class="hand-handle">@barkada_times</p>
-              <p class="hand-drink">Signature Ube Latte x3<br>Sundays are for tsismis!</p>
-              <i class="fa-solid fa-heart back-heart" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- Polaroid 4 - Empty Slot (Awaiting Upload) -->
-        <div class="polaroid empty-slot" id="empty-polaroid-2" style="--rot:-2.5deg">
-          <div class="polaroid-inner">
-            <div class="polaroid-front bg-coconut/60 flex flex-col items-center justify-center">
-              <span class="pin"></span>
-              <div class="text-center p-2">
-                <i class="fa-solid fa-mug-hot text-2xl text-teal/40 animate-pulse mb-2"></i>
-                <p class="font-hand text-xl text-teal font-bold leading-none">Cozy Cup</p>
-                <p class="text-[8px] uppercase font-mono tracking-wider text-barako/60 mt-1">Post yours</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Polaroid 5 -->
-        <div class="polaroid" style="--rot:-1.5deg">
-          <div class="polaroid-inner" style="aspect-ratio:500/620">
-            <div class="polaroid-front">
-              <span class="tape tape-gold"></span>
-              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=500&h=620" alt="Barista smiling with custom coffee latte art" loading="lazy"></div>
-              <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
-            </div>
-            <div class="polaroid-back">
-              <p class="hand-handle">@barista_renz</p>
-              <p class="hand-drink">Flat White Latte Art<br>Brewed with pure pride!</p>
-              <i class="fa-solid fa-heart back-heart" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
+        <!-- JS will populate live and place vacant placeholders if needed -->
       </div>
       
       <!-- Interactive Upload Trigger -->
@@ -1096,8 +1023,526 @@ img{max-width:100%;display:block}
   </div>
 </div>
 
+<!-- Admin CMS Dashboard Panel Drawer -->
+<div class="sheet" id="admin-cms-sheet" role="dialog" aria-modal="true" aria-labelledby="cms-title">
+  <div class="sheet-handle"></div>
+  <button class="sheet-close" id="close-cms" aria-label="Close CMS Window"><i class="fa-solid fa-xmark"></i></button>
+  <div class="sheet-content">
+    <h3 class="font-display text-2xl text-teal" id="cms-title">BKT Admin CMS Hub 🛠️</h3>
+    <p class="text-xs text-barako/60 mb-4">Direct cloud persistence control over community media & cafe menu.</p>
+
+    <!-- CMS Sub Tabs -->
+    <div class="flex border-b border-gray-200 mb-4">
+      <button class="flex-1 pb-2 text-sm font-bold text-teal border-b-2 border-teal" id="tab-cms-photos" onclick="switchCMSTab('photos')">
+        📸 Photos
+      </button>
+      <button class="flex-1 pb-2 text-sm font-bold text-gray-400 border-b-2 border-transparent" id="tab-cms-menu" onclick="switchCMSTab('menu')">
+        ☕ Menu Products
+      </button>
+    </div>
+
+    <!-- CMS Container 1: Community Photos List -->
+    <div id="cms-photos-container" class="space-y-3">
+      <!-- JS dynamically generates photo lineitems with Download & Delete actions -->
+    </div>
+
+    <!-- CMS Container 2: Products Manager -->
+    <div id="cms-menu-container" class="space-y-4 hidden">
+      <button class="w-full bg-teal text-white py-2.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 mb-3" onclick="openProductForm()">
+        <i class="fa-solid fa-circle-plus"></i> Add New Product Catalog
+      </button>
+      <div id="cms-product-list" class="space-y-3">
+        <!-- JS dynamically renders active products catalog edit actions -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add / Edit Menu Product Form Modal (Sub Drawer) -->
+<div class="sheet" id="product-form-sheet" role="dialog" aria-modal="true">
+  <div class="sheet-handle"></div>
+  <button class="sheet-close" onclick="closeProductForm()"><i class="fa-solid fa-xmark"></i></button>
+  <div class="sheet-content">
+    <h3 class="font-display text-2xl text-teal" id="product-form-title">Add/Edit Product</h3>
+    <form id="product-form" class="space-y-3 mt-3">
+      <input type="hidden" id="p-form-id">
+      
+      <div class="field">
+        <label for="p-form-name">Product Name</label>
+        <input type="text" id="p-form-name" required placeholder="e.g. Special Leche Flan Roll">
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="p-form-price">Price (PHP)</label>
+          <input type="number" id="p-form-price" required placeholder="₱">
+        </div>
+        <div class="field">
+          <label for="p-form-category">Category</label>
+          <select id="p-form-category" required>
+            <option value="espresso">Barako & Coffee</option>
+            <option value="non-coffee">Teas & Refreshers</option>
+            <option value="pastries">Merienda Bites</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="p-form-desc">Short Description</label>
+        <textarea id="p-form-desc" rows="2" required placeholder="Detail the local ingredients..."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="p-form-img">Image URL (Unsplash or Base64)</label>
+        <input type="text" id="p-form-img" required placeholder="https://images.unsplash.com/...">
+      </div>
+
+      <button type="submit" class="btn-stamp w-full justify-center">
+        Save Catalog Item ⚡
+      </button>
+    </form>
+  </div>
+</div>
+
 <!-- Toast Popup Notification -->
 <div class="toast" id="toast">Salamat! Successfully added to the community database! 🎉</div>
+
+<!-- Firebase System Imports & Initialization -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+import { getFirestore, doc, collection, addDoc, setDoc, getDocs, updateDoc, deleteDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+// --- Global Firebase State Configuration (Using standard strict paths per RULE 1) ---
+const appId = typeof __app_id !== 'undefined' ? __app_id : 'bobakatea-master-app';
+let firebaseConfig;
+
+try {
+  firebaseConfig = JSON.parse(__firebase_config);
+} catch(e) {
+  // Graceful local workspace simulation fallback
+  firebaseConfig = {
+    apiKey: "AIzaSyFake_Credentials_For_Simulations_Only",
+    authDomain: "fake.firebaseapp.com",
+    projectId: "fake-project-2026",
+    storageBucket: "fake.appspot.com",
+    messagingSenderId: "12345",
+    appId: "1:12345:web:fake"
+  };
+}
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+// Strict Firestore Collection References
+const photosCollection = collection(db, 'artifacts', appId, 'public', 'data', 'photos');
+const productsCollection = collection(db, 'artifacts', appId, 'public', 'data', 'products');
+
+let user = null;
+let allPhotos = [];
+let allProducts = [];
+
+// Await Anonymous Authentication first before running any queries (Per Mandatory Rule 3)
+const initAuthentication = async () => {
+  try {
+    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+      await signInWithCustomToken(auth, __initial_auth_token);
+    } else {
+      await signInAnonymously(auth);
+    }
+  } catch (error) {
+    console.error("Authentication setup failed securely:", error);
+  }
+};
+
+await initAuthentication();
+
+onAuthStateChanged(auth, (u) => {
+  user = u;
+  if (user) {
+    // Kick off listeners safely once auth completes
+    listenToPhotos();
+    listenToProducts();
+  }
+});
+
+// --- CMS Navigation Functions ---
+window.switchCMSTab = function(tabName) {
+  const pTab = document.getElementById('tab-cms-photos');
+  const mTab = document.getElementById('tab-cms-menu');
+  const pContainer = document.getElementById('cms-photos-container');
+  const mContainer = document.getElementById('cms-menu-container');
+
+  if (tabName === 'photos') {
+    pTab.className = "flex-1 pb-2 text-sm font-bold text-teal border-b-2 border-teal";
+    mTab.className = "flex-1 pb-2 text-sm font-bold text-gray-400 border-b-2 border-transparent";
+    pContainer.classList.remove('hidden');
+    mContainer.classList.add('hidden');
+  } else {
+    mTab.className = "flex-1 pb-2 text-sm font-bold text-teal border-b-2 border-teal";
+    pTab.className = "flex-1 pb-2 text-sm font-bold text-gray-400 border-b-2 border-transparent";
+    mContainer.classList.remove('hidden');
+    pContainer.classList.add('hidden');
+  }
+};
+
+// Subscriptions to Cloud Data Store
+function listenToPhotos() {
+  if (!user) return; // Strict Auth guard (Rule 3)
+  
+  onSnapshot(photosCollection, (snapshot) => {
+    allPhotos = [];
+    snapshot.forEach(doc => {
+      allPhotos.push({ id: doc.id, ...doc.data() });
+    });
+    
+    // Render standard public wall & admin CMS listing
+    renderPublicWall();
+    renderCMSPhotos();
+  }, (err) => {
+    console.error("Photos Firestore Sync Error:", err);
+  });
+}
+
+function listenToProducts() {
+  if (!user) return; // Strict Auth guard (Rule 3)
+  
+  onSnapshot(productsCollection, (snapshot) => {
+    allProducts = [];
+    snapshot.forEach(doc => {
+      allProducts.push({ id: doc.id, ...doc.data() });
+    });
+
+    // Seed database automatically on first load if collection is empty
+    if (allProducts.length === 0) {
+      seedDefaultMenuProducts();
+    } else {
+      renderPublicMenu();
+      renderCMSMenu();
+    }
+  }, (err) => {
+    console.error("Products Firestore Sync Error:", err);
+  });
+}
+
+// Seed helper (Seeding default catalog once to ensure live preview instantly functions)
+async function seedDefaultMenuProducts() {
+  const defaults = [
+    { name: "Batangas Barako Brew", price: 60, desc: "Strong, authentic dark roast directly from Lipa highlands.", img: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&q=80&w=400", category: "espresso", badge: "Best Seller" },
+    { name: "Barako Flat White", price: 95, desc: "Espresso sweetened with raw cane sugar and velvet steamed milk.", img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=400", category: "espresso" },
+    { name: "Spiced Pandan Latte", price: 110, desc: "House recipe espresso combined with pandan extract infusion.", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=80&w=400", category: "espresso", badge: "Signature" },
+    { name: "Cold Brew High", price: 120, desc: "Slow steeped for 18 hours to reveal robust chocolate undertones.", img: "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&q=80&w=400", category: "espresso" },
+    { name: "Signature Creamy Ube Latte", price: 130, desc: "Native purple yam puree layered with oat milk and real sweet taro.", img: "https://images.unsplash.com/photo-1515825838458-f2a94b20105a?auto=format&fit=crop&q=80&w=400", category: "non-coffee", badge: "Community Fav" },
+    { name: "Calamansi Ginger Ginger", price: 90, desc: "A zesty warm mocktail with spicy salabat ginger roots.", img: "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&q=80&w=400", category: "non-coffee" },
+    { name: "Iced Pandan Matcha tea", price: 140, desc: "Organic stone-ground green tea whisked with aromatic pandan.", img: "https://images.unsplash.com/photo-1582793988951-9aed5509eb97?auto=format&fit=crop&q=80&w=400", category: "non-coffee" },
+    { name: "Sweet Calamansi Cold Fizzer", price: 70, desc: "Refreshing local citrus, honey nectar, cold water, and lots of ice.", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=400", category: "non-coffee" },
+    { name: "Pandesal Basket", price: 45, desc: "Three fresh baked soft bread rolls served warm with Batangas salted butter.", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=400", category: "pastries" },
+    { name: "Artisan Ube Hopia", price: 65, desc: "Indulgently flaky sweet pocket pastries packed with premium ube halaya.", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=400", category: "pastries", badge: "Highly Fresh" },
+    { name: "Sweet Banana Cue Skewers", price: 80, desc: "Two skewers of deep-fried saba bananas heavily glazed in brown sugar caramel.", img: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&q=80&w=400", category: "pastries" },
+    { name: "Crispy Jackfruit Turon", price: 75, desc: "Golden caramelized spring rolls with ripe banana saba and sweet langka.", img: "https://images.unsplash.com/photo-1543807535-eceef0bc6599?auto=format&fit=crop&q=80&w=400", category: "pastries", badge: "Crispy Gold" }
+  ];
+  for (const item of defaults) {
+    await addDoc(productsCollection, item);
+  }
+}
+
+// Render Public wall - Centered 2 Image rows layout on mobile, filtering posts aged < 7 Days
+function renderPublicWall() {
+  const grid = document.getElementById('polaroid-grid');
+  grid.innerHTML = '';
+
+  const sevenDaysAgo = Date.now() - (7 * 24 * 60 * 60 * 1000);
+  
+  // Sort and filter strictly in memory to comply with Rule 2 (No complex Firestore queries)
+  const activePhotos = allPhotos
+    .filter(photo => photo.timestamp >= sevenDaysAgo)
+    .sort((a, b) => b.timestamp - a.timestamp);
+
+  // Pad visual layout grid with empty slots dynamically up to minimum 4 frames
+  const renderCount = Math.max(4, activePhotos.length + 2);
+  
+  for (let i = 0; i < renderCount; i++) {
+    const randomRot = (Math.random() * 8 - 4).toFixed(1);
+    const randomTape = ['tape-teal', 'tape-gold', 'tape-pink'][Math.floor(Math.random() * 3)];
+    const photo = activePhotos[i];
+
+    const card = document.createElement('div');
+    if (photo) {
+      card.className = 'polaroid';
+      card.style.setProperty('--rot', `${randomRot}deg`);
+      card.innerHTML = `
+        <div class="polaroid-inner" style="aspect-ratio:500/550">
+          <div class="polaroid-front">
+            <span class="tape ${randomTape}"></span>
+            <div class="polaroid-photo"><img src="${photo.image}" alt="Community user upload pinned to board" loading="lazy"></div>
+            <i class="fa-solid fa-rotate flip-hint"></i>
+          </div>
+          <div class="polaroid-back">
+            <p class="hand-handle">@${photo.handle}</p>
+            <p class="hand-drink">${photo.drink}</p>
+            <i class="fa-solid fa-heart back-heart"></i>
+          </div>
+        </div>
+      `;
+    } else {
+      // Return a beautiful empty placeholder wait slot ready for visitor uploads
+      card.className = 'polaroid empty-slot';
+      card.style.setProperty('--rot', `${randomRot}deg`);
+      card.innerHTML = `
+        <div class="polaroid-inner">
+          <div class="polaroid-front border-2 border-dashed border-teal/30 bg-coconut/60 flex flex-col items-center justify-center">
+            <span class="pin"></span>
+            <div class="text-center p-3">
+              <i class="fa-solid fa-camera text-2xl text-teal/40 animate-pulse mb-1"></i>
+              <p class="font-hand text-xl text-teal font-bold">Your Spot!</p>
+              <p class="text-[8px] uppercase font-mono tracking-widest text-barako/60">Tap to upload</p>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+    grid.appendChild(card);
+  }
+}
+
+// Render dynamic public catalog filtered in-memory matching search query & tab selection
+window.renderPublicMenu = function() {
+  const grid = document.getElementById('menu-grid');
+  grid.classList.add('fading');
+  
+  setTimeout(() => {
+    grid.innerHTML = '';
+    
+    const filtered = allProducts.filter(item => {
+      const matchCategory = item.category === activeCategory;
+      const matchSearch = item.name.toLowerCase().includes(menuSearchQuery.toLowerCase()) || 
+                          item.desc.toLowerCase().includes(menuSearchQuery.toLowerCase());
+      return matchCategory && matchSearch;
+    });
+
+    if (filtered.length === 0) {
+      grid.innerHTML = `
+        <div class="col-span-full text-center py-12 text-sm text-gray-400 font-mono">
+          Walang nahanap! Try searching for something else... 🔎
+        </div>
+      `;
+      grid.classList.remove('fading');
+      return;
+    }
+
+    filtered.forEach(item => {
+      const card = document.createElement('article');
+      card.className = 'menu-card';
+      card.innerHTML = `
+        <div class="menu-card-img-wrap">
+          ${item.badge ? `<span class="menu-card-badge">${item.badge}</span>` : ''}
+          <img src="${item.img}" alt="${item.name}" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">${item.name}</h3>
+          <p class="menu-card-desc">${item.desc}</p>
+          <div class="menu-card-footer">
+            <span class="price-tag">₱${item.price}.00</span>
+            <button class="add-circle" onclick="addItemToCart('${item.id}', '${item.name}', ${item.price})" aria-label="Add ${item.name} to order">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+    grid.classList.remove('fading');
+  }, 200);
+};
+
+// Render CMS photo managers - lists all active + expired photos with delete & instant download triggers
+function renderCMSPhotos() {
+  const container = document.getElementById('cms-photos-container');
+  container.innerHTML = '';
+
+  if (allPhotos.length === 0) {
+    container.innerHTML = `<p class="text-center py-6 text-sm text-gray-400">No community uploads registered on Firestore cloud database yet.</p>`;
+    return;
+  }
+
+  const sortedAll = [...allPhotos].sort((a,b) => b.timestamp - a.timestamp);
+  const sevenDaysAgo = Date.now() - (7 * 24 * 60 * 60 * 1000);
+
+  sortedAll.forEach(photo => {
+    const isExpired = photo.timestamp < sevenDaysAgo;
+    const row = document.createElement('div');
+    row.className = 'flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-3 bg-white rounded-xl border border-gray-100 shadow-sm';
+    row.innerHTML = `
+      <div class="flex items-center gap-3">
+        <img src="${photo.image}" class="w-12 h-12 rounded object-cover flex-shrink-0">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-sm text-barako">@${photo.handle}</span>
+            <span class="text-[9px] px-1.5 py-0.5 rounded font-bold uppercase ${isExpired ? 'bg-red-100 text-red-600' : 'bg-green-100 text-green-600'}">
+              ${isExpired ? 'Expired' : 'Active'}
+            </span>
+          </div>
+          <p class="text-xs text-barako/65 truncate max-w-[180px] sm:max-w-xs">${photo.drink}</p>
+          <span class="text-[10px] text-gray-400 font-mono">${new Date(photo.timestamp).toLocaleDateString()}</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 self-stretch sm:self-auto justify-end">
+        <button class="bg-teal/10 text-teal p-2 rounded-lg text-xs font-bold hover:bg-teal hover:text-white" onclick="downloadCMSImage('${photo.image}', '${photo.handle}')" title="Download Image">
+          <i class="fa-solid fa-download"></i>
+        </button>
+        <button class="bg-red-50 text-red-500 p-2 rounded-lg text-xs font-bold hover:bg-red-500 hover:text-white" onclick="deleteCMSPhoto('${photo.id}')" title="Delete Post">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
+    `;
+    container.appendChild(row);
+  });
+}
+
+// Render CMS product catalog with full administrative controls
+function renderCMSMenu() {
+  const container = document.getElementById('cms-product-list');
+  container.innerHTML = '';
+
+  if (allProducts.length === 0) {
+    container.innerHTML = `<p class="text-center py-6 text-sm text-gray-400">No active products populated in menu.</p>`;
+    return;
+  }
+
+  allProducts.forEach(item => {
+    const row = document.createElement('div');
+    row.className = 'flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-3 bg-white rounded-xl border border-gray-100 shadow-sm';
+    row.innerHTML = `
+      <div class="flex items-center gap-3">
+        <img src="${item.img}" class="w-12 h-12 rounded object-cover flex-shrink-0">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-sm text-barako">${item.name}</span>
+            <span class="text-[9px] px-1.5 py-0.5 rounded bg-amber-100 text-amber-700 font-bold uppercase tracking-wider">${item.category}</span>
+          </div>
+          <p class="text-xs text-barako/70 truncate max-w-[180px] sm:max-w-xs">${item.desc}</p>
+          <span class="text-xs text-teal font-mono font-bold">₱${item.price}.00</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 self-stretch sm:self-auto justify-end">
+        <button class="bg-teal/10 text-teal p-2 rounded-lg text-xs font-bold hover:bg-teal hover:text-white" onclick="openProductForm('${item.id}')">
+          <i class="fa-solid fa-pen-to-square"></i> Edit
+        </button>
+        <button class="bg-red-50 text-red-500 p-2 rounded-lg text-xs font-bold hover:bg-red-500 hover:text-white" onclick="deleteCMSProduct('${item.id}')">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
+    `;
+    container.appendChild(row);
+  });
+}
+
+// --- Dynamic Mutation handlers directly mapping to Firestore ---
+window.deleteCMSPhoto = async function(id) {
+  try {
+    await deleteDoc(doc(db, 'artifacts', appId, 'public', 'data', 'photos', id));
+    showToast("Community photo deleted successfully! 🗑️");
+  } catch (error) {
+    console.error("Firestore error removing photo", error);
+    showToast("Error updating database!");
+  }
+};
+
+window.deleteCMSProduct = async function(id) {
+  try {
+    await deleteDoc(doc(db, 'artifacts', appId, 'public', 'data', 'products', id));
+    showToast("Menu product removed from cloud database! 🗑️");
+  } catch (error) {
+    console.error("Firestore error removing product", error);
+    showToast("Error updating database!");
+  }
+};
+
+window.downloadCMSImage = function(base64Data, filename) {
+  const trigger = document.createElement('a');
+  trigger.href = base64Data;
+  trigger.download = `BKT_Memory_@${filename}_${Date.now()}.png`;
+  document.body.appendChild(trigger);
+  trigger.click();
+  document.body.removeChild(trigger);
+  showToast("Downloading image directly to storage! 💾");
+};
+
+// Handle addition & update edit submissions of products catalog
+const pForm = document.getElementById('product-form');
+pForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const idVal = document.getElementById('p-form-id').value;
+  const productPayload = {
+    name: document.getElementById('p-form-name').value.trim(),
+    price: parseInt(document.getElementById('p-form-price').value),
+    category: document.getElementById('p-form-category').value,
+    desc: document.getElementById('p-form-desc').value.trim(),
+    img: document.getElementById('p-form-img').value.trim()
+  };
+
+  try {
+    if (idVal) {
+      // Update existing item
+      await setDoc(doc(db, 'artifacts', appId, 'public', 'data', 'products', idVal), productPayload);
+      showToast("Menu product updated successfully! 📝");
+    } else {
+      // Append a brand new item
+      await addDoc(productsCollection, productPayload);
+      showToast("New product published successfully! 🚀");
+    }
+    pForm.reset();
+    closeProductForm();
+  } catch (err) {
+    console.error("Error mutating Firestore products directory", err);
+    showToast("Cloud connection error. Please retry.");
+  }
+});
+
+// Community wall submission handler writing directly to Firebase Cloud
+const uploadForm = document.getElementById('upload-form');
+uploadForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const handleInput = document.getElementById('u-handle').value.trim() || 'anonymous_legend';
+  const drinkInput = document.getElementById('u-drink').value.trim() || 'Cozy sips';
+  const finalImageSrc = document.getElementById('preview-img').src;
+
+  if (!finalImageSrc) {
+    showToast("Please choose or upload an image! 📸");
+    return;
+  }
+
+  // Elevate loader state
+  const submitBtn = document.getElementById('submit-upload');
+  const origText = submitBtn.innerHTML;
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = "<i class='fa-solid fa-spinner animate-spin'></i> Pining to Cloud Board...";
+
+  try {
+    await addDoc(photosCollection, {
+      handle: handleInput,
+      drink: drinkInput,
+      image: finalImageSrc,
+      timestamp: Date.now()
+    });
+
+    uploadForm.reset();
+    document.getElementById('preview-img').src = '';
+    document.getElementById('dropzone').classList.remove('has-file');
+    closeUploadSheet();
+    showToast("🎉 awesome! Pinned securely to our cloud-persisted Local Legends cork board!");
+  } catch (error) {
+    console.error("Firebase Photo upload error", error);
+    showToast("Cloud Error: Could not pin memory. ❌");
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = origText;
+  }
+});
+</script>
 
 <script>
 // --- In-Memory State Management ---
@@ -1107,26 +1552,28 @@ let chosenZoneName = "Indoor Barako Lounge";
 let activeCategory = "espresso";
 let menuSearchQuery = "";
 
-// Mock Master Database
-const menuItems = {
-  espresso: [
-    { id: 'e1', name: "Batangas Barako Brew", price: 60, desc: "Strong, authentic dark roast directly from lipa highlands.", img: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&q=80&w=400", badge: "Best Seller" },
-    { id: 'e2', name: "Barako Flat White", price: 95, desc: "Espresso sweetened with raw cane sugar and velvet steamed milk.", img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=400" },
-    { id: 'e3', name: "Spiced Pandan Latte", price: 110, desc: "House recipe espresso combined with pandan extract infusion.", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=80&w=400", badge: "Signature" },
-    { id: 'e4', name: "Cold Brew High", price: 120, desc: "Slow steeped for 18 hours to reveal robust chocolate undertones.", img: "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&q=80&w=400" }
-  ],
-  "non-coffee": [
-    { id: 'n1', name: "Signature Creamy Ube Latte", price: 130, desc: "Native purple yam puree layered with oat milk and real sweet taro.", img: "https://images.unsplash.com/photo-1515825838458-f2a94b20105a?auto=format&fit=crop&q=80&w=400", badge: "Community Fav" },
-    { id: 'n2', name: "Calamansi Ginger Ginger", price: 90, desc: "A zesty warm mocktail with spicy salabat ginger roots.", img: "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&q=80&w=400" },
-    { id: 'n3', name: "Iced Pandan Matcha tea", price: 140, desc: "Organic stone-ground green tea whisked with aromatic pandan.", img: "https://images.unsplash.com/photo-1582793988951-9aed5509eb97?auto=format&fit=crop&q=80&w=400" },
-    { id: 'n4', name: "Sweet Calamansi Cold Fizzer", price: 70, desc: "Refreshing local citrus, honey nectar, cold water, and lots of ice.", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=400" }
-  ],
-  pastries: [
-    { id: 'p1', name: "Pandesal Basket", price: 45, desc: "Three fresh baked soft bread rolls served warm with Batangas salted butter.", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=400" },
-    { id: 'p2', name: "Artisan Ube Hopia", price: 65, desc: "Indulgently flaky sweet pocket pastries packed with premium ube halaya.", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=400", badge: "Highly Fresh" },
-    { id: 'p3', name: "Sweet Banana Cue Skewers", price: 80, desc: "Two skewers of deep-fried saba bananas heavily glazed in brown sugar caramel.", img: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&q=80&w=400" },
-    { id: 'p4', name: "Crispy Jackfruit Turon", price: 75, desc: "Golden caramelized spring rolls with ripe banana saba and sweet langka.", img: "https://images.unsplash.com/photo-1543807535-eceef0bc6599?auto=format&fit=crop&q=80&w=400", badge: "Crispy Gold" }
-  ]
+// Ensure global scopes for inline dynamic actions
+window.addItemToCart = function(id, name, price) {
+  const existing = cart.find(item => item.id === id);
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({ id, name, price, quantity: 1 });
+  }
+  updateCartUI();
+  showToast(`Added ${name} to your order! ☕`);
+};
+
+window.removeItemFromCart = function(id) {
+  const existing = cart.find(item => item.id === id);
+  if (existing) {
+    if (existing.quantity > 1) {
+      existing.quantity--;
+    } else {
+      cart = cart.filter(item => item.id !== id);
+    }
+  }
+  updateCartUI();
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1137,7 +1584,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initImageUploadLogic();
   initReservationSystem();
   updateCustomDrink();
-  renderMenu();
 });
 
 // --- Navigation & Sidebar Logic ---
@@ -1178,10 +1624,24 @@ function initNavigation() {
   desktopCartBtn.addEventListener('click', openSidebarCart);
   closeCartBtn.addEventListener('click', closeSidebarCart);
   
+  // CMS Dashboard Controller with PIN protection
+  const adminBtn = document.getElementById('admin-cms-btn');
+  adminBtn.addEventListener('click', () => {
+    const pin = prompt("Enter Admin Secure Passcode:");
+    if (pin === 'barako' || pin === 'admin') {
+      openCMSPanel();
+    } else {
+      showToast("Access Denied: Invalid secure PIN! 🔐");
+    }
+  });
+
+  document.getElementById('close-cms').addEventListener('click', closeCMSPanel);
+
   sheetBackdrop.addEventListener('click', () => {
     closeSidebarCart();
     closeReservationTicket();
     closeUploadSheet();
+    closeCMSPanel();
   });
 }
 
@@ -1209,6 +1669,18 @@ function closeUploadSheet() {
   document.body.style.overflow = '';
 }
 
+function openCMSPanel() {
+  document.getElementById('admin-cms-sheet').classList.add('active');
+  document.getElementById('sheet-backdrop').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCMSPanel() {
+  document.getElementById('admin-cms-sheet').classList.remove('active');
+  document.getElementById('sheet-backdrop').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
 // --- Dynamic Interactive Menu Logic ---
 function initMenuFilters() {
   const btns = document.querySelectorAll('.tab-btn');
@@ -1217,89 +1689,16 @@ function initMenuFilters() {
       btns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       activeCategory = btn.dataset.category;
-      renderMenu();
+      window.renderPublicMenu();
     });
   });
 }
 
-function renderMenu() {
-  const grid = document.getElementById('menu-grid');
-  grid.classList.add('fading');
-  
-  setTimeout(() => {
-    grid.innerHTML = '';
-    const rawItems = menuItems[activeCategory] || [];
-    
-    // Filter by search text
-    const filtered = rawItems.filter(item => 
-      item.name.toLowerCase().includes(menuSearchQuery.toLowerCase()) || 
-      item.desc.toLowerCase().includes(menuSearchQuery.toLowerCase())
-    );
-
-    if (filtered.length === 0) {
-      grid.innerHTML = `
-        <div class="col-span-full text-center py-12 text-sm text-gray-400 font-mono">
-          Walang nahanap! Try searching for something else... 🔎
-        </div>
-      `;
-      grid.classList.remove('fading');
-      return;
-    }
-
-    filtered.forEach(item => {
-      const card = document.createElement('article');
-      card.className = 'menu-card';
-      card.innerHTML = `
-        <div class="menu-card-img-wrap">
-          ${item.badge ? `<span class="menu-card-badge">${item.badge}</span>` : ''}
-          <img src="${item.img}" alt="${item.name}" loading="lazy">
-        </div>
-        <div class="menu-card-body">
-          <h3 class="menu-card-name">${item.name}</h3>
-          <p class="menu-card-desc">${item.desc}</p>
-          <div class="menu-card-footer">
-            <span class="price-tag">₱${item.price}.00</span>
-            <button class="add-circle" onclick="addItemToCart('${item.id}', '${item.name}', ${item.price})" aria-label="Add ${item.name} to order">
-              <i class="fa-solid fa-plus"></i>
-            </button>
-          </div>
-        </div>
-      `;
-      grid.appendChild(card);
-    });
-    grid.classList.remove('fading');
-  }, 200);
-}
-
-function filterMenuBySearch() {
+window.filterMenuBySearch = function() {
   const input = document.getElementById('menu-search');
   menuSearchQuery = input.value;
-  renderMenu();
-}
-
-// --- Cart System Logic ---
-function addItemToCart(id, name, price) {
-  const existing = cart.find(item => item.id === id);
-  if (existing) {
-    existing.quantity++;
-  } else {
-    cart.push({ id, name, price, quantity: 1 });
-  }
-  updateCartUI();
-  showToast(`Added ${name} to your order! ☕`);
-}
-
-function removeItemFromCart(id) {
-  const existing = cart.find(item => item.id === id);
-  if (existing) {
-    if (existing.quantity > 1) {
-      existing.quantity--;
-    } else {
-      cart = cart.filter(item => item.id !== id);
-    }
-  }
-  updateCartUI();
-}
+  window.renderPublicMenu();
+};
 
 function updateCartUI() {
   const container = document.getElementById('cart-items-container');
@@ -1351,15 +1750,15 @@ function updateCartUI() {
   checkoutBtn.disabled = false;
 }
 
-function checkoutCart() {
+window.checkoutCart = function() {
   closeSidebarCart();
   showToast("Pre-Order received! Simulating kitchen preparation... 🍳");
   cart = [];
   updateCartUI();
-}
+};
 
 // --- Loyalty Rewards Gamification stamp card ---
-function claimStamp(slotIndex) {
+window.claimStamp = function(slotIndex) {
   const slots = document.querySelectorAll('.stamp-slot');
   const target = slots[slotIndex - 1];
 
@@ -1377,10 +1776,10 @@ function claimStamp(slotIndex) {
       showToast("🏆 Congratulations! You have unlocked your free rewards coupon!");
     }
   }
-}
+};
 
 // --- Timplahan Custom Drink Builder Logic ---
-function updateCustomDrink() {
+window.updateCustomDrink = function() {
   const baseSelect = document.getElementById('build-base');
   const chosenOption = baseSelect.options[baseSelect.selectedIndex];
   const baseName = chosenOption.text.split(' ').slice(1).join(' '); // strip emoji
@@ -1419,24 +1818,23 @@ function updateCustomDrink() {
   document.getElementById('custom-drink-name').innerText = `Custom ${baseName}`;
   document.getElementById('custom-drink-desc').innerText = `Crafted premium base mixed at ${sweetLabel}, and served with fresh ${sinkerName}. Perfectly tailored for your taste!`;
   document.getElementById('custom-drink-price').innerText = `₱${finalPrice}`;
-}
+};
 
-function addCustomDrinkToCart() {
+window.addCustomDrinkToCart = function() {
   const name = document.getElementById('custom-drink-name').innerText;
   const priceString = document.getElementById('custom-drink-price').innerText.replace('₱', '');
   const price = parseInt(priceString);
 
   addItemToCart('custom-' + Date.now(), name, price);
   openSidebarCart();
-}
+};
 
-// --- Polaroid Wall & Real-Time Upload Simulation ---
+// --- Polaroid Wall Simulation ---
 function initPolaroidClickHandlers() {
   const container = document.getElementById('polaroid-grid');
   container.addEventListener('click', (e) => {
     const emptySlot = e.target.closest('.polaroid.empty-slot');
     if (emptySlot) {
-      // Direct click on empty slots triggers the upload modal
       openUploadSheet();
       return;
     }
@@ -1449,16 +1847,9 @@ function initPolaroidClickHandlers() {
 }
 
 function initImageUploadLogic() {
-  const openBtn = document.getElementById('open-upload');
-  const closeBtn = document.getElementById('close-upload');
-  const sheet = document.getElementById('upload-sheet');
   const fileInput = document.getElementById('file-input');
   const previewImg = document.getElementById('preview-img');
   const dropzone = document.getElementById('dropzone');
-  const uploadForm = document.getElementById('upload-form');
-
-  openBtn.addEventListener('click', openUploadSheet);
-  closeBtn.addEventListener('click', closeUploadSheet);
 
   fileInput.addEventListener('change', (e) => {
     const file = e.target.files[0];
@@ -1493,85 +1884,25 @@ function initImageUploadLogic() {
       reader.readAsDataURL(file);
     }
   });
-
-  uploadForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const handleInput = document.getElementById('u-handle').value.trim() || 'anonymous_legend';
-    const drinkInput = document.getElementById('u-drink').value.trim() || 'Cozy sips';
-    const finalImageSrc = previewImg.src || 'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&q=80&w=400';
-
-    const randomRot = (Math.random() * 8 - 4).toFixed(1); // random angle between -4deg and 4deg
-    const randomTape = ['tape-teal', 'tape-gold', 'tape-pink'][Math.floor(Math.random() * 3)];
-
-    const emptySlots = document.querySelectorAll('.polaroid.empty-slot');
-    if (emptySlots.length > 0) {
-      const targetSlot = emptySlots[0];
-      targetSlot.classList.remove('empty-slot');
-      targetSlot.setAttribute('style', `--rot: ${randomRot}deg`);
-      targetSlot.innerHTML = `
-        <div class="polaroid-inner" style="aspect-ratio:500/550">
-          <div class="polaroid-front">
-            <span class="tape ${randomTape}"></span>
-            <div class="polaroid-photo"><img src="${finalImageSrc}" alt="User pinned memory on local legends wall"></div>
-            <i class="fa-solid fa-rotate flip-hint"></i>
-          </div>
-          <div class="polaroid-back">
-            <p class="hand-handle">@${handleInput}</p>
-            <p class="hand-drink">${drinkInput}</p>
-            <i class="fa-solid fa-heart back-heart"></i>
-          </div>
-        </div>
-      `;
-    } else {
-      const polaroid = document.createElement('div');
-      polaroid.className = 'polaroid animate-fadeIn';
-      polaroid.style.setProperty('--rot', `${randomRot}deg`);
-      polaroid.innerHTML = `
-        <div class="polaroid-inner" style="aspect-ratio:500/550">
-          <div class="polaroid-front">
-            <span class="tape ${randomTape}"></span>
-            <div class="polaroid-photo"><img src="${finalImageSrc}" alt="User pinned memory on local legends wall"></div>
-            <i class="fa-solid fa-rotate flip-hint"></i>
-          </div>
-          <div class="polaroid-back">
-            <p class="hand-handle">@${handleInput}</p>
-            <p class="hand-drink">${drinkInput}</p>
-            <i class="fa-solid fa-heart back-heart"></i>
-          </div>
-        </div>
-      `;
-      const grid = document.getElementById('polaroid-grid');
-      grid.insertBefore(polaroid, grid.firstChild);
-    }
-
-    // Reset Form & Close sheet
-    uploadForm.reset();
-    previewImg.src = '';
-    dropzone.classList.remove('has-file');
-    closeUploadSheet();
-
-    showToast("🎉 Awesome! Your memory has been pinned to the cork wall!");
-  });
 }
 
-function applyPreset(url) {
+window.applyPreset = function(url) {
   const previewImg = document.getElementById('preview-img');
   const dropzone = document.getElementById('dropzone');
   previewImg.src = url;
   dropzone.classList.add('has-file');
   showToast("Preset image applied! ☕");
-}
+};
 
 // --- Cozy Seating Reservation Logic & Passport Ticket ---
-function selectZone(element, name, description) {
+window.selectZone = function(element, name, description) {
   chosenZoneName = name;
   document.getElementById('zone-description').innerText = description;
 
   const btns = document.querySelectorAll('.zone-btn');
   btns.forEach(btn => btn.classList.remove('selected'));
   element.classList.add('selected');
-}
+};
 
 function initReservationSystem() {
   const form = document.getElementById('reserve-form');
@@ -1604,6 +1935,36 @@ function closeReservationTicket() {
   document.getElementById('sheet-backdrop').classList.remove('active');
   document.body.style.overflow = '';
 }
+
+// --- CMS Product editing helper ---
+window.openProductForm = function(editId = '') {
+  const sheet = document.getElementById('product-form-sheet');
+  const title = document.getElementById('product-form-title');
+  const form = document.getElementById('product-form');
+  
+  sheet.classList.add('active');
+  form.reset();
+
+  if (editId) {
+    title.innerText = "Edit Catalog Product ☕";
+    const product = allProducts.find(p => p.id === editId);
+    if (product) {
+      document.getElementById('p-form-id').value = product.id;
+      document.getElementById('p-form-name').value = product.name;
+      document.getElementById('p-form-price').value = product.price;
+      document.getElementById('p-form-category').value = product.category;
+      document.getElementById('p-form-desc').value = product.desc;
+      document.getElementById('p-form-img').value = product.img;
+    }
+  } else {
+    title.innerText = "Add New Product ➕";
+    document.getElementById('p-form-id').value = '';
+  }
+};
+
+window.closeProductForm = function() {
+  document.getElementById('product-form-sheet').classList.remove('active');
+};
 
 // --- About Interaction & Live Counters ---
 function initAboutInteraction() {
