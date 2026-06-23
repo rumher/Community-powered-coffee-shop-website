@@ -1104,9 +1104,6 @@ img{max-width:100%;display:block}
   </div>
 </div>
 
-<!-- Toast Popup Notification -->
-<div class="toast" id="toast">Salamat! Successfully added to the community database! 🎉</div>
-
 <!-- Firebase System Imports & Initialization -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
@@ -1140,8 +1137,6 @@ const photosCollection = collection(db, 'artifacts', appId, 'public', 'data', 'p
 const productsCollection = collection(db, 'artifacts', appId, 'public', 'data', 'products');
 
 let user = null;
-let allPhotos = [];
-let allProducts = [];
 
 // Await Anonymous Authentication first before running any queries (Per Mandatory Rule 3)
 const initAuthentication = async () => {
@@ -1192,9 +1187,9 @@ function listenToPhotos() {
   if (!user) return; // Strict Auth guard (Rule 3)
   
   onSnapshot(photosCollection, (snapshot) => {
-    allPhotos = [];
+    window.allPhotos = [];
     snapshot.forEach(doc => {
-      allPhotos.push({ id: doc.id, ...doc.data() });
+      window.allPhotos.push({ id: doc.id, ...doc.data() });
     });
     
     // Render standard public wall & admin CMS listing
@@ -1209,13 +1204,13 @@ function listenToProducts() {
   if (!user) return; // Strict Auth guard (Rule 3)
   
   onSnapshot(productsCollection, (snapshot) => {
-    allProducts = [];
+    window.allProducts = [];
     snapshot.forEach(doc => {
-      allProducts.push({ id: doc.id, ...doc.data() });
+      window.allProducts.push({ id: doc.id, ...doc.data() });
     });
 
     // Seed database automatically on first load if collection is empty
-    if (allProducts.length === 0) {
+    if (window.allProducts.length === 0) {
       seedDefaultMenuProducts();
     } else {
       renderPublicMenu();
@@ -1229,17 +1224,17 @@ function listenToProducts() {
 // Seed helper (Seeding default catalog once to ensure live preview instantly functions)
 async function seedDefaultMenuProducts() {
   const defaults = [
-    { name: "Batangas Barako Brew", price: 60, desc: "Strong, authentic dark roast directly from Lipa highlands.", img: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&q=80&w=400", category: "espresso", badge: "Best Seller" },
-    { name: "Barako Flat White", price: 95, desc: "Espresso sweetened with raw cane sugar and velvet steamed milk.", img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=400", category: "espresso" },
-    { name: "Spiced Pandan Latte", price: 110, desc: "House recipe espresso combined with pandan extract infusion.", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=80&w=400", category: "espresso", badge: "Signature" },
-    { name: "Cold Brew High", price: 120, desc: "Slow steeped for 18 hours to reveal robust chocolate undertones.", img: "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&q=80&w=400", category: "espresso" },
-    { name: "Signature Creamy Ube Latte", price: 130, desc: "Native purple yam puree layered with oat milk and real sweet taro.", img: "https://images.unsplash.com/photo-1515825838458-f2a94b20105a?auto=format&fit=crop&q=80&w=400", category: "non-coffee", badge: "Community Fav" },
-    { name: "Calamansi Ginger Ginger", price: 90, desc: "A zesty warm mocktail with spicy salabat ginger roots.", img: "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&q=80&w=400", category: "non-coffee" },
-    { name: "Iced Pandan Matcha tea", price: 140, desc: "Organic stone-ground green tea whisked with aromatic pandan.", img: "https://images.unsplash.com/photo-1582793988951-9aed5509eb97?auto=format&fit=crop&q=80&w=400", category: "non-coffee" },
-    { name: "Sweet Calamansi Cold Fizzer", price: 70, desc: "Refreshing local citrus, honey nectar, cold water, and lots of ice.", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=400", category: "non-coffee" },
-    { name: "Pandesal Basket", price: 45, desc: "Three fresh baked soft bread rolls served warm with Batangas salted butter.", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=400", category: "pastries" },
-    { name: "Artisan Ube Hopia", price: 65, desc: "Indulgently flaky sweet pocket pastries packed with premium ube halaya.", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=400", category: "pastries", badge: "Highly Fresh" },
-    { name: "Sweet Banana Cue Skewers", price: 80, desc: "Two skewers of deep-fried saba bananas heavily glazed in brown sugar caramel.", img: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&q=80&w=400", category: "pastries" },
+    { name: "Barako Espresso", price: 60, desc: "Strong & bold Batangas coffee", img: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&q=80&w=400", category: "espresso", badge: "Best Seller" },
+    { name: "Cortado", price: 95, desc: "Espresso & warm steamed milk", img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=400", category: "espresso" },
+    { name: "Latte", price: 110, desc: "Smooth espresso with creamy foam", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=80&w=400", category: "espresso" },
+    { name: "Cold Brew", price: 120, desc: "Steeped 18hrs, super smooth", img: "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&q=80&w=400", category: "espresso" },
+    { name: "Ube Latte", price: 130, desc: "Purple yam extract & oat milk", img: "https://images.unsplash.com/photo-1515825838458-f2a94b20105a?auto=format&fit=crop&q=80&w=400", category: "non-coffee", badge: "Best Seller" },
+    { name: "Salabat Sparkler", price: 90, desc: "Ginger tea with calamansi fizz", img: "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&q=80&w=400", category: "non-coffee" },
+    { name: "Matcha", price: 140, desc: "Premium grade green tea", img: "https://images.unsplash.com/photo-1582793988951-9aed5509eb97?auto=format&fit=crop&q=80&w=400", category: "non-coffee" },
+    { name: "Calamansi Juice", price: 70, desc: "Freshly squeezed, icy cold", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=400", category: "non-coffee" },
+    { name: "Pandesal", price: 45, desc: "Warm bread rolls, butter included", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=400", category: "pastries" },
+    { name: "Ube Hopia", price: 65, desc: "Flaky pastry with ube filling", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=400", category: "pastries", badge: "Highly Fresh" },
+    { name: "Banana Cue", price: 80, desc: "Caramelized banana skewer", img: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&q=80&w=400", category: "pastries" },
     { name: "Crispy Jackfruit Turon", price: 75, desc: "Golden caramelized spring rolls with ripe banana saba and sweet langka.", img: "https://images.unsplash.com/photo-1543807535-eceef0bc6599?auto=format&fit=crop&q=80&w=400", category: "pastries", badge: "Crispy Gold" }
   ];
   for (const item of defaults) {
@@ -1255,7 +1250,7 @@ function renderPublicWall() {
   const sevenDaysAgo = Date.now() - (7 * 24 * 60 * 60 * 1000);
   
   // Sort and filter strictly in memory to comply with Rule 2 (No complex Firestore queries)
-  const activePhotos = allPhotos
+  const activePhotos = window.allPhotos
     .filter(photo => photo.timestamp >= sevenDaysAgo)
     .sort((a, b) => b.timestamp - a.timestamp);
 
@@ -1314,7 +1309,7 @@ window.renderPublicMenu = function() {
   setTimeout(() => {
     grid.innerHTML = '';
     
-    const filtered = allProducts.filter(item => {
+    const filtered = window.allProducts.filter(item => {
       const matchCategory = item.category === activeCategory;
       const matchSearch = item.name.toLowerCase().includes(menuSearchQuery.toLowerCase()) || 
                           item.desc.toLowerCase().includes(menuSearchQuery.toLowerCase());
@@ -1361,12 +1356,12 @@ function renderCMSPhotos() {
   const container = document.getElementById('cms-photos-container');
   container.innerHTML = '';
 
-  if (allPhotos.length === 0) {
+  if (window.allPhotos.length === 0) {
     container.innerHTML = `<p class="text-center py-6 text-sm text-gray-400">No community uploads registered on Firestore cloud database yet.</p>`;
     return;
   }
 
-  const sortedAll = [...allPhotos].sort((a,b) => b.timestamp - a.timestamp);
+  const sortedAll = [...window.allPhotos].sort((a,b) => b.timestamp - a.timestamp);
   const sevenDaysAgo = Date.now() - (7 * 24 * 60 * 60 * 1000);
 
   sortedAll.forEach(photo => {
@@ -1405,12 +1400,12 @@ function renderCMSMenu() {
   const container = document.getElementById('cms-product-list');
   container.innerHTML = '';
 
-  if (allProducts.length === 0) {
+  if (window.allProducts.length === 0) {
     container.innerHTML = `<p class="text-center py-6 text-sm text-gray-400">No active products populated in menu.</p>`;
     return;
   }
 
-  allProducts.forEach(item => {
+  window.allProducts.forEach(item => {
     const row = document.createElement('div');
     row.className = 'flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-3 bg-white rounded-xl border border-gray-100 shadow-sm';
     row.innerHTML = `
@@ -1519,7 +1514,7 @@ uploadForm.addEventListener('submit', async (e) => {
   const submitBtn = document.getElementById('submit-upload');
   const origText = submitBtn.innerHTML;
   submitBtn.disabled = true;
-  submitBtn.innerHTML = "<i class='fa-solid fa-spinner animate-spin'></i> Pining to Cloud Board...";
+  submitBtn.innerHTML = "<i class='fa-solid fa-spinner animate-spin'></i> Pining to Cloud...";
 
   try {
     await addDoc(photosCollection, {
@@ -1552,7 +1547,10 @@ let chosenZoneName = "Indoor Barako Lounge";
 let activeCategory = "espresso";
 let menuSearchQuery = "";
 
-// Ensure global scopes for inline dynamic actions
+// Initialize Global scopes so Module-Loaded listener can safely bind parameters
+window.allProducts = [];
+window.allPhotos = [];
+
 window.addItemToCart = function(id, name, price) {
   const existing = cart.find(item => item.id === id);
   if (existing) {
@@ -1624,6 +1622,14 @@ function initNavigation() {
   desktopCartBtn.addEventListener('click', openSidebarCart);
   closeCartBtn.addEventListener('click', closeSidebarCart);
   
+  // Immersive Uplink: Open modal on "I-Upload Ang Vibe Mo" button click
+  const uploadButton = document.getElementById('open-upload');
+  if (uploadButton) {
+    uploadButton.addEventListener('click', () => {
+      openUploadSheet();
+    });
+  }
+
   // CMS Dashboard Controller with PIN protection
   const adminBtn = document.getElementById('admin-cms-btn');
   adminBtn.addEventListener('click', () => {
@@ -1947,7 +1953,7 @@ window.openProductForm = function(editId = '') {
 
   if (editId) {
     title.innerText = "Edit Catalog Product ☕";
-    const product = allProducts.find(p => p.id === editId);
+    const product = window.allProducts.find(p => p.id === editId);
     if (product) {
       document.getElementById('p-form-id').value = product.id;
       document.getElementById('p-form-name').value = product.name;
