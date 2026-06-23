@@ -6,12 +6,78 @@
 <meta name="theme-color" content="#005C4B">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Boba Ka Tea? — Filipino Community Hub</title>
-<meta name="description" content="Boba Ka Tea? is a community-powered Filipino tea & coffee shop. Order ahead, book a table, and get featured on our Local Legends wall.">
+
+<!-- Primary SEO Meta Tags -->
+<title>Boba Ka Tea? — Filipino Artisan Coffee, Ube Tea & Community Hub</title>
+<meta name="title" content="Boba Ka Tea? — Filipino Artisan Coffee, Ube Tea & Community Hub">
+<meta name="description" content="Sip on Batangas Barako coffee, authentic milk teas, and fresh Pandesal. Order ahead, collect digital Salamat stamps, book cozy Kubos, and join our local community wall.">
+<meta name="keywords" content="Filipino coffee shop, Barako coffee, Boba Ka Tea, Manila cafe, Ube latte, Calamansi drink, local community hub, Pandesal, Pinoy merienda">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bobakatea.com/">
+<meta property="og:title" content="Boba Ka Tea? — Filipino Artisan Coffee, Ube Tea & Community Hub">
+<meta property="og:description" content="Experience authentic Filipino hospitality. Sips, Smiles & Solidarity in every single cup of Barako and premium local teas.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1596707328770-7a208b9d0679?auto=format&fit=crop&q=80&w=1200&h=630">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://bobakatea.com/">
+<meta property="twitter:title" content="Boba Ka Tea? — Filipino Artisan Coffee, Ube Tea & Community Hub">
+<meta property="twitter:description" content="Experience authentic Filipino hospitality. Sips, Smiles & Solidarity in every single cup of Barako and premium local teas.">
+<meta property="twitter:image" content="https://images.unsplash.com/photo-1596707328770-7a208b9d0679?auto=format&fit=crop&q=80&w=1200&h=630">
+
+<!-- JSON-LD Local Business Structured Data for Google SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Boba Ka Tea?",
+  "image": "https://images.unsplash.com/photo-1596707328770-7a208b9d0679?auto=format&fit=crop&q=80&w=600",
+  "@id": "https://bobakatea.com/#about",
+  "url": "https://bobakatea.com/",
+  "telephone": "+63281234567",
+  "priceRange": "₱60 - ₱200",
+  "menu": "https://bobakatea.com/#menu",
+  "servesCuisine": "Filipino, Asian Fusion, Specialty Coffee, Teas",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Rizal Avenue",
+    "addressLocality": "Manila",
+    "postalCode": "1000",
+    "addressCountry": "PH"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 14.5995,
+    "longitude": 120.9842
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "07:00",
+    "closes": "21:00"
+  },
+  "sameAs": [
+    "https://www.instagram.com/bobakatea",
+    "https://www.facebook.com/bobakatea",
+    "https://www.tiktok.com/@bobakatea"
+  ]
+}
+</script>
+
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧋%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Added Shrikhand for that bold Filipino retro vibe, kept others for readability -->
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;0,900;1,500;1,600&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&family=Caveat:wght@600;700&family=Shrikhand&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -22,7 +88,7 @@
 :root{--teal:#005C4B;--tealDark:#004437;--mango:#FFB800;--mangoDark:#E5A500;--coconut:#FDFBF7;--bamboo:#D4C5A3;--barako:#3E2723;--guava:#F48FB1}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-tap-highlight-color:transparent}
-body{font-family:'DM Sans',sans-serif;background:var(--coconut);color:var(--barako);-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:80px}
+body{font-family:'DM Sans',sans-serif;background:var(--coconut);color:var(--barako);-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:120px}
 button{font-family:inherit;cursor:pointer;background:0 0;border:none}
 input,select,textarea{font-family:inherit}
 img{max-width:100%;display:block}
@@ -31,36 +97,36 @@ img{max-width:100%;display:block}
 .font-hand{font-family:'Caveat',cursive}
 .font-mono{font-family:'Space Mono',monospace}
 
-/* Animations */
+/* Web Animations & Transitions */
 [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
 [data-reveal].is-visible{opacity:1;transform:translateY(0)}
 @media (prefers-reduced-motion:reduce){[data-reveal]{transition:none!important;transform:none!important;opacity:1!important}}
 
 .grain{pointer-events:none;opacity:.04;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E")}
 
-/* Hero */
-.hero{position:relative;height:100dvh;min-height:600px;width:100%;overflow:hidden;display:flex;flex-direction:column}
+/* Hero Header and Steam Elements */
+.hero{position:relative;height:100dvh;min-height:650px;width:100%;overflow:hidden;display:flex;flex-direction:column}
 .hero-bg{position:absolute;inset:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,92,75,.7) 0,rgba(0,92,75,.5) 40%,rgba(0,92,75,.85) 100%)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,92,75,.7) 0,rgba(0,92,75,.4) 40%,rgba(0,92,75,.85) 100%)}
 .steam{position:absolute;width:14px;height:60px;border-radius:50%;background:rgba(255,255,255,.2);filter:blur(8px);bottom:50%;animation:steamRise 7s ease-in-out infinite;z-index:3}
 .steam-1{left:41%;animation-delay:0s}.steam-2{left:57%;width:10px;animation-delay:2.6s}
 @keyframes steamRise{0%{transform:translateY(0) scaleX(1);opacity:0}15%{opacity:.5}55%{transform:translateY(-90px) scaleX(1.5);opacity:.2}100%{transform:translateY(-160px) scaleX(1.9);opacity:0}}
 .hero-badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:.4rem .9rem;border-radius:999px;backdrop-filter:blur(6px)}
 .live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--mango);box-shadow:0 0 0 0 rgba(255,184,0,.6);animation:pulseDot 2s infinite}
 @keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(255,184,0,.5)}70%{box-shadow:0 0 0 7px rgba(255,184,0,0)}100%{box-shadow:0 0 0 0 rgba(255,184,0,0)}}
-.hero-wordmark{font-size:clamp(3.5rem,12vw,6.5rem);letter-spacing:-.01em;line-height:0.9;text-shadow:2px 2px 0px rgba(0,0,0,0.2)}
+.hero-wordmark{font-size:clamp(3.5rem,11vw,6.5rem);letter-spacing:-.01em;line-height:0.95;text-shadow:2px 3px 0px rgba(0,0,0,0.25)}
 .scroll-cue{animation:bounceCue 2s infinite}
 @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 
-/* Fluid Menu (Top Right) */
+/* Floating Fluid Navigation Bar (Top Corner) */
 .fluid-menu-container {
   position: fixed;
   top: 24px;
   right: 24px;
   z-index: 100;
   display: flex;
-  flex-direction: column; /* Changed to column for top-right drop down */
+  flex-direction: column;
   align-items: center;
   gap: 12px;
 }
@@ -100,7 +166,7 @@ img{max-width:100%;display:block}
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   cursor: pointer;
   opacity: 0;
-  transform: translateY(-20px) scale(0.8); /* Start above for top-right menu */
+  transform: translateY(-20px) scale(0.8);
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
   z-index: 101;
@@ -111,7 +177,6 @@ img{max-width:100%;display:block}
   opacity: 1;
   transform: translateY(0) scale(1);
 }
-/* Staggered delays */
 .fluid-menu-container.active .fluid-item:nth-child(1) { transition-delay: 0.05s; }
 .fluid-menu-container.active .fluid-item:nth-child(2) { transition-delay: 0.1s; }
 .fluid-menu-container.active .fluid-item:nth-child(3) { transition-delay: 0.15s; }
@@ -120,8 +185,8 @@ img{max-width:100%;display:block}
 .fluid-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0,92,75,0.4);
-  backdrop-filter: blur(4px);
+  background: rgba(0,92,75,0.45);
+  backdrop-filter: blur(5px);
   z-index: 99;
   opacity: 0;
   pointer-events: none;
@@ -129,7 +194,21 @@ img{max-width:100%;display:block}
 }
 .fluid-backdrop.active { opacity: 1; pointer-events: auto; }
 
-/* Expandable Tabs (Menu Filter) */
+/* Sticky Conversion Bar (Bottom Screen on Mobile, Hidden on Large Desktop) */
+.sticky-conversion-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(0, 92, 75, 0.15);
+  padding: 0.75rem 1.25rem;
+  z-index: 50;
+  box-shadow: 0 -8px 24px rgba(0,0,0,0.08);
+}
+
+/* Expandable Category Filter Tabs */
 .expandable-tabs-wrapper {
   display: flex;
   justify-content: center;
@@ -139,11 +218,11 @@ img{max-width:100%;display:block}
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(0,92,75,0.08);
+  background: rgba(0,92,75,0.06);
   padding: 0.35rem;
   border-radius: 999px;
   position: relative;
-  border: 1px solid rgba(0,92,75,0.1);
+  border: 1px solid rgba(0,92,75,0.08);
 }
 .tab-btn {
   position: relative;
@@ -154,9 +233,9 @@ img{max-width:100%;display:block}
   height: 44px;
   padding: 0 1rem;
   border-radius: 999px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.9rem;
-  color: rgba(0,92,75,0.6);
+  color: rgba(0,92,75,0.65);
   background: transparent;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
@@ -181,7 +260,7 @@ img{max-width:100%;display:block}
   color: white;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  box-shadow: 0 4px 12px rgba(0,92,75,0.2);
+  box-shadow: 0 4px 12px rgba(0,92,75,0.25);
 }
 .tab-btn.active i { margin-right: 0.5rem; }
 .tab-btn.active span {
@@ -192,67 +271,129 @@ img{max-width:100%;display:block}
 .tab-separator {
   width: 1px;
   height: 24px;
-  background: rgba(0,92,75,0.2);
-  margin: 0 0.25rem;
+  background: rgba(0,92,75,0.15);
+  margin: 0 0.15rem;
 }
 
-/* Menu Grid */
-.menu-card{display:flex;flex-direction:column;text-align:left;background:#fff;border-radius:18px;overflow:hidden;border:1px solid rgba(0,92,75,.1);box-shadow:0 4px 14px rgba(0,0,0,0.05);transition:transform .25s,box-shadow .25s,opacity .25s;width:100%}
+/* Redesigned Menu Cards & Hover States */
+.menu-card{display:flex;flex-direction:column;text-align:left;background:#fff;border-radius:18px;overflow:hidden;border:1px solid rgba(0,92,75,.08);box-shadow:0 4px 14px rgba(0,0,0,0.03);transition:transform .25s,box-shadow .25s,opacity .25s;width:100%}
 .menu-card:active{transform:scale(.97)}
-.menu-card-img-wrap{aspect-ratio:1/1;overflow:hidden;background:rgba(0,0,0,.05)}
+.menu-card-img-wrap{aspect-ratio:1/1;overflow:hidden;background:rgba(0,0,0,.03);position:relative}
 .menu-card-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s}
-.menu-card:hover .menu-card-img-wrap img{transform:scale(1.05)}
+.menu-card:hover .menu-card-img-wrap img{transform:scale(1.06)}
+.menu-card-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--mango);
+  color: var(--barako);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
 .menu-card-body{padding:.85rem .9rem 1rem;display:flex;flex-direction:column;gap:.3rem;flex:1}
 .menu-card-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;color:var(--barako);line-height:1.2}
 .menu-card-desc{font-size:.8rem;color:rgba(62,39,35,.6);line-height:1.35;flex:1}
 .menu-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:.5rem}
-.price-tag{font-family:'Space Mono',monospace;font-size:.9rem;color:var(--teal);font-weight:700}
-.add-circle{width:32px;height:32px;border-radius:50%;background:var(--mango);color:var(--barako);display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;transition:transform 0.2s}
-.add-circle:active{transform:scale(0.9)}
+.price-tag{font-family:'Space Mono',monospace;font-size:.95rem;color:var(--teal);font-weight:700}
+.add-circle{width:36px;height:36px;border-radius:50%;background:var(--mango);color:var(--barako);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;transition:transform 0.2s, background 0.2s}
+.add-circle:hover { background: var(--mangoDark); transform: rotate(90deg); }
+.add-circle:active{transform:scale(0.85)}
 #menu-grid.fading .menu-card{opacity:0;transform:translateY(8px)}
 
-/* Community Wall */
+/* Cork Board Community Wall Styles */
 .cork-bg{position:relative;background-color:var(--bamboo);background-image:radial-gradient(circle at 12% 18%,rgba(62,39,35,.1) 0 2px,transparent 3px),radial-gradient(circle at 58% 22%,rgba(62,39,35,.08) 0 2px,transparent 3px),linear-gradient(180deg,rgba(0,0,0,.05),transparent 10%,transparent 90%,rgba(0,0,0,.05));background-size:100px 100px,150px 150px,100% 100%}
 .masonry{
   column-count:2;
   column-gap:1.5rem;
-  max-width: 1000px; /* Limit width on desktop */
-  margin: 0 auto;    /* Center the grid itself */
-  padding: 0 1rem;   /* Internal padding */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 @media (min-width:640px){.masonry{column-count:3}}
 @media (min-width:1024px){.masonry{column-count:4}}
 
-.polaroid{margin-bottom:1.5rem;break-inside:avoid;display:inline-block;width:100%;transform:rotate(var(--rot,0deg));transition:transform .25s}
-.polaroid:active,.polaroid:hover{transform:rotate(0) scale(1.03);z-index:10}
+.polaroid{margin-bottom:1.5rem;break-inside:avoid;display:inline-block;width:100%;transform:rotate(var(--rot,0deg));transition:transform .25s;perspective:1000px}
+.polaroid:active,.polaroid:hover{transform:rotate(0deg) scale(1.04);z-index:15}
 .polaroid-inner{position:relative;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.4,.2,.2,1);cursor:pointer}
 .polaroid.is-flipped .polaroid-inner{transform:rotateY(180deg)}
-.polaroid-back,.polaroid-front{position:absolute;inset:0;backface-visibility:hidden;border-radius:2px;box-shadow:0 10px 25px rgba(0,0,0,0.15)}
-.polaroid-front{background:#fff;padding:10px 10px 35px;display:flex;flex-direction:column}
-.polaroid-photo{flex:1;overflow:hidden;border-radius:1px;background:rgba(0,0,0,.05)}
+.polaroid-back,.polaroid-front{backface-visibility:hidden;border-radius:2px;box-shadow:0 10px 25px rgba(0,0,0,0.18)}
+.polaroid-front{background:#fff;padding:10px 10px 38px;display:flex;flex-direction:column;position:relative}
+.polaroid-photo{aspect-ratio:1/1;overflow:hidden;border-radius:1px;background:rgba(0,0,0,.05)}
 .polaroid-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.flip-hint{position:absolute;bottom:10px;right:12px;font-size:.8rem;color:rgba(0,0,0,.3)}
-.polaroid-back{transform:rotateY(180deg);background:var(--teal);color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1.5rem;border-radius:2px}
-.hand-handle{font-family:'Caveat',cursive;font-weight:700;font-size:1.8rem;color:var(--mango);margin-bottom:.5rem;line-height:1}
-.hand-drink{font-size:.95rem;color:rgba(255,255,255,.9);line-height:1.4}
-.back-heart{margin-top:1rem;color:var(--guava);font-size:1.2rem}
+.flip-hint{position:absolute;bottom:10px;right:12px;font-size:.8rem;color:rgba(0,0,0,.35)}
+.polaroid-back{position:absolute;inset:0;transform:rotateY(180deg);background:var(--teal);color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1.2rem;border-radius:2px}
+.hand-handle{font-family:'Caveat',cursive;font-weight:700;font-size:1.8rem;color:var(--mango);margin-bottom:.3rem;line-height:1}
+.hand-drink{font-size:.9rem;color:rgba(255,255,255,.9);line-height:1.4}
+.back-heart{margin-top:1rem;color:var(--guava);font-size:1.2rem;animation:pulseDot 1.5s infinite}
 .tape{position:absolute;top:-12px;left:50%;transform:translateX(-50%) rotate(-3deg);width:70px;height:24px;opacity:.9;z-index:2;border-radius:2px;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
 .tape-gold{background:repeating-linear-gradient(135deg,var(--mango) 0 6px,var(--mangoDark) 6px 12px)}
 .tape-teal{background:repeating-linear-gradient(135deg,var(--teal) 0 6px,var(--tealDark) 6px 12px)}
 .tape-pink{background:repeating-linear-gradient(135deg,var(--guava) 0 6px,#F06292 6px 12px)}
 .pin{position:absolute;top:-8px;left:50%;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ffccbc,var(--barako) 70%);box-shadow:0 2px 4px rgba(0,0,0,0.3);z-index:3}
 
-/* Forms & UI */
+/* Digital Loyalty Stamps Section */
+.stamp-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+  max-width: 420px;
+  margin: 1.5rem auto 0;
+}
+.stamp-slot {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 3px dashed rgba(0,92,75,0.25);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+.stamp-slot.stamped {
+  border-style: solid;
+  border-color: var(--mango);
+  background: #FFFDF0;
+  transform: scale(1.08) rotate(6deg);
+  box-shadow: 0 4px 10px rgba(255,184,0,0.25);
+}
+
+/* User Interactive Zone Selection (Reservations) */
+.zone-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+.zone-btn {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 0.75rem;
+  text-align: center;
+  transition: all 0.2s;
+  cursor: pointer;
+  background: rgba(255,255,255,0.05);
+}
+.zone-btn.selected {
+  border-color: var(--mango);
+  background: rgba(255, 184, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Form Styles */
 .field{margin-bottom:1rem;display:flex;flex-direction:column;gap:.4rem}
-.field label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(0,92,75,.7)}
-.field input,.field select,.field textarea{padding:.8rem 1rem;border-radius:12px;border:2px solid rgba(0,92,75,.15);background:#fff;color:var(--barako);font-size:1rem;width:100%;transition:border-color .2s}
-.field input:focus{border-color:var(--teal);outline:none}
+.field label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(0,92,75,.75)}
+.field input,.field select,.field textarea{padding:.8rem 1rem;border-radius:12px;border:2px solid rgba(0,92,75,.12);background:#fff;color:var(--barako);font-size:1rem;width:100%;transition:border-color .2s}
+.field input:focus,.field select:focus{border-color:var(--teal);outline:none;box-shadow: 0 0 0 3px rgba(0,92,75,0.08)}
 .field-row{display:flex;gap:.8rem}
 .field-row .field{flex:1}
-.reserve-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:24px;padding:2rem;backdrop-filter:blur(10px)}
-.reserve-card label{color:rgba(255,255,255,.8)!important}
-.reserve-card input{background:rgba(255,255,255,.9);border:none}
-.btn-stamp{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:var(--teal);color:white;font-weight:700;font-size:1rem;padding:1rem 2rem;border-radius:999px;box-shadow:0 8px 20px rgba(0,92,75,.3);transition:transform .15s,box-shadow .15s,opacity .15s}
+.reserve-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:24px;padding:2rem;backdrop-filter:blur(10px)}
+.reserve-card label{color:rgba(255,255,255,.9)!important}
+.reserve-card input, .reserve-card select{background:rgba(255,255,255,.95);border:none}
+.btn-stamp{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:var(--teal);color:white;font-weight:700;font-size:1rem;padding:1rem 2rem;border-radius:999px;box-shadow:0 8px 20px rgba(0,92,75,.2);transition:transform .15s,box-shadow .15s,opacity .15s}
 .btn-stamp:active{transform:scale(.96)}
 .btn-stamp:disabled{opacity:.5;cursor:not-allowed}
 .eyebrow{font-family:'Space Mono',monospace;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem;display:inline-block;font-weight:700}
@@ -262,138 +403,281 @@ img{max-width:100%;display:block}
 .section-sub{margin-top:1rem;color:rgba(62,39,35,.7);font-size:1.05rem;max-width:32rem;margin-inline:auto;line-height:1.5}
 .section-sub.on-dark{color:rgba(255,255,255,.8)}
 
-/* Modal / Sheet */
-.sheet-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .3s;z-index:60}
+/* Modal / Pull-up Sliders */
+.sheet-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.65);opacity:0;pointer-events:none;transition:opacity .3s;z-index:60}
 .sheet-backdrop.active{opacity:1;pointer-events:auto}
-.sheet{position:fixed;left:0;right:0;bottom:0;max-height:85vh;background:var(--coconut);border-radius:24px 24px 0 0;transform:translateY(100%);transition:transform .4s cubic-bezier(.32,.72,0,1);z-index:65;display:flex;flex-direction:column;box-shadow:0 -10px 40px rgba(0,0,0,0.2)}
+.sheet{position:fixed;left:0;right:0;bottom:0;max-height:90vh;background:var(--coconut);border-radius:24px 24px 0 0;transform:translateY(100%);transition:transform .4s cubic-bezier(.32,.72,0,1);z-index:65;display:flex;flex-direction:column;box-shadow:0 -10px 40px rgba(0,0,0,0.22)}
 .sheet.active{transform:translateY(0)}
 .sheet-handle{width:48px;height:6px;border-radius:3px;background:rgba(0,0,0,.15);margin:1.2rem auto;flex-shrink:0}
 .sheet-close{position:absolute;top:1.2rem;right:1.2rem;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.05);color:var(--barako);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
-.sheet-content{padding:0 1.5rem 1.5rem;overflow-y:auto;flex:1}
+.sheet-content{padding:0 1.5rem 2rem;overflow-y:auto;flex:1}
+
 .dropzone{position:relative;border:2px dashed rgba(0,92,75,.25);border-radius:20px;min-height:180px;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;overflow:hidden;background:rgba(0,92,75,.03);transition:all .2s}
 .dropzone.dragover{border-color:var(--mango);background:rgba(255,184,0,.1)}
 .dropzone-preview{display:none;width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
 .dropzone.has-file .dropzone-preview{display:block}
 .dropzone.has-file .dropzone-placeholder{display:none}
 .dropzone-placeholder{color:rgba(0,92,75,.6);padding:1rem}
-.consent-row{display:flex;gap:.8rem;align-items:flex-start;font-size:.85rem;color:rgba(0,0,0,.7);margin:1.5rem 0;cursor:pointer}
+.consent-row{display:flex;gap:.8rem;align-items:flex-start;font-size:.85rem;color:rgba(0,0,0,.7);margin:1.2rem 0;cursor:pointer}
 .consent-row input{margin-top:.25rem;accent-color:var(--teal);width:18px;height:18px;flex-shrink:0}
+
+/* Toast Alerts */
 .toast{position:fixed;bottom:100px;left:50%;transform:translate(-50%,20px);background:var(--barako);color:white;padding:.8rem 1.5rem;border-radius:999px;font-size:.9rem;opacity:0;pointer-events:none;transition:all .3s;z-index:80;box-shadow:0 10px 28px rgba(0,0,0,0.3);max-width:90vw;text-align:center;font-weight:600}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
-/* Testimonials */
-.testimonial-track{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1rem;scrollbar-width:none;margin:0 -1.5rem;padding-left:1.5rem}
+/* Customer Reviews Slider */
+.testimonial-track{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1.2rem;scrollbar-width:none;margin:0 -1.5rem;padding-left:1.5rem}
 .testimonial-track::-webkit-scrollbar{display:none}
-.testimonial-card{scroll-snap-align:start;flex:0 0 85%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:1.5rem;backdrop-filter:blur(5px)}@media (min-width:640px){.testimonial-card{flex:0 0 60%}}@media (min-width:1024px){.testimonial-card{flex:0 0 40%}}
+.testimonial-card{scroll-snap-align:start;flex:0 0 85%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:1.5rem;backdrop-filter:blur(5px)}
+@media (min-width:640px){.testimonial-card{flex:0 0 55%}}
+@media (min-width:1024px){.testimonial-card{flex:0 0 38%}}
 .testimonial-card .stars{color:var(--mango);margin-bottom:.8rem;font-size:1rem}
 .testimonial-card p.quote{font-family:'Fraunces',serif;font-style:italic;font-size:1.1rem;color:white;line-height:1.5}
 .testimonial-card p.author{margin-top:1rem;font-family:'Space Mono',monospace;font-size:.75rem;color:rgba(255,255,255,.7);font-weight:700}
 
-/* About */
-.about-frame{position:relative;background:#fff;padding:12px 12px 40px;border-radius:2px;box-shadow:0 20px 40px rgba(0,0,0,0.15);transform:rotate(-2deg);max-width:400px;margin:0 auto;transition:transform .3s}
+/* Brand Frame */
+.about-frame{position:relative;background:#fff;padding:12px 12px 42px;border-radius:2px;box-shadow:0 20px 40px rgba(0,0,0,0.15);transform:rotate(-2deg);max-width:400px;margin:0 auto;transition:transform .3s}
 .about-frame:hover{transform:rotate(0) scale(1.02)}
-.about-frame img{width:100%;border-radius:1px;display:block;filter:sepia(0.2)}
+.about-frame img{width:100%;border-radius:1px;display:block;filter:sepia(0.12)}
 </style>
 </head>
 <body>
 
-<!-- Fluid Backdrop -->
-<div class="fluid-backdrop" id="fluid-backdrop"></div>
+<!-- High-fidelity Custom Grain overlay for organic texture -->
+<div class="grain fixed inset-0 z-50 pointer-events-none"></div>
 
-<!-- Fluid Menu Navigation (Top Right) -->
-<div class="fluid-menu-container" id="fluid-menu">
-  <a href="#about" class="fluid-item" aria-label="About"><i class="fa-solid fa-store"></i></a>
-  <a href="#reserve" class="fluid-item" aria-label="Reserve"><i class="fa-regular fa-calendar-check"></i></a>
-  <a href="#wall" class="fluid-item" aria-label="Community Wall"><i class="fa-solid fa-camera-retro"></i></a>
-  <a href="#menu" class="fluid-item" aria-label="Menu"><i class="fa-solid fa-mug-hot"></i></a>
+<!-- Fluid Overlay Backdrops -->
+<div class="fluid-backdrop" id="fluid-backdrop"></div>
+<div class="sheet-backdrop" id="sheet-backdrop"></div>
+
+<!-- Custom Floating Navigation Menu (Top Right) -->
+<nav class="fluid-menu-container" id="fluid-menu" aria-label="Global Navigation">
+  <a href="#about" class="fluid-item" aria-label="About Us"><i class="fa-solid fa-store" aria-hidden="true"></i></a>
+  <a href="#reserve" class="fluid-item" aria-label="Reserve a spot"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i></a>
+  <a href="#wall" class="fluid-item" aria-label="Community Wall"><i class="fa-solid fa-camera-retro" aria-hidden="true"></i></a>
+  <a href="#menu" class="fluid-item" aria-label="Explore Menu"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i></a>
   
-  <div class="fluid-trigger" id="fluid-trigger" aria-label="Toggle Menu">
-    <i class="fa-solid fa-bars"></i>
-    <i class="fa-solid fa-xmark"></i>
+  <button class="fluid-trigger" id="fluid-trigger" aria-label="Toggle Navigation Menu">
+    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+  </button>
+</nav>
+
+<!-- Persistent Mobile Conversion Bar (Sticky Footer Strategy) -->
+<aside class="sticky-conversion-bar md:hidden flex justify-between items-center gap-3">
+  <div class="flex items-center gap-2">
+    <div class="relative">
+      <button class="text-teal text-2xl p-2 relative" id="mobile-cart-btn" aria-label="View shopping basket">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <span class="absolute -top-1 -right-1 bg-guava text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold" id="mobile-cart-badge">0</span>
+      </button>
+    </div>
+    <span class="text-xs font-mono font-bold text-barako/70" id="mobile-cart-total">₱0.00</span>
   </div>
-</div>
+  <div class="flex gap-2">
+    <a href="#reserve" class="bg-teal text-white text-xs font-bold px-3 py-2.5 rounded-lg">Reserve</a>
+    <button class="bg-mango text-barako text-xs font-bold px-4 py-2.5 rounded-lg" id="mobile-order-trigger">Order Now</button>
+  </div>
+</aside>
 
 <main>
   <!-- Hero Section -->
   <section id="hero" class="hero">
     <div class="hero-bg">
-      <!-- Fixed Image: Tropical/Philippine vibe -->
-      <img src="https://images.unsplash.com/photo-1596707328770-7a208b9d0679?auto=format&fit=crop&q=80&w=1600&h=2000" alt="Tropical cafe interior" loading="eager" fetchpriority="high" decoding="async">
+      <img src="https://images.unsplash.com/photo-1596707328770-7a208b9d0679?auto=format&fit=crop&q=80&w=1600&h=2000" alt="Boba Ka Tea tropical cozy Pinoy style cafe interior" loading="eager" fetchpriority="high">
       <div class="hero-overlay"></div>
-      <div class="grain"></div>
     </div>
     <div class="steam steam-1"></div>
     <div class="steam steam-2"></div>
+    
     <div class="relative z-10 flex flex-col h-full px-6" style="padding-top:max(1.5rem, env(safe-area-inset-top));">
-      <div class="hero-badge inline-flex items-center gap-2 self-start mt-6">
-        <span class="live-dot"></span>
-        <span class="font-mono text-xs tracking-wide text-white/90"><span id="live-count">42</span> ka-Boba here</span>
-      </div>
+      <!-- Live Counter for Social Proof -->
+      <header class="hero-badge inline-flex items-center gap-2 self-start mt-6">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span class="font-mono text-xs tracking-wide text-white/90">
+          <span id="live-count" class="font-bold">47</span> ka-Boba dining here right now
+        </span>
+      </header>
+
       <div class="flex-1 flex flex-col items-center justify-center text-center gap-4 -mt-6">
-        <p class="font-mono text-xs uppercase tracking-[0.3em] text-mango font-bold" data-reveal>Est. 2024 · Manila Vibes</p>
+        <p class="font-mono text-xs uppercase tracking-[0.3em] text-mango font-bold" data-reveal>Est. 2024 · BGC & Manila</p>
         <h1 class="hero-wordmark font-display text-white" data-reveal>BOBA KA<br><span class="text-mango">TEA?</span></h1>
-        <p class="font-display italic text-xl sm:text-2xl text-white/90" data-reveal>Sips, Smiles, & Solidarity.</p>
-        <p class="max-w-xs text-sm text-white/80" data-reveal>Your daily dose of Pinoy hospitality, specialty teas, and good times.</p>
+        <p class="font-display italic text-xl sm:text-2xl text-white/95" data-reveal>Sips, Smiles, & Pamilya Solidarity.</p>
+        <p class="max-w-md text-sm sm:text-base text-white/85 leading-relaxed" data-reveal>
+          The neighborhood sanctuary where modern Filipino hospitality meets traditional Batangas Barako brews and organic Boba teas.
+        </p>
+        <div class="flex gap-4 mt-2" data-reveal>
+          <a href="#menu" class="bg-mango text-barako hover:bg-mangoDark font-bold px-6 py-3 rounded-full text-sm transition-colors shadow-lg">Tingnan ang Menu</a>
+          <a href="#reserve" class="bg-white/10 hover:bg-white/20 text-white font-bold px-6 py-3 rounded-full text-sm backdrop-blur transition-colors border border-white/20">Book a Kubo</a>
+        </div>
       </div>
-      <div class="flex flex-col items-center gap-2 pb-32 text-white/60">
-        <span class="text-[11px] font-mono uppercase tracking-widest">Scroll Down</span>
-        <i class="fa-solid fa-chevron-down scroll-cue"></i>
+
+      <div class="flex flex-col items-center gap-2 pb-24 text-white/60">
+        <span class="text-[10px] font-mono uppercase tracking-widest">Explore Our Space</span>
+        <i class="fa-solid fa-chevron-down scroll-cue" aria-hidden="true"></i>
       </div>
     </div>
   </section>
 
-  <!-- Menu Section with Expandable Tabs -->
-  <section id="menu" class="relative bg-coconut px-5 sm:px-8 py-20 sm:py-28">
+  <!-- Interactive Loyalty Card Section (CRO Gamification) -->
+  <section class="bg-white px-5 sm:px-8 py-16 border-b border-gray-100">
+    <div class="max-w-xl mx-auto text-center" data-reveal>
+      <span class="eyebrow">Virtual Reward Card</span>
+      <h2 class="font-display text-3xl text-barako">Salamat Stamp Card!</h2>
+      <p class="text-sm text-barako/75 mt-2">
+        We value community. Collect 5 virtual stamps today to simulate your loyal customer status and unlock a free **Secret Ube Latte** voucher!
+      </p>
+      
+      <div class="stamp-grid" id="stamp-grid">
+        <button class="stamp-slot" aria-label="Stamp slot 1" onclick="claimStamp(1)"><i class="fa-solid fa-mug-hot text-transparent text-xl"></i></button>
+        <button class="stamp-slot" aria-label="Stamp slot 2" onclick="claimStamp(2)"><i class="fa-solid fa-mug-hot text-transparent text-xl"></i></button>
+        <button class="stamp-slot" aria-label="Stamp slot 3" onclick="claimStamp(3)"><i class="fa-solid fa-mug-hot text-transparent text-xl"></i></button>
+        <button class="stamp-slot" aria-label="Stamp slot 4" onclick="claimStamp(4)"><i class="fa-solid fa-mug-hot text-transparent text-xl"></i></button>
+        <button class="stamp-slot" aria-label="Stamp slot 5" onclick="claimStamp(5)"><i class="fa-solid fa-gift text-transparent text-xl"></i></button>
+      </div>
+      <p class="text-[11px] font-mono mt-4 text-teal uppercase tracking-widest font-bold" id="stamp-hint">Tap on an empty slot to stamp your card!</p>
+    </div>
+  </section>
+
+  <!-- Interactive Custom Drink Builder Section ("Timplahan Studio") -->
+  <section id="builder" class="bg-coconut px-5 sm:px-8 py-20 border-b border-gray-100">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12" data-reveal>
+        <span class="eyebrow">Timplahan Studio</span>
+        <h2 class="section-title text-3xl">Timplahin Mo! (Mix Creator)</h2>
+        <p class="section-sub">Customize your dream drink combo in our interactive virtual bar. Mix your sweetness, select your local ingredients, and see it generated!</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 items-center bg-white p-6 sm:p-8 rounded-3xl border border-teal/10 shadow-sm" data-reveal>
+        <!-- Builder controls -->
+        <div class="space-y-6">
+          <div class="field">
+            <label for="build-base">Select Your Tea/Coffee Base</label>
+            <select id="build-base" onchange="updateCustomDrink()">
+              <option value="barako" data-price="100">☕ Native Batangas Barako</option>
+              <option value="ube" data-price="130" selected>🍠 Creamy Ube Oat Milk</option>
+              <option value="salabat" data-price="95">🍋 Calamansi Ginger Salabat</option>
+              <option value="matcha" data-price="140">🍃 Premium Pandan Matcha</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-teal uppercase tracking-wider mb-2">Pinoy Sweetness Level: <span class="text-mango" id="sweet-label">100% (Tamang Tamis)</span></label>
+            <input type="range" id="build-sweet" min="0" max="120" step="30" value="100" class="w-full accent-teal" oninput="updateCustomDrink()">
+            <div class="flex justify-between text-[11px] text-barako/50 font-mono mt-1">
+              <span>0% (Walang Asukal)</span>
+              <span>100% (Tamang Tamis)</span>
+              <span>120% (Extra Sweet)</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Choose Native Sinker</label>
+            <div class="grid grid-cols-2 gap-2 mt-1">
+              <label class="flex items-center gap-2 border border-gray-200 rounded-xl p-3 cursor-pointer hover:border-teal transition-all">
+                <input type="radio" name="sinker" value="boba" checked onchange="updateCustomDrink()" class="accent-teal">
+                <span class="text-sm font-semibold">Tapioca Boba (+₱15)</span>
+              </label>
+              <label class="flex items-center gap-2 border border-gray-200 rounded-xl p-3 cursor-pointer hover:border-teal transition-all">
+                <input type="radio" name="sinker" value="nata" onchange="updateCustomDrink()" class="accent-teal">
+                <span class="text-sm font-semibold">Nata de Coco (+₱15)</span>
+              </label>
+              <label class="flex items-center gap-2 border border-gray-200 rounded-xl p-3 cursor-pointer hover:border-teal transition-all">
+                <input type="radio" name="sinker" value="jelly" onchange="updateCustomDrink()" class="accent-teal">
+                <span class="text-sm font-semibold">Grass Jelly (+₱10)</span>
+              </label>
+              <label class="flex items-center gap-2 border border-gray-200 rounded-xl p-3 cursor-pointer hover:border-teal transition-all">
+                <input type="radio" name="sinker" value="none" onchange="updateCustomDrink()" class="accent-teal">
+                <span class="text-sm font-semibold">No Sinkers</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom visual output card -->
+        <div class="bg-teal text-white p-6 rounded-2xl flex flex-col justify-between h-full min-h-[280px] shadow-inner relative overflow-hidden">
+          <div class="grain absolute inset-0 opacity-10"></div>
+          <div>
+            <span class="text-mango font-mono uppercase text-[10px] tracking-widest font-bold">Your Custom Sip</span>
+            <h3 class="font-display text-2xl text-white mt-1" id="custom-drink-name">Custom Ube Oat Milk</h3>
+            <p class="text-sm text-white/80 mt-2 font-mono leading-relaxed" id="custom-drink-desc">
+              Sweetened at 100% sweet level, paired nicely with premium chewy tapioca pearls.
+            </p>
+          </div>
+          <div class="mt-6 flex justify-between items-center border-t border-white/20 pt-4 z-10">
+            <div>
+              <span class="text-[10px] text-white/60 font-mono block">Estimated Cost</span>
+              <span class="text-mango text-2xl font-bold font-mono" id="custom-drink-price">₱145</span>
+            </div>
+            <button onclick="addCustomDrinkToCart()" class="bg-mango hover:bg-mangoDark text-barako font-bold px-4 py-2.5 rounded-xl text-xs flex items-center gap-2 transition-all shadow-md">
+              <i class="fa-solid fa-cart-plus"></i> Add Custom Mix
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Menu Section with Search & Expandable Filters -->
+  <section id="menu" class="relative bg-white px-5 sm:px-8 py-20 sm:py-28 border-b border-gray-100">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-10" data-reveal>
-        <span class="eyebrow">The Menu</span>
-        <h2 class="section-title">Ano Gusto Mo?</h2>
-        <p class="section-sub">Freshly brewed Barako coffee, authentic teas, and baked-with-love snacks.</p>
+        <span class="eyebrow">Interactive Menu</span>
+        <h2 class="section-title">Ano Gusto Mo, Suki?</h2>
+        <p class="section-sub">Freshly brewed Batangas coffee, heritage milk teas, and baked-with-love snacks.</p>
+      </div>
+
+      <!-- Quick Search Bar to increase SEO user engagement and retention -->
+      <div class="max-w-md mx-auto mb-8" data-reveal>
+        <div class="relative">
+          <input type="text" id="menu-search" placeholder="Search for Ube, Pandesal, Barako..." class="w-full px-5 py-3 pl-12 rounded-full border-2 border-teal/10 focus:border-teal focus:outline-none shadow-sm text-sm" oninput="filterMenuBySearch()">
+          <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+        </div>
       </div>
       
-      <!-- Expandable Tabs Component -->
+      <!-- Expandable Category Tabs -->
       <div class="expandable-tabs-wrapper" data-reveal>
-        <div class="expandable-tabs">
+        <nav class="expandable-tabs" aria-label="Menu category filters">
           <button class="tab-btn active" data-category="espresso">
-            <i class="fa-solid fa-mug-hot"></i>
+            <i class="fa-solid fa-mug-hot" aria-hidden="true"></i>
             <span>Barako & Coffee</span>
           </button>
           <div class="tab-separator"></div>
           <button class="tab-btn" data-category="non-coffee">
-            <i class="fa-solid fa-leaf"></i>
+            <i class="fa-solid fa-leaf" aria-hidden="true"></i>
             <span>Teas & Refreshers</span>
           </button>
           <div class="tab-separator"></div>
           <button class="tab-btn" data-category="pastries">
-            <i class="fa-solid fa-bread-slice"></i>
-            <span>Merienda</span>
+            <i class="fa-solid fa-bread-slice" aria-hidden="true"></i>
+            <span>Merienda Bites</span>
           </button>
-        </div>
+        </nav>
       </div>
 
+      <!-- Live Dynamic Grid -->
       <div id="menu-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"></div>
     </div>
   </section>
 
-  <!-- Community Wall -->
-  <section id="wall" class="relative cork-bg px-5 sm:px-8 py-20 sm:py-28 overflow-hidden">
+  <!-- Community Wall (Fully dynamic digital polaroid board) -->
+  <section id="wall" class="relative cork-bg px-5 sm:px-8 py-20 sm:py-28 overflow-hidden border-b border-gray-200">
     <div class="grain absolute inset-0"></div>
     <div class="max-w-6xl mx-auto relative z-10 w-full">
       <div class="text-center mb-12" data-reveal>
-        <span class="eyebrow">Community Canvas</span>
-        <h2 class="section-title">Local Legends</h2>
-        <p class="section-sub">I-post mo ang vibe mo! Upload your photo and get featured on our digital dingding (wall).</p>
+        <span class="eyebrow">Pinoy Community Canvas</span>
+        <h2 class="section-title">Local Legends Wall</h2>
+        <p class="section-sub">Capture the cozy neighborhood vibe! Upload your photo below and watch it append live to our cork board.</p>
       </div>
       
-      <!-- Masonry Grid Centered via CSS -->
+      <!-- Polaroid Grid (Dynamic generation & User uploads rendered here) -->
       <div class="masonry" data-reveal id="polaroid-grid">
-        <!-- Polaroid 1 -->
-        <div class="polaroid" style="--rot:-3deg">
+        <!-- Initial Static Polaroid 1 -->
+        <div class="polaroid" style="--rot:-2deg">
           <div class="polaroid-inner" style="aspect-ratio:500/640">
             <div class="polaroid-front">
               <span class="pin"></span>
-              <!-- Fixed Image -->
-              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1541167863299-9b595f08c007?auto=format&fit=crop&q=80&w=500&h=640" alt="Customer" loading="lazy" decoding="async"></div>
+              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1541167863299-9b595f08c007?auto=format&fit=crop&q=80&w=500&h=640" alt="Customer sipping Barako coffee at cafe" loading="lazy"></div>
               <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
             </div>
             <div class="polaroid-back">
@@ -403,351 +687,681 @@ img{max-width:100%;display:block}
             </div>
           </div>
         </div>
-        <!-- Polaroid 2 -->
-        <div class="polaroid" style="--rot:2deg">
+        <!-- Initial Static Polaroid 2 -->
+        <div class="polaroid" style="--rot:3deg">
           <div class="polaroid-inner" style="aspect-ratio:500/400">
             <div class="polaroid-front">
               <span class="tape tape-teal"></span>
-              <!-- Fixed Image -->
-              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&q=80&w=500&h=400" alt="Friends" loading="lazy" decoding="async"></div>
+              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&q=80&w=500&h=400" alt="Barkada group enjoying drinks in Philippines cafe" loading="lazy"></div>
               <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
             </div>
             <div class="polaroid-back">
               <p class="hand-handle">@barkada_goals</p>
-              <p class="hand-drink">Ube Latte x3<br>Tuesday tsismis</p>
+              <p class="hand-drink">Ube Latte x3<br>Tuesday tsismis sessions</p>
               <i class="fa-solid fa-heart back-heart" aria-hidden="true"></i>
             </div>
           </div>
         </div>
-        <!-- Polaroid 3 -->
-        <div class="polaroid" style="--rot:-2deg">
+        <!-- Initial Static Polaroid 3 -->
+        <div class="polaroid" style="--rot:-1.5deg">
           <div class="polaroid-inner" style="aspect-ratio:500/620">
             <div class="polaroid-front">
               <span class="tape tape-gold"></span>
-              <!-- Fixed Image -->
-              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1517938532-a98cb36c8307?auto=format&fit=crop&q=80&w=500&h=620" alt="Smiling customer" loading="lazy" decoding="async"></div>
+              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1517938532-a98cb36c8307?auto=format&fit=crop&q=80&w=500&h=620" alt="Smiling customer holding a matcha tea" loading="lazy"></div>
               <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
             </div>
             <div class="polaroid-back">
               <p class="hand-handle">@study_with_me</p>
-              <p class="hand-drink">Cold Brew<br>Thesis mode: ON</p>
-              <i class="fa-solid fa-heart back-heart" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-        <!-- Polaroid 4 -->
-        <div class="polaroid" style="--rot:3deg">
-          <div class="polaroid-inner" style="aspect-ratio:500/500">
-            <div class="polaroid-front">
-              <span class="pin"></span>
-              <!-- Fixed Image -->
-              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&q=80&w=500&h=500" alt="Coffee cup" loading="lazy" decoding="async"></div>
-              <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
-            </div>
-            <div class="polaroid-back">
-              <p class="hand-handle">@coffee_ninja</p>
-              <p class="hand-drink">Salabat Sparkler<br>Immunity boost!</p>
-              <i class="fa-solid fa-heart back-heart" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-        <!-- Polaroid 5 -->
-        <div class="polaroid" style="--rot:-1.5deg">
-          <div class="polaroid-inner" style="aspect-ratio:500/600">
-            <div class="polaroid-front">
-              <span class="tape tape-pink"></span>
-              <!-- Fixed Image -->
-              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1550950158-d0d960dff51b?auto=format&fit=crop&q=80&w=500&h=600" alt="Burger/Snack" loading="lazy" decoding="async"></div>
-              <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
-            </div>
-            <div class="polaroid-back">
-              <p class="hand-handle">@hungry_juan</p>
-              <p class="hand-drink">Pandesal Sandwich<br>Lunch special</p>
+              <p class="hand-drink">Cold Brew<br>Midterm Thesis Mode: Active</p>
               <i class="fa-solid fa-heart back-heart" aria-hidden="true"></i>
             </div>
           </div>
         </div>
       </div>
       
+      <!-- Interactive Upload Trigger -->
       <div class="text-center mt-12" data-reveal>
         <button id="open-upload" class="btn-stamp">&#128248; I-Upload Ang Vibe Mo</button>
       </div>
     </div>
   </section>
 
-  <!-- Reservations -->
+  <!-- Cozy Corner Booking (Step-by-Step UX flow with interactive seating zone selector) -->
   <section id="reserve" class="relative bg-teal px-5 sm:px-8 py-20 sm:py-28">
     <div class="grain absolute inset-0"></div>
     <div class="max-w-3xl mx-auto relative z-10">
       <div class="text-center mb-10" data-reveal>
-        <span class="eyebrow on-dark">Reservations</span>
-        <h2 class="section-title on-dark">May Table Ka Na?</h2>
-        <p class="section-sub on-dark">Don't wait in line! Reserve your spot for the barkada.</p>
+        <span class="eyebrow on-dark">Kubo Booking & Seating</span>
+        <h2 class="section-title on-dark">Cozy Seat Selector</h2>
+        <p class="section-sub on-dark">Save a secure spot for your family or study barkada. Pick your cozy aesthetic zone below!</p>
       </div>
+
       <form id="reserve-form" class="reserve-card" data-reveal>
-        <div class="field">
-          <label for="r-name">Name</label>
-          <input id="r-name" name="name" required placeholder="Your name">
+        <!-- Custom Seating Zone Map Selector -->
+        <div class="mb-6">
+          <label class="block text-xs font-bold text-mango uppercase tracking-widest mb-3 text-center">Select Lounge Area</label>
+          <div class="zone-selector-grid" role="radiogroup" aria-label="Seating Zone Selection">
+            <button type="button" class="zone-btn text-white selected" onclick="selectZone(this, 'Indoor Barako Lounge', '☕ Rich coffee aroma, air-conditioned workspace, plugs available.')">
+              <span class="block text-mango text-sm font-bold">Barako Lounge</span>
+              <span class="text-[10px] opacity-75">Indoor Cozy</span>
+            </button>
+            <button type="button" class="zone-btn text-white" onclick="selectZone(this, 'Garden Kubo Cottage', '🌴 Open-air native gazebo huts surrounded by tropical orchids.')">
+              <span class="block text-mango text-sm font-bold">Garden Kubo</span>
+              <span class="text-[10px] opacity-75">Scenic Huts</span>
+            </button>
+            <button type="button" class="zone-btn text-white" onclick="selectZone(this, 'Calamansi Bar Corner', '🍋 Vibrant, tall wooden stools perfect for quick bites.')">
+              <span class="block text-mango text-sm font-bold">Calamansi Corner</span>
+              <span class="text-[10px] opacity-75">Stools / Bar</span>
+            </button>
+          </div>
+          <p class="text-center text-xs italic text-white/90 mt-3 font-mono" id="zone-description">
+            ☕ Rich coffee aroma, air-conditioned workspace, plugs available.
+          </p>
         </div>
+
+        <div class="field">
+          <label for="r-name">Full Name</label>
+          <input id="r-name" name="name" required placeholder="What name should we hold the table under?">
+        </div>
+
         <div class="field-row">
           <div class="field">
-            <label for="r-guests">Guests</label>
-            <input type="number" id="r-guests" name="guests" min="1" max="10" required placeholder="0">
+            <label for="r-guests">Number of Guests</label>
+            <input type="number" id="r-guests" name="guests" min="1" max="12" required placeholder="Number of people">
           </div>
           <div class="field">
-            <label for="r-time">Time</label>
+            <label for="r-time">Target Arrival Time</label>
             <input type="time" id="r-time" name="time" required>
           </div>
         </div>
-        <button type="submit" class="btn-stamp mt-4 w-full justify-center" style="background:var(--mango);color:var(--barako)">Reserve Table</button>
+        
+        <button type="submit" class="btn-stamp mt-6 w-full justify-center" style="background:var(--mango);color:var(--barako)">
+          Reserve My Chosen Seating Zone
+        </button>
       </form>
       
-      <!-- Testimonials -->
-      <div class="mt-16" data-reveal>
-        <h3 class="text-center font-display text-white text-2xl mb-6">Chismis (Reviews)</h3>
+      <!-- Chismis Dynamic Testimonials Slider -->
+      <div class="mt-20 animate-fadeIn" data-reveal>
+        <h3 class="text-center font-display text-white text-3xl mb-8">Chismis (What Neighbors Say)</h3>
         <div class="testimonial-track">
           <div class="testimonial-card">
-            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <p class="quote">"Ang ganda ng vibe! Parang nasa Probinsya ka pero may WiFi."</p>
-            <p class="author">— Juan D.</p>
+            <div class="stars" aria-label="5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="quote">"Ang ganda ng vibe! Absolute work sanctuary. Super strong Batangas coffee with amazing high-speed WiFi."</p>
+            <p class="author">— Juan De la Cruz, Manila Local</p>
           </div>
           <div class="testimonial-card">
-            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <p class="quote">"Best Ube Latte in the city. Hindi ma-asim, perfect sweet!"</p>
-            <p class="author">— Maria L.</p>
+            <div class="stars" aria-label="5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="quote">"Their signature Ube Oat Milk is legendary. Perfect sweetness control! The digital wall feels incredibly warm."</p>
+            <p class="author">— Bianca G., BGC Food Blogger</p>
           </div>
           <div class="testimonial-card">
-            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
-            <p class="quote">"Love the community wall. Nakita ko picture ni ate ko dito!"</p>
-            <p class="author">— Pedro S.</p>
+            <div class="stars" aria-label="4.5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+            <p class="quote">"My barkada books the Garden Kubo almost every Sunday. Love the fresh Calamansi tea options!"</p>
+            <p class="author">— Kevin Santos, Tech Lead</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About Us -->
-  <section id="about" class="bg-coconut px-5 sm:px-8 py-20 sm:py-28">
+  <!-- About Us Section -->
+  <section id="about" class="bg-white px-5 sm:px-8 py-20 sm:py-28">
     <div class="max-w-4xl mx-auto text-center" data-reveal>
-      <span class="eyebrow">Our Roots</span>
-      <h2 class="section-title mb-6">From Manila With Love</h2>
+      <span class="eyebrow">Our Roots & Heritage</span>
+      <h2 class="section-title mb-6">Serving Smiles & Pamilya</h2>
       <div class="about-frame mb-8">
-        <!-- Fixed Image -->
-        <img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&q=80&w=600&h=400" alt="Team photo" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&q=80&w=600&h=400" alt="Friendly local Filipino coffee shop team welcoming customers with smiles">
       </div>
-      <p class="text-lg text-barako/80 leading-relaxed mb-8">
-        We started <strong>Boba Ka Tea?</strong> to bring the warmth of a Filipino living room to your neighborhood. No pretension, just strong Barako coffee, sweet treats, and a place where everyone is family (pamilya). We source our beans from Batangas and our ingredients from local markets.
+      <p class="text-base sm:text-lg text-barako/85 leading-relaxed mb-8 max-w-2xl mx-auto">
+        We conceptualized <strong>Boba Ka Tea?</strong> as a whimsical love letter to the warmth of a Filipino home living room. Every batch of coffee is made with 100% authentic single-origin Barako beans ethically sourced from local farmers in Batangas. Everyone who steps inside is considered <span class="text-teal font-bold">Kapamilya</span>.
       </p>
-      <div class="grid grid-cols-3 gap-4 max-w-md mx-auto font-mono text-xs uppercase tracking-wider text-barako/60">
+      
+      <!-- Conversational Trust Signals -->
+      <div class="grid grid-cols-3 gap-4 max-w-md mx-auto font-mono text-xs uppercase tracking-wider text-barako/65">
         <div>
           <span class="block text-3xl font-bold text-teal">100%</span>
-          Pinoy Beans
+          Batangas Beans
         </div>
         <div>
-          <span class="block text-3xl font-bold text-teal">50+</span>
-          Happy Customers
+          <span class="block text-3xl font-bold text-teal">4.9★</span>
+          Rating average
         </div>
         <div>
           <span class="block text-3xl font-bold text-teal">∞</span>
-          Good Vibes
+          Cozy hospitality
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="bg-barako text-white/60 py-12 px-6 text-center text-sm">
-  <div class="max-w-md mx-auto space-y-4">
-    <h3 class="font-display text-3xl text-white">Boba Ka Tea?</h3>
-    <p>123 Rizal Avenue, Open Daily 7am - 9pm</p>
-    <div class="flex justify-center gap-6 text-2xl">
-      <a href="#" class="hover:text-mango transition-colors"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#" class="hover:text-mango transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#" class="hover:text-mango transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+<footer class="bg-barako text-white/75 py-16 px-6 text-center text-sm border-t border-white/5 relative z-10">
+  <div class="max-w-2xl mx-auto space-y-6">
+    <h3 class="font-display text-4xl text-white">Boba Ka Tea?</h3>
+    <address class="not-italic space-y-2 text-white/70">
+      <p><i class="fa-solid fa-location-dot text-mango mr-1.5" aria-hidden="true"></i> 123 Rizal Avenue, Metro Manila, Philippines</p>
+      <p><i class="fa-solid fa-clock text-mango mr-1.5" aria-hidden="true"></i> Open Daily: 7:00 AM — 9:00 PM</p>
+      <p><i class="fa-solid fa-phone text-mango mr-1.5" aria-hidden="true"></i> +63 2 8123 4567</p>
+    </address>
+    
+    <div class="flex justify-center gap-6 text-2xl pt-2">
+      <a href="https://instagram.com/bobakatea" class="text-white/60 hover:text-mango transition-colors" aria-label="Visit us on Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://facebook.com/bobakatea" class="text-white/60 hover:text-mango transition-colors" aria-label="Visit us on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://tiktok.com/@bobakatea" class="text-white/60 hover:text-mango transition-colors" aria-label="Visit us on TikTok"><i class="fa-brands fa-tiktok"></i></a>
     </div>
-    <p class="text-xs pt-4">&copy; 2024 Boba Ka Tea? Co. All rights reserved.</p>
+    
+    <div class="text-xs text-white/50 pt-8 border-t border-white/10 space-y-2">
+      <p>&copy; 2026 Boba Ka Tea? Co. All rights reserved.</p>
+      <p>Hand-crafted with cozy love for the Pinoy community.</p>
+    </div>
   </div>
 </footer>
 
-<!-- Upload Modal -->
-<div class="sheet-backdrop" id="upload-backdrop"></div>
-<div class="sheet" id="upload-sheet">
+<!-- Interactive Shopping Cart Drawer Modal -->
+<div class="sheet" id="cart-sheet" role="dialog" aria-modal="true" aria-labelledby="cart-title">
   <div class="sheet-handle"></div>
-  <button class="sheet-close" id="close-upload"><i class="fa-solid fa-xmark"></i></button>
+  <button class="sheet-close" id="close-cart" aria-label="Close Shopping Cart"><i class="fa-solid fa-xmark"></i></button>
   <div class="sheet-content">
-    <h3 class="font-display text-3xl mb-1 text-teal">Upload Your Vibe</h3>
-    <p class="text-sm text-barako/60 mb-6">Get featured on the Local Legends wall!</p>
+    <h3 class="font-display text-3xl mb-1 text-teal" id="cart-title">Your Sips & Merienda</h3>
+    <p class="text-sm text-barako/65 mb-6">Pre-order checkout simulation for quick pick-up!</p>
     
-    <form id="upload-form">
+    <div id="cart-items-container" class="space-y-4 mb-8">
+      <!-- Dynamic list of added cart items -->
+      <p class="text-center py-8 text-sm text-gray-400 font-mono">Ang lungkot ng cart mo... Magdagdag ka muna! 🥺</p>
+    </div>
+
+    <div class="border-t border-gray-100 pt-4 space-y-4">
+      <div class="flex justify-between items-center font-mono font-bold text-lg">
+        <span>Total Estimate:</span>
+        <span class="text-teal" id="cart-total-price">₱0.00</span>
+      </div>
+
+      <button id="cart-checkout-btn" class="btn-stamp w-full justify-center" disabled onclick="checkoutCart()">
+        Confirm Pre-Order (Simulate)
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Dynamic Seating Ticket Passport Modal (Replaces browser alerts) -->
+<div class="sheet" id="ticket-sheet" role="dialog" aria-modal="true">
+  <div class="sheet-handle"></div>
+  <button class="sheet-close" id="close-ticket" aria-label="Close ticket"><i class="fa-solid fa-xmark"></i></button>
+  <div class="sheet-content text-center">
+    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-mango/10 text-mango text-4xl mb-4">
+      <i class="fa-solid fa-circle-check"></i>
+    </div>
+    <h3 class="font-display text-3xl text-teal mb-2">Reserved successfully!</h3>
+    <p class="text-sm text-barako/75 mb-6">Show this Cozy Passport to our baristas upon arrival!</p>
+    
+    <!-- Retro Ticket Pass View -->
+    <div class="bg-white border-2 border-dashed border-teal/30 p-6 rounded-2xl text-left font-mono text-xs space-y-3 relative overflow-hidden max-w-sm mx-auto">
+      <div class="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-coconut"></div>
+      <div class="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-coconut"></div>
+      
+      <div class="flex justify-between border-b border-gray-100 pb-2">
+        <span class="font-bold text-teal">RESERVATION COZY PASS</span>
+        <span class="text-gray-400">#BKT-2026</span>
+      </div>
+      <div class="grid grid-cols-2 gap-y-3 pt-2">
+        <div>
+          <span class="text-gray-400 block text-[10px]">GUEST</span>
+          <span class="font-bold text-sm text-barako" id="ticket-guest-name">-</span>
+        </div>
+        <div>
+          <span class="text-gray-400 block text-[10px]">PARTY SIZE</span>
+          <span class="font-bold text-sm text-barako" id="ticket-party-size">-</span>
+        </div>
+        <div>
+          <span class="text-gray-400 block text-[10px]">TIME ARRIVAL</span>
+          <span class="font-bold text-sm text-barako" id="ticket-arrival-time">-</span>
+        </div>
+        <div>
+          <span class="text-gray-400 block text-[10px]">ZONE AREA</span>
+          <span class="font-bold text-sm text-teal" id="ticket-zone">-</span>
+        </div>
+      </div>
+      
+      <!-- Generated Fake Barcode for authentic micro-interactions -->
+      <div class="pt-6 text-center border-t border-gray-100 mt-2">
+        <div class="inline-block bg-barako text-white px-4 py-2 text-xs font-mono tracking-widest font-bold">
+          ||||| ||| |||| || |||| |||
+        </div>
+        <p class="text-[9px] text-gray-400 mt-1">SEE YOU SOON, PARE!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Polaroid Upload Sheet -->
+<div class="sheet" id="upload-sheet" role="dialog" aria-modal="true" aria-labelledby="upload-title">
+  <div class="sheet-handle"></div>
+  <button class="sheet-close" id="close-upload" aria-label="Close upload window"><i class="fa-solid fa-xmark"></i></button>
+  <div class="sheet-content">
+    <h3 class="font-display text-3xl mb-1 text-teal" id="upload-title">Upload Your Vibe</h3>
+    <p class="text-sm text-barako/65 mb-6">Take a snap of your food/drink to get pinned instantly to the live Local Legends cork wall!</p>
+    
+    <form id="upload-form" class="space-y-4">
       <div class="dropzone" id="dropzone">
-        <img class="dropzone-preview" id="preview-img" alt="Preview">
+        <img class="dropzone-preview" id="preview-img" alt="Uploaded polaroid preview image">
         <div class="dropzone-placeholder">
           <i class="fa-solid fa-cloud-arrow-up text-4xl mb-2 text-mango"></i>
-          <p class="font-bold text-teal">Tap to upload photo</p>
-          <p class="text-xs mt-1">or drag and drop here</p>
+          <p class="font-bold text-teal">Tap to upload your photo</p>
+          <p class="text-xs mt-1">or drag & drop your image file here</p>
         </div>
         <input type="file" id="file-input" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer">
       </div>
 
-      <div class="field mt-6">
-        <label>IG Handle (Optional)</label>
-        <div class="ig-input-wrap" style="display:flex;align-items:center;border:2px solid rgba(0,92,75,.15);border-radius:12px;background:#fff;overflow:hidden">
-          <span class="text-barako/40 px-3 font-bold">@</span>
-          <input type="text" placeholder="username" style="border:none!important;flex:1;padding:.8rem 0;font-size:1rem">
+      <!-- Quick Preset Selectors (Enables instant testing without file upload) -->
+      <div>
+        <label class="block text-[11px] font-mono font-bold uppercase tracking-wider text-teal mb-2">No photo ready? Use a cozy café preset:</label>
+        <div class="grid grid-cols-3 gap-2">
+          <button type="button" class="border border-gray-200 rounded-lg p-1.5 hover:border-teal text-xs font-semibold bg-white transition-all truncate" onclick="applyPreset('https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&q=80&w=400')">☕ Cozy Cup</button>
+          <button type="button" class="border border-gray-200 rounded-lg p-1.5 hover:border-teal text-xs font-semibold bg-white transition-all truncate" onclick="applyPreset('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=400')">🍵 Foam Art</button>
+          <button type="button" class="border border-gray-200 rounded-lg p-1.5 hover:border-teal text-xs font-semibold bg-white transition-all truncate" onclick="applyPreset('https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=400')">🥖 Merienda Roll</button>
         </div>
       </div>
 
       <div class="field">
-        <label>Your Order</label>
-        <input type="text" placeholder="e.g. Ube Latte, Pandesal" required>
+        <label for="u-handle">Instagram Handle (Optional)</label>
+        <div class="flex items-center border-2 border-teal/15 rounded-xl bg-white overflow-hidden focus-within:border-teal">
+          <span class="text-barako/40 px-3 font-bold font-mono">@</span>
+          <input type="text" id="u-handle" placeholder="username" class="border-none focus:ring-0 p-3 text-sm flex-1">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="u-drink">What did you order?</label>
+        <input type="text" id="u-drink" placeholder="e.g., Creamy Ube Latte with Pandesal" required>
       </div>
 
       <label class="consent-row">
-        <input type="checkbox" required>
-        <span>I agree to let <strong>Boba Ka Tea?</strong> feature this photo on our digital wall.</span>
+        <input type="checkbox" required checked>
+        <span>I consent to share this photo on the public digital cork board wall.</span>
       </label>
 
-      <button type="submit" class="btn-stamp w-full justify-center mt-2" id="submit-upload">
-        Send to Admin!
+      <button type="submit" class="btn-stamp w-full justify-center" id="submit-upload">
+        Pin to the Legends Wall! 📌
       </button>
     </form>
   </div>
 </div>
 
-<!-- Toast Notification -->
-<div class="toast" id="toast">Salamat! You're on the waitlist for the wall! 🎉</div>
+<!-- Toast Popup Notification -->
+<div class="toast" id="toast">Salamat! Successfully added to the community database! 🎉</div>
 
 <script>
+// --- In-Memory State Management ---
+let cart = [];
+let stampCount = 0;
+let chosenZoneName = "Indoor Barako Lounge";
+let activeCategory = "espresso";
+let menuSearchQuery = "";
+
+// Mock Master Database
+const menuItems = {
+  espresso: [
+    { id: 'e1', name: "Batangas Barako Brew", price: 60, desc: "Strong, authentic dark roast directly from lipa highlands.", img: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&q=80&w=400", badge: "Best Seller" },
+    { id: 'e2', name: "Barako Flat White", price: 95, desc: "Espresso sweetened with raw cane sugar and velvet steamed milk.", img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=400" },
+    { id: 'e3', name: "Spiced Pandan Latte", price: 110, desc: "House recipe espresso combined with pandan extract infusion.", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=80&w=400", badge: "Signature" },
+    { id: 'e4', name: "Cold Brew High", price: 120, desc: "Slow steeped for 18 hours to reveal robust chocolate undertones.", img: "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&q=80&w=400" }
+  ],
+  "non-coffee": [
+    { id: 'n1', name: "Signature Creamy Ube Latte", price: 130, desc: "Native purple yam puree layered with oat milk and real sweet taro.", img: "https://images.unsplash.com/photo-1515825838458-f2a94b20105a?auto=format&fit=crop&q=80&w=400", badge: "Community Fav" },
+    { id: 'n2', name: "Calamansi Ginger Ginger", price: 90, desc: "A zesty warm mocktail with spicy salabat ginger roots.", img: "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&q=80&w=400" },
+    { id: 'n3', name: "Iced Pandan Matcha tea", price: 140, desc: "Organic stone-ground green tea whisked with aromatic pandan.", img: "https://images.unsplash.com/photo-1582793988951-9aed5509eb97?auto=format&fit=crop&q=80&w=400" },
+    { id: 'n4', name: "Sweet Calamansi Cold Fizzer", price: 70, desc: "Refreshing local citrus, honey nectar, cold water, and lots of ice.", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=400" }
+  ],
+  pastries: [
+    { id: 'p1', name: "Pandesal Basket", price: 45, desc: "Three fresh baked soft bread rolls served warm with Batangas salted butter.", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=400" },
+    { id: 'p2', name: "Artisan Ube Hopia", price: 65, desc: "Indulgently flaky sweet pocket pastries packed with premium ube halaya.", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=400", badge: "Highly Fresh" },
+    { id: 'p3', name: "Sweet Banana Cue Skewers", price: 80, desc: "Two skewers of deep-fried saba bananas heavily glazed in brown sugar caramel.", img: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&q=80&w=400" }
+  ]
+};
+
 document.addEventListener('DOMContentLoaded', () => {
-  // --- Fluid Menu Logic ---
-  const fluidTrigger = document.getElementById('fluid-trigger');
-  const fluidMenu = document.getElementById('fluid-menu');
-  const fluidBackdrop = document.getElementById('fluid-backdrop');
-  const fluidItems = document.querySelectorAll('.fluid-item');
+  initNavigation();
+  initMenuFilters();
+  initAboutInteraction();
+  initPolaroidClickHandlers();
+  initImageUploadLogic();
+  initReservationSystem();
+  updateCustomDrink();
+  renderMenu();
+});
 
-  function toggleMenu() {
-    const isActive = fluidMenu.classList.toggle('active');
-    fluidBackdrop.classList.toggle('active', isActive);
-    document.body.style.overflow = isActive ? 'hidden' : '';
-  }
-
-  fluidTrigger.addEventListener('click', toggleMenu);
-  fluidBackdrop.addEventListener('click', toggleMenu);
+// --- Navigation & Sidebar Logic ---
+function initNavigation() {
+  const trigger = document.getElementById('fluid-trigger');
+  const menu = document.getElementById('fluid-menu');
+  const backdrop = document.getElementById('fluid-backdrop');
   
-  fluidItems.forEach(item => {
-    item.addEventListener('click', () => {
-      if(fluidMenu.classList.contains('active')) toggleMenu();
+  function toggle() {
+    const active = menu.classList.toggle('active');
+    backdrop.classList.toggle('active', active);
+  }
+  
+  trigger.addEventListener('click', toggle);
+  backdrop.addEventListener('click', toggle);
+  
+  document.querySelectorAll('.fluid-item').forEach(link => {
+    link.addEventListener('click', () => {
+      if (menu.classList.contains('active')) toggle();
     });
   });
 
-  // --- Expandable Tabs Logic ---
-  const tabBtns = document.querySelectorAll('.tab-btn');
-  const menuGrid = document.getElementById('menu-grid');
-  
-  // Mock Menu Data with PHP Prices
-  const menuItems = {
-    espresso: [
-      { name: "Barako Espresso", price: "₱60", desc: "Strong & bold Batangas coffee", img: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&q=80&w=400" },
-      { name: "Cortado", price: "₱95", desc: "Espresso & warm steamed milk", img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=400" },
-      { name: "Latte", price: "₱110", desc: "Smooth espresso with creamy foam", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=80&w=400" },
-      { name: "Cold Brew", price: "₱120", desc: "Steeped 18hrs, super smooth", img: "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&q=80&w=400" }
-    ],
-    "non-coffee": [
-      { name: "Ube Latte", price: "₱130", desc: "Purple yam extract & oat milk", img: "https://images.unsplash.com/photo-1515825838458-f2a94b20105a?auto=format&fit=crop&q=80&w=400" },
-      { name: "Salabat Sparkler", price: "₱90", desc: "Ginger tea with calamansi fizz", img: "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&q=80&w=400" },
-      { name: "Matcha", price: "₱140", desc: "Premium grade green tea", img: "https://images.unsplash.com/photo-1582793988951-9aed5509eb97?auto=format&fit=crop&q=80&w=400" },
-      { name: "Calamansi Juice", price: "₱70", desc: "Freshly squeezed, icy cold", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=400" }
-    ],
-    pastries: [
-      { name: "Pandesal", price: "₱45", desc: "Warm bread rolls, butter included", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=400" },
-      { name: "Ube Hopia", price: "₱65", desc: "Flaky pastry with ube filling", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=400" },
-      { name: "Banana Cue", price: "₱80", desc: "Caramelized banana skewer", img: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&q=80&w=400" }
-    ]
-  };
-
-  function renderMenu(category) {
-    menuGrid.classList.add('fading');
-    setTimeout(() => {
-      menuGrid.innerHTML = '';
-      menuItems[category].forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'menu-card';
-        card.innerHTML = `
-          <div class="menu-card-img-wrap"><img src="${item.img}" alt="${item.name}" loading="lazy"></div>
-          <div class="menu-card-body">
-            <h3 class="menu-card-name">${item.name}</h3>
-            <p class="menu-card-desc">${item.desc}</p>
-            <div class="menu-card-footer">
-              <span class="price-tag">${item.price}</span>
-              <button class="add-circle"><i class="fa-solid fa-plus"></i></button>
-            </div>
-          </div>
-        `;
-        menuGrid.appendChild(card);
-      });
-      menuGrid.classList.remove('fading');
-    }, 200);
+  // Mobile Sticky Order Trigger
+  const mobileOrderTrigger = document.getElementById('mobile-order-trigger');
+  if (mobileOrderTrigger) {
+    mobileOrderTrigger.addEventListener('click', () => {
+      openSidebarCart();
+    });
   }
 
-  tabBtns.forEach(btn => {
+  // Cart Sidebar Controllers
+  const mobileCartBtn = document.getElementById('mobile-cart-btn');
+  const closeCartBtn = document.getElementById('close-cart');
+  const cartSheet = document.getElementById('cart-sheet');
+  const sheetBackdrop = document.getElementById('sheet-backdrop');
+
+  mobileCartBtn.addEventListener('click', openSidebarCart);
+  closeCartBtn.addEventListener('click', closeSidebarCart);
+  sheetBackdrop.addEventListener('click', () => {
+    closeSidebarCart();
+    closeReservationTicket();
+    document.getElementById('upload-sheet').classList.remove('active');
+  });
+}
+
+function openSidebarCart() {
+  document.getElementById('cart-sheet').classList.add('active');
+  document.getElementById('sheet-backdrop').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSidebarCart() {
+  document.getElementById('cart-sheet').classList.remove('active');
+  document.getElementById('sheet-backdrop').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// --- Dynamic Interactive Menu Logic ---
+function initMenuFilters() {
+  const btns = document.querySelectorAll('.tab-btn');
+  btns.forEach(btn => {
     btn.addEventListener('click', () => {
-      tabBtns.forEach(b => b.classList.remove('active'));
+      btns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      renderMenu(btn.dataset.category);
+      activeCategory = btn.dataset.category;
+      renderMenu();
     });
   });
+}
 
-  // Initial Render
-  renderMenu('espresso');
+function renderMenu() {
+  const grid = document.getElementById('menu-grid');
+  grid.classList.add('fading');
+  
+  setTimeout(() => {
+    grid.innerHTML = '';
+    const rawItems = menuItems[activeCategory] || [];
+    
+    // Filter by search text
+    const filtered = rawItems.filter(item => 
+      item.name.toLowerCase().includes(menuSearchQuery.toLowerCase()) || 
+      item.desc.toLowerCase().includes(menuSearchQuery.toLowerCase())
+    );
 
-  // --- Scroll Reveal Animation ---
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-      }
+    if (filtered.length === 0) {
+      grid.innerHTML = `
+        <div class="col-span-full text-center py-12 text-sm text-gray-400 font-mono">
+          Walang nahanap! Try searching for something else... 🔎
+        </div>
+      `;
+      grid.classList.remove('fading');
+      return;
+    }
+
+    filtered.forEach(item => {
+      const card = document.createElement('article');
+      card.className = 'menu-card';
+      card.innerHTML = `
+        <div class="menu-card-img-wrap">
+          ${item.badge ? `<span class="menu-card-badge">${item.badge}</span>` : ''}
+          <img src="${item.img}" alt="${item.name}" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <h3 class="menu-card-name">${item.name}</h3>
+          <p class="menu-card-desc">${item.desc}</p>
+          <div class="menu-card-footer">
+            <span class="price-tag">₱${item.price}.00</span>
+            <button class="add-circle" onclick="addItemToCart('${item.id}', '${item.name}', ${item.price})" aria-label="Add ${item.name} to order">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
     });
-  }, { threshold: 0.1 });
+    grid.classList.remove('fading');
+  }, 200);
+}
 
-  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+function filterMenuBySearch() {
+  const input = document.getElementById('menu-search');
+  menuSearchQuery = input.value;
+  renderMenu();
+}
 
-  // --- Polaroid Flip Logic ---
-  document.querySelectorAll('.polaroid-inner').forEach(inner => {
-    inner.addEventListener('click', function() {
-      this.parentElement.classList.toggle('is-flipped');
-    });
-  });
+// --- Cart System Logic ---
+function addItemToCart(id, name, price) {
+  const existing = cart.find(item => item.id === id);
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({ id, name, price, quantity: 1 });
+  }
+  updateCartUI();
+  showToast(`Added ${name} to your order! ☕`);
+}
 
-  // --- Upload Modal Logic ---
-  const openUploadBtn = document.getElementById('open-upload');
-  const closeUploadBtn = document.getElementById('close-upload');
-  const uploadSheet = document.getElementById('upload-sheet');
-  const uploadBackdrop = document.getElementById('upload-backdrop');
-  const dropzone = document.getElementById('dropzone');
-  const fileInput = document.getElementById('file-input');
-  const previewImg = document.getElementById('preview-img');
-  const uploadForm = document.getElementById('upload-form');
-  const toast = document.getElementById('toast');
-
-  function toggleSheet(show) {
-    if(show) {
-      uploadSheet.classList.add('active');
-      uploadBackdrop.classList.add('active');
-      document.body.style.overflow = 'hidden';
+function removeItemFromCart(id) {
+  const existing = cart.find(item => item.id === id);
+  if (existing) {
+    if (existing.quantity > 1) {
+      existing.quantity--;
     } else {
-      uploadSheet.classList.remove('active');
-      uploadBackdrop.classList.remove('active');
-      document.body.style.overflow = '';
+      cart = cart.filter(item => item.id !== id);
     }
   }
+  updateCartUI();
+}
 
-  openUploadBtn.addEventListener('click', () => toggleSheet(true));
-  closeUploadBtn.addEventListener('click', () => toggleSheet(false));
-  uploadBackdrop.addEventListener('click', () => toggleSheet(false));
+function updateCartUI() {
+  const container = document.getElementById('cart-items-container');
+  const totalLabel = document.getElementById('cart-total-price');
+  const mobileBadge = document.getElementById('mobile-cart-badge');
+  const mobileTotal = document.getElementById('mobile-cart-total');
+  const checkoutBtn = document.getElementById('cart-checkout-btn');
+
+  if (cart.length === 0) {
+    container.innerHTML = `<p class="text-center py-8 text-sm text-gray-400 font-mono">Ang lungkot ng cart mo... Magdagdag ka muna! 🥺</p>`;
+    totalLabel.innerText = "₱0.00";
+    mobileBadge.innerText = "0";
+    mobileTotal.innerText = "₱0.00";
+    checkoutBtn.disabled = true;
+    return;
+  }
+
+  container.innerHTML = '';
+  let sum = 0;
+  let count = 0;
+
+  cart.forEach(item => {
+    sum += item.price * item.quantity;
+    count += item.quantity;
+
+    const row = document.createElement('div');
+    row.className = 'flex justify-between items-center bg-white p-3 rounded-xl border border-gray-100 shadow-sm';
+    row.innerHTML = `
+      <div class="flex-1">
+        <h4 class="font-bold text-barako text-sm">${item.name}</h4>
+        <span class="text-xs text-teal font-mono">₱${item.price} each</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="text-gray-400 hover:text-red-500 font-bold p-1" onclick="removeItemFromCart('${item.id}')" aria-label="Decrease quantity">
+          <i class="fa-solid fa-minus"></i>
+        </button>
+        <span class="font-mono text-sm font-bold">${item.quantity}</span>
+        <button class="text-teal hover:text-tealDark font-bold p-1" onclick="addItemToCart('${item.id}', '${item.name}', ${item.price})" aria-label="Increase quantity">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+    `;
+    container.appendChild(row);
+  });
+
+  totalLabel.innerText = `₱${sum}.00`;
+  mobileBadge.innerText = count;
+  mobileTotal.innerText = `₱${sum}.00`;
+  checkoutBtn.disabled = false;
+}
+
+function checkoutCart() {
+  closeSidebarCart();
+  showToast("Pre-Order received! Simulating kitchen preparation... 🍳");
+  cart = [];
+  updateCartUI();
+}
+
+// --- Loyalty Rewards Gamification stamp card ---
+function claimStamp(slotIndex) {
+  const slots = document.querySelectorAll('.stamp-slot');
+  const target = slots[slotIndex - 1];
+
+  if (!target.classList.contains('stamped')) {
+    target.classList.add('stamped');
+    const icon = target.querySelector('i');
+    icon.classList.remove('text-transparent');
+    icon.classList.add('text-mango', 'scale-125');
+    stampCount++;
+    
+    showToast(`Got Stamp ${stampCount}/5! Salamat po! 🎉`);
+
+    if (stampCount === 5) {
+      document.getElementById('stamp-hint').innerHTML = "🌟 UNLOCKED! Secret free Ube Latte coupon code: <strong class='text-mango'>PINOYSIP2026</strong> 🌟";
+      showToast("🏆 Congratulations! You have unlocked your free rewards coupon!");
+    }
+  }
+}
+
+// --- Timplahan Custom Drink Builder Logic ---
+function updateCustomDrink() {
+  const baseSelect = document.getElementById('build-base');
+  const chosenOption = baseSelect.options[baseSelect.selectedIndex];
+  const baseName = chosenOption.text.split(' ').slice(1).join(' '); // strip emoji
+  const basePrice = parseInt(chosenOption.dataset.price);
+
+  const sweetSlider = document.getElementById('build-sweet');
+  const sweetVal = parseInt(sweetSlider.value);
+  let sweetLabel = "100% (Tamang Tamis)";
+  
+  if (sweetVal === 0) sweetLabel = "0% (No Sweetness)";
+  else if (sweetVal === 30) sweetLabel = "30% (Light Sweet)";
+  else if (sweetVal === 60) sweetLabel = "60% (Medium Sweet)";
+  else if (sweetVal === 90) sweetLabel = "90% (Sweet)";
+  else if (sweetVal === 120) sweetLabel = "120% (Pinoy Sweet!)";
+
+  document.getElementById('sweet-label').innerText = sweetLabel;
+
+  const sinkerVal = document.querySelector('input[name="sinker"]:checked').value;
+  let sinkerName = "no sinkers";
+  let extraCost = 0;
+
+  if (sinkerVal === 'boba') {
+    sinkerName = "chewy tapioca boba";
+    extraCost = 15;
+  } else if (sinkerVal === 'nata') {
+    sinkerName = "tender nata de coco cubes";
+    extraCost = 15;
+  } else if (sinkerVal === 'jelly') {
+    sinkerName = "cool grass jelly slices";
+    extraCost = 10;
+  }
+
+  const finalPrice = basePrice + extraCost;
+  
+  // Update view
+  document.getElementById('custom-drink-name').innerText = `Custom ${baseName}`;
+  document.getElementById('custom-drink-desc').innerText = `Crafted premium base mixed at ${sweetLabel}, and served with fresh ${sinkerName}. Perfectly tailored for your taste!`;
+  document.getElementById('custom-drink-price').innerText = `₱${finalPrice}`;
+}
+
+function addCustomDrinkToCart() {
+  const name = document.getElementById('custom-drink-name').innerText;
+  const priceString = document.getElementById('custom-drink-price').innerText.replace('₱', '');
+  const price = parseInt(priceString);
+
+  addItemToCart('custom-' + Date.now(), name, price);
+  openSidebarCart();
+}
+
+// --- Polaroid Wall & Real-Time Upload Simulation ---
+function initPolaroidClickHandlers() {
+  // delegation to dynamically added polaroids
+  const container = document.getElementById('polaroid-grid');
+  container.addEventListener('click', (e) => {
+    const inner = e.target.closest('.polaroid-inner');
+    if (inner) {
+      inner.parentElement.classList.toggle('is-flipped');
+    }
+  });
+}
+
+function initImageUploadLogic() {
+  const openBtn = document.getElementById('open-upload');
+  const closeBtn = document.getElementById('close-upload');
+  const sheet = document.getElementById('upload-sheet');
+  const fileInput = document.getElementById('file-input');
+  const previewImg = document.getElementById('preview-img');
+  const dropzone = document.getElementById('dropzone');
+  const uploadForm = document.getElementById('upload-form');
+
+  openBtn.addEventListener('click', () => {
+    sheet.classList.add('active');
+    document.getElementById('sheet-backdrop').classList.add('active');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    sheet.classList.remove('active');
+    document.getElementById('sheet-backdrop').classList.remove('active');
+  });
 
   fileInput.addEventListener('change', (e) => {
     const file = e.target.files[0];
-    if(file) {
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (evt) => {
+        previewImg.src = evt.target.result;
+        dropzone.classList.add('has-file');
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // Drag and Drop
+  dropzone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropzone.classList.add('dragover');
+  });
+  dropzone.addEventListener('dragleave', () => {
+    dropzone.classList.remove('dragover');
+  });
+  dropzone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropzone.classList.remove('dragover');
+    const file = e.dataTransfer.files[0];
+    if (file) {
       const reader = new FileReader();
       reader.onload = (evt) => {
         previewImg.src = evt.target.result;
@@ -759,33 +1373,135 @@ document.addEventListener('DOMContentLoaded', () => {
 
   uploadForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const btn = document.getElementById('submit-upload');
-    const originalText = btn.innerText;
     
-    btn.disabled = true;
-    btn.innerText = "Sending...";
-    
-    setTimeout(() => {
-      btn.disabled = false;
-      btn.innerText = originalText;
-      toggleSheet(false);
-      
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 3000);
-      
-      uploadForm.reset();
-      dropzone.classList.remove('has-file');
-      previewImg.src = '';
-    }, 1500);
-  });
+    const handleInput = document.getElementById('u-handle').value.trim() || 'anonymous_legend';
+    const drinkInput = document.getElementById('u-drink').value.trim() || 'Cozy sips';
+    const finalImageSrc = previewImg.src || 'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&q=80&w=400';
 
-  // --- Reservation Form Mock ---
-  document.getElementById('reserve-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert("Table reserved! See you soon, pare!");
-    e.target.reset();
+    // Build Polaroid Element dynamically
+    const randomRot = (Math.random() * 8 - 4).toFixed(1); // random angle between -4deg and 4deg
+    const randomTape = ['tape-teal', 'tape-gold', 'tape-pink'][Math.floor(Math.random() * 3)];
+
+    const polaroid = document.createElement('div');
+    polaroid.className = 'polaroid animate-fadeIn';
+    polaroid.style.setProperty('--rot', `${randomRot}deg`);
+    polaroid.innerHTML = `
+      <div class="polaroid-inner" style="aspect-ratio:500/550">
+        <div class="polaroid-front">
+          <span class="tape ${randomTape}"></span>
+          <div class="polaroid-photo"><img src="${finalImageSrc}" alt="User pinned memory on local legends wall"></div>
+          <i class="fa-solid fa-rotate flip-hint"></i>
+        </div>
+        <div class="polaroid-back">
+          <p class="hand-handle">@${handleInput}</p>
+          <p class="hand-drink">${drinkInput}</p>
+          <i class="fa-solid fa-heart back-heart"></i>
+        </div>
+      </div>
+    `;
+
+    // Append to top of cork board masonry
+    const grid = document.getElementById('polaroid-grid');
+    grid.insertBefore(polaroid, grid.firstChild);
+
+    // Reset Form & Close sheet
+    uploadForm.reset();
+    previewImg.src = '';
+    dropzone.classList.remove('has-file');
+    sheet.classList.remove('active');
+    document.getElementById('sheet-backdrop').classList.remove('active');
+
+    showToast("🎉 Awesome! Your memory has been pinned to the cork wall!");
   });
-});
+}
+
+function applyPreset(url) {
+  const previewImg = document.getElementById('preview-img');
+  const dropzone = document.getElementById('dropzone');
+  previewImg.src = url;
+  dropzone.classList.add('has-file');
+  showToast("Preset image applied! ☕");
+}
+
+// --- Cozy Seating Reservation Logic & Passport Ticket ---
+function selectZone(element, name, description) {
+  // Update state
+  chosenZoneName = name;
+  document.getElementById('zone-description').innerText = description;
+
+  // Toggle CSS Selected state
+  const btns = document.querySelectorAll('.zone-btn');
+  btns.forEach(btn => btn.classList.remove('selected'));
+  element.classList.add('selected');
+}
+
+function initReservationSystem() {
+  const form = document.getElementById('reserve-form');
+  const closeTicketBtn = document.getElementById('close-ticket');
+
+  closeTicketBtn.addEventListener('click', closeReservationTicket);
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const guestName = document.getElementById('r-name').value;
+    const partySize = document.getElementById('r-guests').value;
+    const arrivalTime = document.getElementById('r-time').value;
+
+    // Render retro receipt passport data
+    document.getElementById('ticket-guest-name').innerText = guestName;
+    document.getElementById('ticket-party-size').innerText = `${partySize} Pax`;
+    document.getElementById('ticket-arrival-time').innerText = arrivalTime;
+    document.getElementById('ticket-zone').innerText = chosenZoneName;
+
+    // Open ticket sheet modal instead of native alert
+    document.getElementById('ticket-sheet').classList.add('active');
+    document.getElementById('sheet-backdrop').classList.add('active');
+
+    // Reset Form
+    form.reset();
+  });
+}
+
+function closeReservationTicket() {
+  document.getElementById('ticket-sheet').classList.remove('active');
+  document.getElementById('sheet-backdrop').classList.remove('active');
+}
+
+// --- About Interaction & Live Counters ---
+function initAboutInteraction() {
+  // Set up live interval simulating people entering/leaving
+  setInterval(() => {
+    const counter = document.getElementById('live-count');
+    if (counter) {
+      let current = parseInt(counter.innerText);
+      const delta = Math.random() > 0.4 ? 1 : -1;
+      current = Math.max(30, Math.min(65, current + delta));
+      counter.innerText = current;
+    }
+  }, 12000);
+
+  // Scroll reveal setup
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+}
+
+// --- Global Toast utility ---
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  toast.innerText = message;
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3500);
+}
 </script>
 </body>
 </html>
