@@ -111,12 +111,11 @@ img{max-width:100%;display:block}
 .hero-wordmark{font-size:clamp(3.5rem,11vw,6.5rem);letter-spacing:-.01em;line-height:0.95;text-shadow:2px 3px 0px rgba(0,0,0,0.25)}
 .scroll-cue{animation:bounceCue 2s infinite}
 @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
-/* Floating Fluid Navigation Bar (Top Center) */
+/* Floating Fluid Navigation Bar (Top Right) */
 .fluid-menu-container {
   position: fixed;
   top: 24px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 24px;
   z-index: 100;
   display: flex;
   flex-direction: column;
@@ -1067,7 +1066,6 @@ const menuItems = {
     { id: 'p1', name: "Pandesal Basket", price: 45, desc: "Three fresh baked soft bread rolls served warm with Batangas salted butter.", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=400" },
     { id: 'p2', name: "Artisan Ube Hopia", price: 65, desc: "Indulgently flaky sweet pocket pastries packed with premium ube halaya.", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=400", badge: "Highly Fresh" },
     { id: 'p3', name: "Sweet Banana Cue Skewers", price: 80, desc: "Two skewers of deep-fried saba bananas heavily glazed in brown sugar caramel.", img: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&q=80&w=400" },
-    // UPGRADED PASTRIES: Adding one more item in Merienda Bites as requested!
     { id: 'p4', name: "Crispy Jackfruit Turon", price: 75, desc: "Golden caramelized spring rolls with ripe banana saba and sweet langka.", img: "https://images.unsplash.com/photo-1543807535-eceef0bc6599?auto=format&fit=crop&q=80&w=400", badge: "Crispy Gold" }
   ]
 };
@@ -1114,7 +1112,6 @@ function initNavigation() {
   // Cart Sidebar Controllers
   const mobileCartBtn = document.getElementById('mobile-cart-btn');
   const closeCartBtn = document.getElementById('close-cart');
-  const cartSheet = document.getElementById('cart-sheet');
   const sheetBackdrop = document.getElementById('sheet-backdrop');
 
   mobileCartBtn.addEventListener('click', openSidebarCart);
@@ -1122,7 +1119,7 @@ function initNavigation() {
   sheetBackdrop.addEventListener('click', () => {
     closeSidebarCart();
     closeReservationTicket();
-    document.getElementById('upload-sheet').classList.remove('active');
+    closeUploadSheet();
   });
 }
 
@@ -1134,6 +1131,18 @@ function openSidebarCart() {
 
 function closeSidebarCart() {
   document.getElementById('cart-sheet').classList.remove('active');
+  document.getElementById('sheet-backdrop').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function openUploadSheet() {
+  document.getElementById('upload-sheet').classList.add('active');
+  document.getElementById('sheet-backdrop').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeUploadSheet() {
+  document.getElementById('upload-sheet').classList.remove('active');
   document.getElementById('sheet-backdrop').classList.remove('active');
   document.body.style.overflow = '';
 }
@@ -1391,15 +1400,8 @@ function initImageUploadLogic() {
   const dropzone = document.getElementById('dropzone');
   const uploadForm = document.getElementById('upload-form');
 
-  openBtn.addEventListener('click', () => {
-    sheet.classList.add('active');
-    document.getElementById('sheet-backdrop').classList.add('active');
-  });
-
-  closeBtn.addEventListener('click', () => {
-    sheet.classList.remove('active');
-    document.getElementById('sheet-backdrop').classList.remove('active');
-  });
+  openBtn.addEventListener('click', openUploadSheet);
+  closeBtn.addEventListener('click', closeUploadSheet);
 
   fileInput.addEventListener('change', (e) => {
     const file = e.target.files[0];
@@ -1537,6 +1539,7 @@ function initReservationSystem() {
 
     document.getElementById('ticket-sheet').classList.add('active');
     document.getElementById('sheet-backdrop').classList.add('active');
+    document.body.style.overflow = 'hidden';
 
     form.reset();
   });
@@ -1545,6 +1548,7 @@ function initReservationSystem() {
 function closeReservationTicket() {
   document.getElementById('ticket-sheet').classList.remove('active');
   document.getElementById('sheet-backdrop').classList.remove('active');
+  document.body.style.overflow = '';
 }
 
 // --- About Interaction & Live Counters ---
