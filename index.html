@@ -3,30 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#1C120B">
+<meta name="theme-color" content="#00695C">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Block & Bean — Specialty Coffee & Community Wall</title>
-<meta name="description" content="Block & Bean is a community-powered coffee shop on Birch Street.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%95%3C/text%3E%3C/svg%3E">
+<title>Boba Ka Tea? — Pinoy Coffee & Community</title>
+<meta name="description" content="Boba Ka Tea? is a community-powered cafe in Poblacion — serving Barako, Ube Lattes, and good vibes.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧋%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;0,900;1,500;1,600&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<!-- Added Shrikhand for that bold Pinoy retro vibe -->
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,700;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Space+Mono:wght@400;700&family=Caveat:wght@600;700&family=Shrikhand&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-  tailwind.config={theme:{extend:{colors:{espresso:'#1C120B',espresso2:'#2A1B12',cream:'#F6EFE0',cork:'#C49A6C',corkdark:'#A8794A',stamp:'#BD4332',stampdark:'#98301F',sage:'#6B7755',gold:'#D9A441'},fontFamily:{display:['Fraunces','serif'],sans:['DM Sans','sans-serif'],mono:['Space Mono','monospace'],hand:['Caveat','cursive']}}}}
+  tailwind.config={theme:{extend:{colors:{teal:'#00695C',tealDark:'#004D40',mango:'#FFC107',mangoDark:'#FFA000',coconut:'#FDFBF7',bamboo:'#D7CCC8',clay:'#BF360A',clayDark:'#870000'},fontFamily:{display:['Shrikhand','cursive'],sans:['DM Sans','sans-serif'],mono:['Space Mono','monospace'],hand:['Caveat','cursive']}}}}
 </script>
 <style>
-:root{--espresso:#1C120B;--espresso2:#2A1B12;--cream:#F6EFE0;--cork:#C49A6C;--corkdark:#A8794A;--stamp:#BD4332;--stampdark:#98301F;--sage:#6B7755;--gold:#D9A441}
+:root{--teal:#00695C;--tealDark:#004D40;--mango:#FFC107;--mangoDark:'#FFA000';--coconut:#FDFBF7;--bamboo:#D7CCC8;--clay:#BF360A}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-tap-highlight-color:transparent}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--espresso);-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:80px}
+body{font-family:'DM Sans',sans-serif;background:var(--coconut);color:var(--tealDark);-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:80px}
 button{font-family:inherit;cursor:pointer;background:0 0;border:none}
 input,select,textarea{font-family:inherit}
 img{max-width:100%}
-:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-.font-display{font-family:'Fraunces',serif}
+:focus-visible{outline:2px solid var(--mango);outline-offset:2px}
+.font-display{font-family:'Shrikhand',cursive; letter-spacing: 0.05em;}
 .font-hand{font-family:'Caveat',cursive}
 .font-mono{font-family:'Space Mono',monospace}
 
@@ -35,31 +36,31 @@ img{max-width:100%}
 [data-reveal].is-visible{opacity:1;transform:translateY(0)}
 @media (prefers-reduced-motion:reduce){[data-reveal]{transition:none!important;transform:none!important;opacity:1!important}}
 
-.grain{pointer-events:none;opacity:.06;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+.grain{pointer-events:none;opacity:.05;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
 
 /* Hero */
 .hero{position:relative;height:100dvh;min-height:600px;width:100%;overflow:hidden;display:flex;flex-direction:column}
 .hero-bg{position:absolute;inset:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,18,11,.6) 0,rgba(28,18,11,.42) 32%,rgba(28,18,11,.78) 75%,rgba(28,18,11,.97) 100%)}
-.steam{position:absolute;width:14px;height:60px;border-radius:50%;background:rgba(246,239,224,.16);filter:blur(7px);bottom:50%;animation:steamRise 7s ease-in-out infinite;z-index:3}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,77,64,.6) 0,rgba(0,77,64,.42) 32%,rgba(0,77,64,.78) 75%,rgba(0,77,64,.97) 100%)}
+.steam{position:absolute;width:14px;height:60px;border-radius:50%;background:rgba(255,193,7,.3);filter:blur(7px);bottom:50%;animation:steamRise 7s ease-in-out infinite;z-index:3}
 .steam-1{left:41%;animation-delay:0s}.steam-2{left:57%;width:10px;animation-delay:2.6s}
 @keyframes steamRise{0%{transform:translateY(0) scaleX(1);opacity:0}15%{opacity:.45}55%{transform:translateY(-90px) scaleX(1.5);opacity:.2}100%{transform:translateY(-160px) scaleX(1.9);opacity:0}}
-.hero-badge{background:rgba(246,239,224,.1);border:1px solid rgba(246,239,224,.22);padding:.4rem .9rem;border-radius:999px;backdrop-filter:blur(6px)}
-.live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--sage);box-shadow:0 0 0 0 rgba(107,119,85,.6);animation:pulseDot 2s infinite}
-@keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(107,119,85,.55)}70%{box-shadow:0 0 0 7px rgba(107,119,85,0)}100%{box-shadow:0 0 0 0 rgba(107,119,85,0)}}
-.hero-wordmark{font-size:clamp(3rem,15vw,5.5rem);letter-spacing:-.02em}
+.hero-badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:.4rem .9rem;border-radius:999px;backdrop-filter:blur(6px)}
+.live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--mango);box-shadow:0 0 0 0 rgba(255,193,7,.6);animation:pulseDot 2s infinite}
+@keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(255,193,7,.55)}70%{box-shadow:0 0 0 7px rgba(255,193,7,0)}100%{box-shadow:0 0 0 0 rgba(255,193,7,0)}}
+.hero-wordmark{font-size:clamp(3.5rem,15vw,6.5rem);letter-spacing:-.01em; line-height: 0.9;}
 .scroll-cue{animation:bounceCue 2s infinite}
 @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 
-/* Fluid Menu (Floating Navigation) */
+/* Fluid Menu (Top Right) */
 .fluid-menu-container {
   position: fixed;
-  bottom: 24px;
+  top: 24px;
   right: 24px;
   z-index: 100;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column; /* Vertical stack downwards */
   align-items: center;
   gap: 12px;
 }
@@ -67,13 +68,13 @@ img{max-width:100%}
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: var(--espresso);
-  color: var(--cream);
+  background: var(--mango);
+  color: var(--tealDark);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
-  box-shadow: 0 8px 24px rgba(28,18,11,0.3);
+  box-shadow: 0 8px 24px rgba(0,77,64,0.3);
   cursor: pointer;
   transition: transform 0.2s, background 0.2s;
   position: relative;
@@ -91,7 +92,7 @@ img{max-width:100%}
   height: 56px;
   border-radius: 50%;
   background: white;
-  color: var(--espresso);
+  color: var(--teal);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,18 +100,18 @@ img{max-width:100%}
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   cursor: pointer;
   opacity: 0;
-  transform: translateY(20px) scale(0.8);
+  transform: translateY(-20px) scale(0.8); /* Start above */
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
   z-index: 101;
   text-decoration: none;
 }
-.fluid-item:hover { background: var(--gold); color: var(--espresso); }
+.fluid-item:hover { background: var(--teal); color: white; }
 .fluid-menu-container.active .fluid-item {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
-/* Staggered delays handled in JS or specific classes if needed, but CSS transition handles the bulk */
+/* Staggered delays */
 .fluid-menu-container.active .fluid-item:nth-child(2) { transition-delay: 0.05s; }
 .fluid-menu-container.active .fluid-item:nth-child(3) { transition-delay: 0.1s; }
 .fluid-menu-container.active .fluid-item:nth-child(4) { transition-delay: 0.15s; }
@@ -119,7 +120,7 @@ img{max-width:100%}
 .fluid-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(28,18,11,0.4);
+  background: rgba(0,77,64,0.4);
   backdrop-filter: blur(4px);
   z-index: 99;
   opacity: 0;
@@ -138,7 +139,7 @@ img{max-width:100%}
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(28,18,11,0.05);
+  background: rgba(0,105,92,0.08);
   padding: 0.35rem;
   border-radius: 999px;
   position: relative;
@@ -154,7 +155,7 @@ img{max-width:100%}
   border-radius: 999px;
   font-weight: 600;
   font-size: 0.9rem;
-  color: rgba(28,18,11,0.5);
+  color: rgba(0,77,64,0.6);
   background: transparent;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
@@ -175,8 +176,8 @@ img{max-width:100%}
   display: inline-block;
 }
 .tab-btn.active {
-  background: var(--espresso);
-  color: var(--cream);
+  background: var(--teal);
+  color: white;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
@@ -189,95 +190,95 @@ img{max-width:100%}
 .tab-separator {
   width: 1px;
   height: 24px;
-  background: rgba(28,18,11,0.15);
+  background: rgba(0,105,92,0.2);
   margin: 0 0.25rem;
 }
 
 /* Menu Grid */
-.menu-card{display:flex;flex-direction:column;text-align:left;background:#FFFDF7;border-radius:18px;overflow:hidden;border:1px solid rgba(28,18,11,.06);box-shadow:0 4px 14px rgba(28,18,11,.07);transition:transform .25s,box-shadow .25s,opacity .25s;width:100%}
+.menu-card{display:flex;flex-direction:column;text-align:left;background:#FFFDF7;border-radius:18px;overflow:hidden;border:1px solid rgba(0,105,92,.1);box-shadow:0 4px 14px rgba(0,105,92,.08);transition:transform .25s,box-shadow .25s,opacity .25s;width:100%}
 .menu-card:active{transform:scale(.97)}
-.menu-card-img-wrap{aspect-ratio:1/1;overflow:hidden;background:rgba(28,18,11,.04)}
-.menu-card-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.05) contrast(1.02)}
+.menu-card-img-wrap{aspect-ratio:1/1;overflow:hidden;background:rgba(0,105,92,.05)}
+.menu-card-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.1) contrast(1.02)}
 .menu-card-body{padding:.85rem .9rem 1rem;display:flex;flex-direction:column;gap:.3rem;flex:1}
-.menu-card-name{font-family:'Fraunces',serif;font-weight:600;font-size:1rem;color:var(--espresso);line-height:1.2}
-.menu-card-desc{font-size:.78rem;color:rgba(28,18,11,.55);line-height:1.35;flex:1}
+.menu-card-name{font-family:'Fraunces',serif;font-weight:700;font-size:1rem;color:var(--tealDark);line-height:1.2}
+.menu-card-desc{font-size:.78rem;color:rgba(0,77,64,.65);line-height:1.35;flex:1}
 .menu-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:.5rem}
-.price-tag{font-family:'Space Mono',monospace;font-size:.85rem;color:#8A5A16}
-.add-circle{width:30px;height:30px;border-radius:50%;background:var(--stamp);color:var(--cream);display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0}
+.price-tag{font-family:'Space Mono',monospace;font-size:.85rem;color:var(--clay); font-weight: bold;}
+.add-circle{width:30px;height:30px;border-radius:50%;background:var(--mango);color:var(--tealDark);display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0; font-weight: bold;}
 #menu-grid.fading .menu-card{opacity:0;transform:translateY(8px)}
 
-/* Community Wall */
-.cork-bg{position:relative;background-color:var(--cork);background-image:radial-gradient(circle at 12% 18%,rgba(70,42,16,.2) 0 3px,transparent 4px),radial-gradient(circle at 32% 64%,rgba(70,42,16,.16) 0 2px,transparent 3px),radial-gradient(circle at 58% 22%,rgba(70,42,16,.18) 0 3px,transparent 4px),radial-gradient(circle at 78% 70%,rgba(70,42,16,.15) 0 2px,transparent 3px),radial-gradient(circle at 88% 30%,rgba(70,42,16,.19) 0 3px,transparent 4px),radial-gradient(circle at 22% 85%,rgba(70,42,16,.16) 0 2px,transparent 3px),radial-gradient(circle at 45% 40%,rgba(70,42,16,.14) 0 2px,transparent 3px),radial-gradient(circle at 68% 92%,rgba(70,42,16,.17) 0 3px,transparent 4px),radial-gradient(circle at 5% 50%,rgba(70,42,16,.15) 0 2px,transparent 3px),radial-gradient(circle at 95% 8%,rgba(70,42,16,.15) 0 2px,transparent 3px),linear-gradient(180deg,rgba(0,0,0,.1),transparent 16%,transparent 84%,rgba(0,0,0,.14));background-size:180px 180px,220px 220px,160px 160px,200px 200px,190px 190px,210px 210px,170px 170px,230px 230px,150px 150px,240px 240px,100% 100%}
-.masonry{column-count:2;column-gap:1.1rem}@media (min-width:640px){.masonry{column-count:3}}@media (min-width:1024px){.masonry{column-count:4}}
+/* Community Wall - Desktop Centering */
+.cork-bg{position:relative;background-color:#EFEBE0; /* Lighter bamboo tone */
+background-image:radial-gradient(circle at 12% 18%,rgba(191,54,10,.1) 0 3px,transparent 4px),radial-gradient(circle at 32% 64%,rgba(191,54,10,.08) 0 2px,transparent 3px),radial-gradient(circle at 58% 22%,rgba(191,54,10,.1) 0 3px,transparent 4px),radial-gradient(circle at 78% 70%,rgba(191,54,10,.08) 0 2px,transparent 3px),linear-gradient(180deg,rgba(0,0,0,.05),transparent 16%,transparent 84%,rgba(0,0,0,.08));background-size:180px 180px,220px 220px,160px 160px,200px 200px,100% 100%}
+.masonry{column-count:2;column-gap:1.1rem; max-width: 1000px; margin: 0 auto;} /* Centered container */
+@media (min-width:640px){.masonry{column-count:3}}
+@media (min-width:1024px){.masonry{column-count:4}}
 .polaroid{margin-bottom:1.1rem;break-inside:avoid;display:inline-block;width:100%;transform:rotate(var(--rot,0deg));transition:transform .25s}
 .polaroid:active,.polaroid:hover{transform:rotate(0) scale(1.02)}
 .polaroid-inner{position:relative;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.4,.2,.2,1);cursor:pointer}
 .polaroid.is-flipped .polaroid-inner{transform:rotateY(180deg)}
-.polaroid-back,.polaroid-front{position:absolute;inset:0;backface-visibility:hidden;border-radius:3px;box-shadow:0 8px 20px rgba(28,18,11,.25)}
+.polaroid-back,.polaroid-front{position:absolute;inset:0;backface-visibility:hidden;border-radius:3px;box-shadow:0 8px 20px rgba(0,0,0,.15)}
 .polaroid-front{background:#FFFDF7;padding:8px 8px 28px;display:flex;flex-direction:column}
 .polaroid-photo{flex:1;overflow:hidden;border-radius:1px;background:rgba(0,0,0,.05)}
-.polaroid-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.05) contrast(1.02)}
-.flip-hint{position:absolute;bottom:7px;right:11px;font-size:.7rem;color:rgba(28,18,11,.32)}
-.polaroid-back{transform:rotateY(180deg);background:var(--espresso2);color:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1rem}
-.hand-handle{font-family:'Caveat',cursive;font-weight:600;font-size:1.6rem;color:var(--gold);margin-bottom:.3rem;line-height:1}
-.hand-drink{font-size:.82rem;color:rgba(246,239,224,.85);line-height:1.35}
-.back-heart{margin-top:.8rem;color:var(--stamp);font-size:1.05rem}
+.polaroid-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.1) contrast(1.02)}
+.flip-hint{position:absolute;bottom:7px;right:11px;font-size:.7rem;color:rgba(0,77,64,.32)}
+.polaroid-back{transform:rotateY(180deg);background:var(--tealDark);color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1rem}
+.hand-handle{font-family:'Caveat',cursive;font-weight:600;font-size:1.6rem;color:var(--mango);margin-bottom:.3rem;line-height:1}
+.hand-drink{font-size:.82rem;color:rgba(255,255,255,.85);line-height:1.35}
+.back-heart{margin-top:.8rem;color:var(--mango);font-size:1.05rem}
 .tape{position:absolute;top:-9px;left:50%;transform:translateX(-50%) rotate(-4deg);width:58px;height:22px;opacity:.88;z-index:2;border-radius:1px}
-.tape-gold{background:repeating-linear-gradient(135deg,rgba(217,164,65,.9) 0 6px,rgba(217,164,65,.65) 6px 12px)}
-.tape-sage{background:repeating-linear-gradient(135deg,rgba(107,119,85,.9) 0 6px,rgba(107,119,85,.65) 6px 12px)}
-.tape-stamp{background:repeating-linear-gradient(135deg,rgba(189,67,50,.9) 0 6px,rgba(189,67,50,.65) 6px 12px)}
-.pin{position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:13px;height:13px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#e8866f,var(--stamp) 70%);box-shadow:0 2px 4px rgba(0,0,0,.35);z-index:3}
+.tape-gold{background:repeating-linear-gradient(135deg,rgba(255,193,7,.9) 0 6px,rgba(255,193,7,.65) 6px 12px)}
+.tape-sage{background:repeating-linear-gradient(135deg,rgba(0,105,92,.9) 0 6px,rgba(0,105,92,.65) 6px 12px)}
+.tape-clay{background:repeating-linear-gradient(135deg,rgba(191,54,10,.9) 0 6px,rgba(191,54,10,.65) 6px 12px)}
+.pin{position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:13px;height:13px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ffccbc,var(--clay) 70%);box-shadow:0 2px 4px rgba(0,0,0,.35);z-index:3}
 
 /* Forms & UI */
 .field{margin-bottom:1rem;display:flex;flex-direction:column;gap:.4rem}
-.field label{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:rgba(28,18,11,.55)}
-.field input,.field select,.field textarea{padding:.75rem .9rem;border-radius:12px;border:1.5px solid rgba(28,18,11,.15);background:#fff;color:var(--espresso);font-size:.95rem;width:100%}
+.field label{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:rgba(0,77,64,.6)}
+.field input,.field select,.field textarea{padding:.75rem .9rem;border-radius:12px;border:1.5px solid rgba(0,105,92,.2);background:#fff;color:var(--tealDark);font-size:.95rem;width:100%}
 .field-row{display:flex;gap:.8rem}
 .field-row .field{flex:1}
-.envelope-card,.reserve-card{background:rgba(246,239,224,.05);border:1px solid rgba(246,239,224,.14);border-radius:20px;padding:1.6rem}
-.envelope-card label,.reserve-card label{color:rgba(246,239,224,.6)!important}
-.btn-stamp{display:inline-flex;align-items:center;gap:.6rem;background:var(--stamp);color:var(--cream);font-weight:700;font-size:.95rem;padding:.9rem 1.6rem;border-radius:999px;box-shadow:0 8px 20px rgba(189,67,50,.35);transition:transform .15s,box-shadow .15s,opacity .15s}
+.envelope-card,.reserve-card{background:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:1.6rem; backdrop-filter: blur(5px);}
+.envelope-card label,.reserve-card label{color:rgba(255,255,255,.9)!important}
+.btn-stamp{display:inline-flex;align-items:center;gap:.6rem;background:var(--clay);color:white;font-weight:700;font-size:.95rem;padding:.9rem 1.6rem;border-radius:999px;box-shadow:0 8px 20px rgba(191,54,10,.35);transition:transform .15s,box-shadow .15s,opacity .15s}
 .btn-stamp:active{transform:scale(.97)}
 .btn-stamp:disabled{opacity:.4;box-shadow:none}
-.btn-outline{display:inline-flex;align-items:center;gap:.6rem;background:0 0;color:var(--cream);font-weight:700;font-size:.95rem;padding:.85rem 1.6rem;border-radius:999px;border:1.5px solid rgba(246,239,224,.35);transition:transform .15s,background .15s}
-.btn-outline:active{transform:scale(.97);background:rgba(246,239,224,.08)}
-.eyebrow{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:#8A5A16;margin-bottom:.5rem;display:inline-block}
-.eyebrow.on-dark{color:var(--gold)}
-.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,5vw,2.75rem);color:var(--espresso);line-height:1.05}
-.section-title.on-dark{color:var(--cream)}
-.section-sub{margin-top:.6rem;color:rgba(28,18,11,.65);font-size:.95rem;max-width:32rem;margin-inline:auto}
-.section-sub.on-dark{color:rgba(246,239,224,.7)}
+.eyebrow{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem;display:inline-block}
+.eyebrow.on-dark{color:var(--mango)}
+.section-title{font-family:'Shrikhand',cursive;font-size:clamp(2rem,5vw,3.5rem);color:var(--tealDark);line-height:1.05}
+.section-title.on-dark{color:white}
+.section-sub{margin-top:.6rem;color:rgba(0,77,64,.7);font-size:.95rem;max-width:32rem;margin-inline:auto}
+.section-sub.on-dark{color:rgba(255,255,255,.8)}
 
 /* Modal / Sheet */
-.sheet-backdrop{position:fixed;inset:0;background:rgba(28,18,11,.55);opacity:0;pointer-events:none;transition:opacity .3s;z-index:60}
+.sheet-backdrop{position:fixed;inset:0;background:rgba(0,77,64,.6);opacity:0;pointer-events:none;transition:opacity .3s;z-index:60}
 .sheet-backdrop.active{opacity:1;pointer-events:auto}
-.sheet{position:fixed;left:0;right:0;bottom:0;max-height:88vh;background:var(--cream);border-radius:22px 22px 0 0;transform:translateY(100%);transition:transform .35s cubic-bezier(.32,.72,0,1);z-index:65;display:flex;flex-direction:column;box-shadow:0 -10px 40px rgba(28,18,11,.3)}
+.sheet{position:fixed;left:0;right:0;bottom:0;max-height:88vh;background:var(--coconut);border-radius:22px 22px 0 0;transform:translateY(100%);transition:transform .35s cubic-bezier(.32,.72,0,1);z-index:65;display:flex;flex-direction:column;box-shadow:0 -10px 40px rgba(0,77,64,.3)}
 .sheet.active{transform:translateY(0)}
-.sheet-handle{width:40px;height:5px;border-radius:3px;background:rgba(28,18,11,.18);margin:.8rem auto .2rem;flex-shrink:0}
-.sheet-close{position:absolute;top:.85rem;right:1rem;width:32px;height:32px;border-radius:50%;background:rgba(28,18,11,.06);color:var(--espresso);display:flex;align-items:center;justify-content:center}
+.sheet-handle{width:40px;height:5px;border-radius:3px;background:rgba(0,105,92,.2);margin:.8rem auto .2rem;flex-shrink:0}
+.sheet-close{position:absolute;top:.85rem;right:1rem;width:32px;height:32px;border-radius:50%;background:rgba(0,105,92,.1);color:var(--tealDark);display:flex;align-items:center;justify-content:center}
 .sheet-content{padding:.4rem 1.4rem 1.4rem;overflow-y:auto;flex:1}
-.sheet-footer{padding:1rem 1.4rem calc(1rem + env(safe-area-inset-bottom));border-top:1px solid rgba(28,18,11,.08);flex-shrink:0}
-.dropzone{position:relative;border:2px dashed rgba(28,18,11,.22);border-radius:18px;min-height:160px;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;overflow:hidden;background:rgba(28,18,11,.02);transition:border-color .2s,background .2s}
-.dropzone.dragover{border-color:var(--stamp);background:rgba(189,67,50,.07)}
+.dropzone{position:relative;border:2px dashed rgba(0,105,92,.2);border-radius:18px;min-height:160px;display:flex;align-items:center;justify-content:center;text-align:center;cursor-pointer;overflow:hidden;background:rgba(0,105,92,.05);transition:border-color .2s,background .2s}
+.dropzone.dragover{border-color:var(--clay);background:rgba(191,54,10,.05)}
 .dropzone-preview{display:none;width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
 .dropzone.has-file .dropzone-preview{display:block}
 .dropzone.has-file .dropzone-placeholder{display:none}
-.dropzone-placeholder{color:rgba(28,18,11,.55);padding:1rem}
-.consent-row{display:flex;gap:.6rem;align-items:flex-start;font-size:.82rem;color:rgba(28,18,11,.7);margin:1.1rem 0;cursor:pointer}
-.consent-row input{margin-top:.2rem;accent-color:var(--stamp);width:16px;height:16px;flex-shrink:0}
-.toast{position:fixed;bottom:96px;left:50%;transform:translate(-50%,12px);background:var(--espresso);color:var(--cream);padding:.7rem 1.3rem;border-radius:999px;font-size:.85rem;opacity:0;pointer-events:none;transition:all .3s;z-index:80;box-shadow:0 10px 28px rgba(0,0,0,.3);max-width:88vw;text-align:center}
+.dropzone-placeholder{color:rgba(0,77,64,.5);padding:1rem}
+.consent-row{display:flex;gap:.6rem;align-items:flex-start;font-size:.82rem;color:rgba(0,77,64,.7);margin:1.1rem 0;cursor:pointer}
+.consent-row input{margin-top:.2rem;accent-color:var(--clay);width:16px;height:16px;flex-shrink:0}
+.toast{position:fixed;bottom:96px;left:50%;transform:translate(-50%,12px);background:var(--tealDark);color:white;padding:.7rem 1.3rem;border-radius:999px;font-size:.85rem;opacity:0;pointer-events:none;transition:all .3s;z-index:80;box-shadow:0 10px 28px rgba(0,0,0,.3);max-width:88vw;text-align:center}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
 /* Testimonials */
 .testimonial-track{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.5rem;scrollbar-width:none}
 .testimonial-track::-webkit-scrollbar{display:none}
-.testimonial-card{scroll-snap-align:start;flex:0 0 85%;background:rgba(246,239,224,.06);border:1px solid rgba(246,239,224,.14);border-radius:18px;padding:1.4rem}@media (min-width:640px){.testimonial-card{flex:0 0 60%}}@media (min-width:1024px){.testimonial-card{flex:0 0 44%}}
-.testimonial-card .stars{color:var(--gold);margin-bottom:.6rem;font-size:.85rem}
-.testimonial-card p.quote{font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;color:var(--cream);line-height:1.4}
-.testimonial-card p.author{margin-top:.9rem;font-family:'Space Mono',monospace;font-size:.72rem;color:rgba(246,239,224,.5)}
+.testimonial-card{scroll-snap-align:start;flex:0 0 85%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:1.4rem}@media (min-width:640px){.testimonial-card{flex:0 0 60%}}@media (min-width:1024px){.testimonial-card{flex:0 0 44%}}
+.testimonial-card .stars{color:var(--mango);margin-bottom:.6rem;font-size:.85rem}
+.testimonial-card p.quote{font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;color:white;line-height:1.4}
+.testimonial-card p.author{margin-top:.9rem;font-family:'Space Mono',monospace;font-size:.72rem;color:rgba(255,255,255,.7)}
 
 /* About */
-.about-frame{position:relative;background:#FFFDF7;padding:10px 10px 30px;border-radius:3px;box-shadow:0 16px 36px rgba(28,18,11,.25);transform:rotate(-2deg);max-width:340px;margin:0 auto}
+.about-frame{position:relative;background:#FFFDF7;padding:10px 10px 30px;border-radius:3px;box-shadow:0 16px 36px rgba(0,77,64,.2);transform:rotate(-2deg);max-width:340px;margin:0 auto}
 .about-frame img{width:100%;border-radius:1px;display:block}
 </style>
 </head>
@@ -286,7 +287,7 @@ img{max-width:100%}
 <!-- Fluid Backdrop -->
 <div class="fluid-backdrop" id="fluid-backdrop"></div>
 
-<!-- Fluid Menu Navigation -->
+<!-- Fluid Menu Navigation (Top Right) -->
 <div class="fluid-menu-container" id="fluid-menu">
   <a href="#about" class="fluid-item"><i class="fa-solid fa-store"></i></a>
   <a href="#reserve" class="fluid-item"><i class="fa-regular fa-calendar-check"></i></a>
@@ -303,7 +304,8 @@ img{max-width:100%}
   <!-- Hero Section -->
   <section id="hero" class="hero">
     <div class="hero-bg">
-      <img src="https://images.unsplash.com/photo-1751956066306-c5684cbcf385?auto=format&fit=crop&q=80&w=1600&h=2000" alt="Warm interior" loading="eager" fetchpriority="high" decoding="async" data-fallback>
+      <!-- Tropical/Philippine vibe image -->
+      <img src="https://images.unsplash.com/photo-1554118598-7b827e7c4d72?auto=format&fit=crop&q=80&w=1600&h=2000" alt="Tropical cafe interior" loading="eager" fetchpriority="high" decoding="async" data-fallback>
       <div class="hero-overlay"></div>
       <div class="grain"></div>
     </div>
@@ -312,15 +314,15 @@ img{max-width:100%}
     <div class="relative z-10 flex flex-col h-full px-6" style="padding-top:max(1.5rem, env(safe-area-inset-top));">
       <div class="hero-badge inline-flex items-center gap-2 self-start mt-5">
         <span class="live-dot"></span>
-        <span class="font-mono text-xs tracking-wide text-cream/90"><span id="live-count">24</span> neighbors here</span>
+        <span class="font-mono text-xs tracking-wide text-white/90"><span id="live-count">42</span> kaibigan here</span>
       </div>
       <div class="flex-1 flex flex-col items-center justify-center text-center gap-4 -mt-6">
-        <p class="font-mono text-xs uppercase tracking-[0.3em] text-gold" data-reveal>Est. 2014 · Birch & 9th</p>
-        <h1 class="hero-wordmark font-display font-black text-cream leading-[0.92]" data-reveal>BLOCK<br><span class="text-stamp">&amp;</span> BEAN</h1>
-        <p class="font-display italic text-xl sm:text-2xl text-cream/90" data-reveal>Part café. Part block party.</p>
-        <p class="max-w-xs text-sm text-cream/70" data-reveal>Specialty coffee, baked-daily pastries, and a wall full of regulars.</p>
+        <p class="font-mono text-xs uppercase tracking-[0.3em] text-mango" data-reveal>Est. 2024 · Poblacion, MKT</p>
+        <h1 class="hero-wordmark font-display text-white leading-[0.9]" data-reveal>BOBA KA<br><span class="text-mango">TEA?</span></h1>
+        <p class="font-display italic text-xl sm:text-2xl text-white/90" data-reveal>Seryoso sa kape. Masaya sa buhay.</p>
+        <p class="max-w-xs text-sm text-white/80" data-reveal>Specialty Barako, fresh-baked Pandesal, at kwentuhan hanggang gabi.</p>
       </div>
-      <div class="flex flex-col items-center gap-2 pb-32 text-cream/55">
+      <div class="flex flex-col items-center gap-2 pb-32 text-white/60">
         <span class="text-[11px] font-mono uppercase tracking-widest">Scroll</span>
         <i class="fa-solid fa-chevron-down scroll-cue"></i>
       </div>
@@ -328,12 +330,12 @@ img{max-width:100%}
   </section>
 
   <!-- Menu Section with Expandable Tabs -->
-  <section id="menu" class="relative bg-cream px-5 sm:px-8 py-20 sm:py-28">
+  <section id="menu" class="relative bg-coconut px-5 sm:px-8 py-20 sm:py-28">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-10" data-reveal>
-        <span class="eyebrow">The Menu</span>
-        <h2 class="section-title">Today's Pour List</h2>
-        <p class="section-sub">Everything's made to order — tap anything to make it yours.</p>
+        <span class="eyebrow">Ang Menu</span>
+        <h2 class="section-title">Para Sa Umaga't Gabi</h2>
+        <p class="section-sub">Freshly brewed Barako at local flavors. Tap to order.</p>
       </div>
       
       <!-- Expandable Tabs Component -->
@@ -341,17 +343,17 @@ img{max-width:100%}
         <div class="expandable-tabs">
           <button class="tab-btn active" data-category="espresso">
             <i class="fa-solid fa-mug-hot"></i>
-            <span>Espresso Bar</span>
+            <span>Kape Barako</span>
           </button>
           <div class="tab-separator"></div>
           <button class="tab-btn" data-category="non-coffee">
             <i class="fa-solid fa-leaf"></i>
-            <span>Non-Coffee</span>
+            <span>Di-Kape</span>
           </button>
           <div class="tab-separator"></div>
           <button class="tab-btn" data-category="pastries">
             <i class="fa-solid fa-bread-slice"></i>
-            <span>Pastries</span>
+            <span>Pandesal & Co.</span>
           </button>
         </div>
       </div>
@@ -365,9 +367,9 @@ img{max-width:100%}
     <div class="grain absolute inset-0"></div>
     <div class="max-w-5xl mx-auto relative z-10">
       <div class="text-center mb-10" data-reveal>
-        <span class="eyebrow">The Community Canvas</span>
-        <h2 class="section-title">Local Legends</h2>
-        <p class="section-sub" style="color:rgba(28,18,11,.7);">Pin your cup, your corner, your crew — upload your vibe and you might just end up on this wall.</p>
+        <span class="eyebrow">Community Canvas</span>
+        <h2 class="section-title">Mga Local Legends</h2>
+        <p class="section-sub" style="color:rgba(0,77,64,.7);">I-post ang selfie mo dito para sumikat! Upload your vibe.</p>
       </div>
       <div class="masonry" data-reveal id="polaroid-grid">
         <!-- Polaroid 1 -->
@@ -375,12 +377,12 @@ img{max-width:100%}
           <div class="polaroid-inner" style="aspect-ratio:500/640">
             <div class="polaroid-front">
               <span class="pin"></span>
-              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1474293507615-951863a0f942?auto=format&fit=crop&q=80&w=500&h=600" alt="Customer" loading="lazy" decoding="async" data-fallback></div>
+              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1596484552993-9c5950724964?auto=format&fit=crop&q=80&w=500&h=600" alt="Customer" loading="lazy" decoding="async" data-fallback></div>
               <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
             </div>
             <div class="polaroid-back">
-              <p class="hand-handle">@desmond.on.draft</p>
-              <p class="hand-drink">Classic Espresso<br>standing room only</p>
+              <p class="hand-handle">@jose.sikat</p>
+              <p class="hand-drink">Iced Barako<br>double sugar</p>
               <i class="fa-solid fa-heart back-heart" aria-hidden="true"></i>
             </div>
           </div>
@@ -390,12 +392,12 @@ img{max-width:100%}
           <div class="polaroid-inner" style="aspect-ratio:500/400">
             <div class="polaroid-front">
               <span class="tape tape-sage"></span>
-              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1758525225816-8dd1901ef6ec?auto=format&fit=crop&q=80&w=500&h=400" alt="Friends laughing" loading="lazy" decoding="async" data-fallback></div>
+              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&q=80&w=500&h=400" alt="Friends" loading="lazy" decoding="async" data-fallback></div>
               <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
             </div>
             <div class="polaroid-back">
-              <p class="hand-handle">@two.sugars.please</p>
-              <p class="hand-drink">Matcha Cloud × 2<br>Tuesday tradition</p>
+              <p class="hand-handle">@maria.ganda</p>
+              <p class="hand-drink">Ube Latte<br>with friends</p>
               <i class="fa-solid fa-heart back-heart" aria-hidden="true"></i>
             </div>
           </div>
@@ -405,12 +407,12 @@ img{max-width:100%}
           <div class="polaroid-inner" style="aspect-ratio:500/620">
             <div class="polaroid-front">
               <span class="tape tape-gold"></span>
-              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1646772281149-91ae4a9478d3?auto=format&fit=crop&q=80&w=500&h=620" alt="Smiling customer" loading="lazy" decoding="async" data-fallback></div>
+              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?auto=format&fit=crop&q=80&w=500&h=620" alt="Smiling customer" loading="lazy" decoding="async" data-fallback></div>
               <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
             </div>
             <div class="polaroid-back">
-              <p class="hand-handle">@mara.reads</p>
-              <p class="hand-drink">Honey Oat Flat White<br>extra hot</p>
+              <p class="hand-handle>@juan.delacruz</p>
+              <p class="hand-drink">Salabat<br>hot & spicy</p>
               <i class="fa-solid fa-heart back-heart" aria-hidden="true"></i>
             </div>
           </div>
@@ -420,68 +422,68 @@ img{max-width:100%}
           <div class="polaroid-inner" style="aspect-ratio:500/500">
             <div class="polaroid-front">
               <span class="pin"></span>
-              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1683329570019-8307d6d42ad9?auto=format&fit=crop&q=80&w=500&h=500" alt="Coffee on table" loading="lazy" decoding="async" data-fallback></div>
+              <div class="polaroid-photo"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&q=80&w=500&h=500" alt="Coffee" loading="lazy" decoding="async" data-fallback></div>
               <i class="fa-solid fa-rotate flip-hint" aria-hidden="true"></i>
             </div>
             <div class="polaroid-back">
-              <p class="hand-handle">@junebug.writes</p>
-              <p class="hand-drink">Cardamom Morning Bun<br>+ chapter 12</p>
+              <p class="hand-handle">@coffee.karla</p>
+              <p class="hand-drink">Cold Brew<br>study session</p>
               <i class="fa-solid fa-heart back-heart" aria-hidden="true"></i>
             </div>
           </div>
         </div>
       </div>
       <div class="text-center mt-12" data-reveal>
-        <button id="open-upload" class="btn-stamp">&#128248; Upload Your Vibe</button>
+        <button id="open-upload" class="btn-stamp">&#128248; I-Upload Ang Vibe Mo</button>
       </div>
     </div>
   </section>
 
   <!-- Reservations -->
-  <section id="reserve" class="relative bg-espresso px-5 sm:px-8 py-20 sm:py-28">
+  <section id="reserve" class="relative bg-teal px-5 sm:px-8 py-20 sm:py-28">
     <div class="grain absolute inset-0"></div>
     <div class="max-w-3xl mx-auto relative z-10">
       <div class="text-center mb-10" data-reveal>
         <span class="eyebrow on-dark">Reservations</span>
-        <h2 class="section-title on-dark">Grab a Seat</h2>
-        <p class="section-sub on-dark">Tables go fast on weekends — lock yours in.</p>
+        <h2 class="section-title on-dark">Mag-Reserve Ng Mesa</h2>
+        <p class="section-sub on-dark">Laging puno tuwing weekend. Secure your spot!</p>
       </div>
       <form id="reserve-form" class="reserve-card" data-reveal>
         <div class="field">
-          <label for="r-name">Name</label>
+          <label for="r-name">Pangalan</label>
           <input id="r-name" name="name" required placeholder="Your name">
         </div>
         <div class="field-row">
           <div class="field">
-            <label for="r-guests">Guests</label>
+            <label for="r-guests">Bisita</label>
             <input type="number" id="r-guests" name="guests" min="1" max="10" required placeholder="0">
           </div>
           <div class="field">
-            <label for="r-time">Time</label>
+            <label for="r-time">Oras</label>
             <input type="time" id="r-time" name="time" required>
           </div>
         </div>
-        <button type="submit" class="btn-stamp mt-4 w-full justify-center">Reserve Table</button>
+        <button type="submit" class="btn-stamp mt-4 w-full justify-center">Confirm Reservation</button>
       </form>
       
       <!-- Testimonials -->
       <div class="mt-16" data-reveal>
-        <h3 class="text-center font-display text-cream text-xl mb-6">Spill the Beans</h3>
+        <h3 class="text-center font-display text-white text-xl mb-6">Ano Sabi Nil?</h3>
         <div class="testimonial-track">
           <div class="testimonial-card">
             <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <p class="quote">"The vibe here is unmatched. It feels like my second living room."</p>
-            <p class="author">— Sarah J.</p>
+            <p class="quote">"Parang nasa probinsya pero sa Makati. Super chill ng place!"</p>
+            <p class="author">— Ana M.</p>
           </div>
           <div class="testimonial-card">
             <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <p class="quote">"Best flat white in the city, hands down. The staff knows my order."</p>
-            <p class="author">— Mike T.</p>
+            <p class="quote">"Best Ube Latte ever. Hindi masyadong matamis, perfect!"</p>
+            <p class="author">— Carlo D.</p>
           </div>
           <div class="testimonial-card">
             <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
-            <p class="quote">"Love the community wall idea. Got my photo featured last week!"</p>
-            <p class="author">— Elena R.</p>
+            <p class="quote">"Love the community wall. Nakita ko photo ko diyan kahapon!"</p>
+            <p class="author">— Bea S.</p>
           </div>
         </div>
       </div>
@@ -489,44 +491,44 @@ img{max-width:100%}
   </section>
 
   <!-- About Us -->
-  <section id="about" class="bg-cream px-5 sm:px-8 py-20 sm:py-28">
+  <section id="about" class="bg-coconut px-5 sm:px-8 py-20 sm:py-28">
     <div class="max-w-4xl mx-auto text-center" data-reveal>
       <span class="eyebrow">Our Roots</span>
-      <h2 class="section-title mb-6">Born on Birch Street</h2>
+      <h2 class="section-title mb-6">Galing Sa Probinsya</h2>
       <div class="about-frame mb-8">
-        <img src="https://images.unsplash.com/photo-1554118598-7b827e7c4d72?auto=format&fit=crop&q=80&w=600&h=400" alt="Cafe founders" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1511537632536-b7a4896840a4?auto=format&fit=crop&q=80&w=600&h=400" alt="Coffee beans" loading="lazy">
       </div>
-      <p class="text-lg text-espresso/80 leading-relaxed mb-8">
-        We started Block & Bean in 2014 with a simple mission: create a space where coffee is serious, but people are welcome just as they are. No pretension, just great beans and good vibes. We source directly from sustainable farms and bake our pastries fresh every morning at 4 AM.
+      <p class="text-lg text-tealDark/80 leading-relaxed mb-8">
+        Nagsimula ang Boba Ka Tea? noong 2024 with a simple mission: serve the best Batangas Barako in the city without the snobbery. We source our beans directly from farmers in Amadeo and bake our Pandesal fresh every 4 AM. Dito, kahit sino, pamilya na.
       </p>
-      <div class="grid grid-cols-3 gap-4 max-w-md mx-auto font-mono text-xs uppercase tracking-wider text-espresso/60">
+      <div class="grid grid-cols-3 gap-4 max-w-md mx-auto font-mono text-xs uppercase tracking-wider text-tealDark/60">
         <div>
-          <span class="block text-2xl font-bold text-espresso">10k+</span>
+          <span class="block text-2xl font-bold text-tealDark">5k+</span>
           Cups/Mo
         </div>
         <div>
-          <span class="block text-2xl font-bold text-espresso">12</span>
+          <span class="block text-2xl font-bold text-tealDark">8</span>
           Local Artists
         </div>
         <div>
-          <span class="block text-2xl font-bold text-espresso">100%</span>
-          Organic
+          <span class="block text-2xl font-bold text-tealDark">100%</span>
+          Pinoy Beans
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="bg-espresso text-cream/60 py-12 px-6 text-center text-sm">
+<footer class="bg-tealDark text-white/60 py-12 px-6 text-center text-sm">
   <div class="max-w-md mx-auto space-y-4">
-    <h3 class="font-display text-2xl text-cream">Block & Bean</h3>
-    <p>214 Birch Street, Open Daily 7am - 7pm</p>
+    <h3 class="font-display text-2xl text-white">Boba Ka Tea?</h3>
+    <p>123 Poblacion Street, Makati City | Open Daily 7am - 10pm</p>
     <div class="flex justify-center gap-6 text-xl">
-      <a href="#" class="hover:text-gold transition-colors"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#" class="hover:text-gold transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#" class="hover:text-gold transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="#" class="hover:text-mango transition-colors"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="hover:text-mango transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" class="hover:text-mango transition-colors"><i class="fa-brands fa-tiktok"></i></a>
     </div>
-    <p class="text-xs pt-4">&copy; 2024 Block & Bean Coffee Co.</p>
+    <p class="text-xs pt-4">&copy; 2024 Boba Ka Tea? Coffee Co.</p>
   </div>
 </footer>
 
@@ -536,14 +538,14 @@ img{max-width:100%}
   <div class="sheet-handle"></div>
   <button class="sheet-close" id="close-upload"><i class="fa-solid fa-xmark"></i></button>
   <div class="sheet-content">
-    <h3 class="font-display text-2xl mb-1">Upload Your Vibe</h3>
-    <p class="text-sm text-espresso/60 mb-6">Get featured on the Local Legends wall.</p>
+    <h3 class="font-display text-2xl mb-1">I-Upload Ang Vibe Mo</h3>
+    <p class="text-sm text-tealDark/60 mb-6">Get featured sa Local Legends wall.</p>
     
     <form id="upload-form">
       <div class="dropzone" id="dropzone">
         <img class="dropzone-preview" id="preview-img" alt="Preview">
         <div class="dropzone-placeholder">
-          <i class="fa-solid fa-cloud-arrow-up text-3xl mb-2 text-stamp"></i>
+          <i class="fa-solid fa-cloud-arrow-up text-3xl mb-2 text-clay"></i>
           <p class="font-medium">Tap to upload photo</p>
           <p class="text-xs mt-1">or drag and drop here</p>
         </div>
@@ -552,20 +554,20 @@ img{max-width:100%}
 
       <div class="field mt-6">
         <label>IG Handle (Optional)</label>
-        <div class="ig-input-wrap" style="display:flex;align-items:center;border:1.5px solid rgba(28,18,11,.15);border-radius:12px;background:#fff;overflow:hidden">
-          <span class="text-espresso/40 px-3">@</span>
+        <div class="ig-input-wrap" style="display:flex;align-items:center;border:1.5px solid rgba(0,105,92,.2);border-radius:12px;background:#fff;overflow:hidden">
+          <span class="text-tealDark/40 px-3">@</span>
           <input type="text" placeholder="username" style="border:none!important;flex:1;padding:.75rem 0">
         </div>
       </div>
 
       <div class="field">
         <label>Your Drink</label>
-        <input type="text" placeholder="e.g. Oat Latte" required>
+        <input type="text" placeholder="e.g. Ube Latte" required>
       </div>
 
       <label class="consent-row">
         <input type="checkbox" required>
-        <span>I agree to let Block & Bean feature this photo on our digital wall.</span>
+        <span>I agree to let Boba Ka Tea? feature this photo on our wall.</span>
       </label>
 
       <button type="submit" class="btn-stamp w-full justify-center mt-2" id="submit-upload">
@@ -576,7 +578,7 @@ img{max-width:100%}
 </div>
 
 <!-- Toast Notification -->
-<div class="toast" id="toast">You're on the waitlist for the wall! 🎉</div>
+<div class="toast" id="toast">Salamat! You're on the waitlist! 🎉</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -606,23 +608,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const tabBtns = document.querySelectorAll('.tab-btn');
   const menuGrid = document.getElementById('menu-grid');
   
-  // Mock Menu Data
+  // Mock Menu Data (Filipino Inspired + PHP Currency)
   const menuItems = {
     espresso: [
-      { name: "House Espresso", price: "$3.50", desc: "Rich, nutty, chocolate notes", img: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&q=80&w=400" },
-      { name: "Cortado", price: "$4.25", desc: "Equal parts espresso & steamed milk", img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=400" },
-      { name: "Flat White", price: "$4.75", desc: "Double shot, microfoam texture", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=80&w=400" },
-      { name: "Cold Brew", price: "$5.00", desc: "Steeped 18hrs, smooth finish", img: "https://images.unsplash.com/photo-1517701604599-bb29b5c7355c?auto=format&fit=crop&q=80&w=400" }
+      { name: "Barako Espresso", price: "₱90", desc: "Strong Batangas coffee", img: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&q=80&w=400" },
+      { name: "Cortado", price: "₱120", desc: "Espresso & steamed milk", img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=400" },
+      { name: "Ube Latte", price: "₱160", desc: "Purple yam, oat milk", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=80&w=400" },
+      { name: "Cold Brew", price: "₱150", desc: "Steeped 18hrs, smooth", img: "https://images.unsplash.com/photo-1517701604599-bb29b5c7355c?auto=format&fit=crop&q=80&w=400" }
     ],
     "non-coffee": [
-      { name: "Matcha Latte", price: "$5.50", desc: "Ceremonial grade, oat milk", img: "https://images.unsplash.com/photo-1515825838458-f2a94b20105a?auto=format&fit=crop&q=80&w=400" },
-      { name: "Chai Tea", price: "$4.75", desc: "Spiced black tea, steamed milk", img: "https://images.unsplash.com/photo-1576092768241-dec231847233?auto=format&fit=crop&q=80&w=400" },
-      { name: "Hot Chocolate", price: "$4.50", desc: "70% dark chocolate, whipped cream", img: "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&q=80&w=400" }
+      { name: "Matcha Latte", price: "₱160", desc: "Ceremonial grade", img: "https://images.unsplash.com/photo-1515825838458-f2a94b20105a?auto=format&fit=crop&q=80&w=400" },
+      { name: "Salabat", price: "₱80", desc: "Spicy ginger tea", img: "https://images.unsplash.com/photo-1576092768241-dec231847233?auto=format&fit=crop&q=80&w=400" },
+      { name: "Hot Chocolate", price: "₱110", desc: "Tablea chocolate", img: "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&q=80&w=400" }
     ],
     pastries: [
-      { name: "Croissant", price: "$3.75", desc: "Buttery, flaky, baked daily", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=400" },
-      { name: "Morning Bun", price: "$4.25", desc: "Cinnamon sugar, orange zest", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=400" },
-      { name: "Blueberry Muffin", price: "$3.50", desc: "Bursting with berries", img: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&q=80&w=400" }
+      { name: "Pandesal", price: "₱45", desc: "Fresh from oven", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=400" },
+      { name: "Ensaymada", price: "₱65", desc: "Cheesy & sweet", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=400" },
+      { name: "Banana Cue", price: "₱50", desc: "Caramelized saba", img: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&q=80&w=400" }
     ]
   };
 
@@ -652,11 +654,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Remove active class from all
       tabBtns.forEach(b => b.classList.remove('active'));
-      // Add active to clicked
       btn.classList.add('active');
-      // Render content
       renderMenu(btn.dataset.category);
     });
   });
@@ -743,7 +742,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Reservation Form Mock ---
   document.getElementById('reserve-form').addEventListener('submit', (e) => {
     e.preventDefault();
-    alert("Table reserved! See you soon.");
+    alert("Reserved na! See you soon.");
     e.target.reset();
   });
 });
