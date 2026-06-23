@@ -111,12 +111,12 @@ img{max-width:100%;display:block}
 .hero-wordmark{font-size:clamp(3.5rem,11vw,6.5rem);letter-spacing:-.01em;line-height:0.95;text-shadow:2px 3px 0px rgba(0,0,0,0.25)}
 .scroll-cue{animation:bounceCue 2s infinite}
 @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
-
-/* Floating Fluid Navigation Bar (Top Corner) */
+/* Floating Fluid Navigation Bar (Top Center) */
 .fluid-menu-container {
   position: fixed;
   top: 24px;
-  right: 24px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 100;
   display: flex;
   flex-direction: column;
@@ -170,10 +170,10 @@ img{max-width:100%;display:block}
   opacity: 1;
   transform: translateY(0) scale(1);
 }
-.fluid-menu-container.active .fluid-item:nth-child(1) { transition-delay: 0.05s; }
-.fluid-menu-container.active .fluid-item:nth-child(2) { transition-delay: 0.1s; }
-.fluid-menu-container.active .fluid-item:nth-child(3) { transition-delay: 0.15s; }
-.fluid-menu-container.active .fluid-item:nth-child(4) { transition-delay: 0.2s; }
+.fluid-menu-container.active .fluid-item:nth-of-type(1) { transition-delay: 0.05s; }
+.fluid-menu-container.active .fluid-item:nth-of-type(2) { transition-delay: 0.1s; }
+.fluid-menu-container.active .fluid-item:nth-of-type(3) { transition-delay: 0.15s; }
+.fluid-menu-container.active .fluid-item:nth-of-type(4) { transition-delay: 0.2s; }
 
 .fluid-backdrop {
   position: fixed;
@@ -470,17 +470,17 @@ img{max-width:100%;display:block}
 <div class="fluid-backdrop" id="fluid-backdrop"></div>
 <div class="sheet-backdrop" id="sheet-backdrop"></div>
 
-<!-- Custom Floating Navigation Menu (Top Right) -->
+<!-- Custom Floating Navigation Menu (Top Center with Downward Dropdown) -->
 <nav class="fluid-menu-container" id="fluid-menu" aria-label="Global Navigation">
-  <a href="#about" class="fluid-item" aria-label="About Us"><i class="fa-solid fa-store" aria-hidden="true"></i></a>
-  <a href="#reserve" class="fluid-item" aria-label="Reserve a spot"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i></a>
-  <a href="#wall" class="fluid-item" aria-label="Community Wall"><i class="fa-solid fa-camera-retro" aria-hidden="true"></i></a>
-  <a href="#menu" class="fluid-item" aria-label="Explore Menu"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i></a>
-  
   <button class="fluid-trigger" id="fluid-trigger" aria-label="Toggle Navigation Menu">
     <i class="fa-solid fa-bars" aria-hidden="true"></i>
     <i class="fa-solid fa-xmark" aria-hidden="true"></i>
   </button>
+
+  <a href="#menu" class="fluid-item" aria-label="Explore Menu"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i></a>
+  <a href="#wall" class="fluid-item" aria-label="Community Wall"><i class="fa-solid fa-camera-retro" aria-hidden="true"></i></a>
+  <a href="#reserve" class="fluid-item" aria-label="Reserve a spot"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i></a>
+  <a href="#about" class="fluid-item" aria-label="About Us"><i class="fa-solid fa-store" aria-hidden="true"></i></a>
 </nav>
 
 <!-- Persistent Mobile Conversion Bar (Sticky Footer Strategy) -->
